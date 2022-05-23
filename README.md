@@ -83,11 +83,11 @@
 # View Plans
 [_Miro Wireframes Here_](https://miro.com/welcomeonboard/WUxlT0RnUTg4b0hOODJpV2NVcmZMZ3laa3VNcTlORkVhckhTaTF6YVFFRGZJaTFOZnR0cDBzU0Fraks4cFBQd3wzMDc0NDU3MzY2MjM4MjQ4MDEx?share_link_id=423257455910)
 ### **User View Expectations (Customer)**
-Login/Signup - customer will be able to login to their account or create a new one using forms/inputs
-Browsing Products - customer will be able to browse the merchandise of store, with dialog box feature for further description
-Adding Products to Cart - customer will be able to use action buttons located on product card to then add to their cart 
-'Placing' an Order - customer will utilize inputs/forms to enter delivery address to create an order instance
+- Login/Signup - customer will be able to login to their account or create a new one using forms/inputs
+- Browsing Products - customer will be able to browse the merchandise of store, with dialog box feature for further description
+- Adding Products to Cart - customer will be able to use action buttons located on product card to then add to their cart 
+- 'Placing' an Order - customer will utilize inputs/forms to enter delivery address to create an order instance
 ### **Employee View Expectations (Admin)**
-Product CRUD (partial) - an employee will be able to post, edit, and delete products using inputs/forms and action buttons
-Order CRUD (partial) - an employee will be able to edit and delete orders using inputs/forms and action buttons
+- Product CRUD (partial) - an employee will be able to post, edit, and delete products using inputs/forms and action buttons
+- Order CRUD (partial) - an employee will be able to edit and delete orders using inputs/forms and action buttons
 
