@@ -85,7 +85,7 @@
 #### Login/Signup
 - customer will be able to login to their account or create a new one using forms/inputs
 #### Browsing Products 
-- customer will be able to browse the merchandise of store
+- customer will be able to browse the merchandise of store, with dialog box feature for further description
 #### Adding Products to Cart
 - customer will be able to use action buttons located on product card to then add to their cart 
 #### 'Placing' an Order 
