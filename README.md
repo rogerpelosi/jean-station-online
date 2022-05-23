@@ -28,11 +28,10 @@
     - userId - 2: integer (required)
     - products - 3: List(Product) (min 1)
 
-- Product - 2 
+- CartProduct - 2 
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
-    - desc - 3: type (required, max=100)
-    - price - 4: float (required, 1.00-1000.00)
+    - price - 3: float (required, 1.00-1000.00)
 
 #### Endpoints 
 - /api/v1/cart/{cartId} - GET –- get cart by id
@@ -49,11 +48,10 @@
     - deliveryAddress - 4: string (required, max=50)
     - status - 5: string (required, placed/shipped/delivered)
 
-- Product - 2 
+- OrderProduct - 2 
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
-    - desc - 3: type (required, max=100)
-    - price - 4: float (required, 1.00-1000.00)
+    - price - 3: float (required, 1.00-1000.00)
 
 #### Endpoints 
 - /api/v1/orders - GET –- get orders  
