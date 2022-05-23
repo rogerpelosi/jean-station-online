@@ -26,7 +26,7 @@
 - Cart - 1 
     - cartId - 1: integer (Primary key)
     - userId - 2: integer (required)
-    - products - 3: List<Product> (min 1)
+    - products - 3: List(<Product>) (min 1)
 
 - Product - 2 
     - product_id - 1: integer (Primary key)
@@ -45,7 +45,7 @@
 - Order - 1 
     - orderId - 1: integer (Primary key)
     - userId - 2: integer (required)
-    - products - 3: List<Product>
+    - products - 3: List(<Product>)
     - deliveryAddress - 4: string (required, max=50)
     - status - 5: string (required, placed/shipped/delivered)
 
@@ -68,7 +68,7 @@
     - userId - 1: integer (Primary key)
     - username - 2: string (required, max=25)
     - password - 3: string (required, max=35)
-    - email - n: string (required, max=35)
+    - email - 4: string (required, max=35)
 
 #### Endpoints 
 - /api/v1/account/{userId} - GET –- get user account 
@@ -78,5 +78,5 @@
 ********************************** 
 ### ServiceRegistry (TBA)
 ********************************* 
-### GatewayService (TBA)
+### GatewayService (TBA, will contain login/signup logic)
 ********************************* 
