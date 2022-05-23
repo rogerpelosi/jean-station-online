@@ -84,9 +84,9 @@
 ********************************* 
 ### GatewayService (TBA, will contain login/signup logic)
 ********************************* 
+## View Expectations
 [Miro Wireframes Here](https://miro.com/welcomeonboard/WUxlT0RnUTg4b0hOODJpV2NVcmZMZ3laa3VNcTlORkVhckhTaTF6YVFFRGZJaTFOZnR0cDBzU0Fraks4cFBQd3wzMDc0NDU3MzY2MjM4MjQ4MDEx?share_link_id=423257455910)
-********************************* 
-### User View Expectations (Customer)
+### User View (Customer)
 #### Login/Signup
 - customer will be able to login to their account or create a new one using forms/inputs
 #### Browsing Products 
@@ -96,7 +96,7 @@
 #### 'Placing' an Order 
 - customer will utilize inputs/forms to enter delivery address to create an order instance
 ********************************* 
-### Employee View Expectations (Admin)
+### Employee View (Admin)
 #### Product CRUD (partial)
 - an employee will be able to post, edit, and delete products using inputs/forms and action buttons
 #### Order CRUD (partial)
