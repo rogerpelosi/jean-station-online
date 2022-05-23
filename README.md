@@ -8,7 +8,6 @@
 ********************************* 
 ### ProductService 
 #### Model
-
 - Product - 1 
     - productId - 1: integer (Primary key)
     - title - 2: string (required, string-20)
@@ -24,7 +23,6 @@
 ********************************* 
 ### CartService 
 #### Models 
-
 - Cart - 1 
 
     - cartId - 1: integer (Primary key)
@@ -45,7 +43,6 @@
 ********************************* 
 ### OrderService 
 #### Models 
-
 - Order - 1 
 
     - orderId - 1: integer (Primary key)
@@ -69,7 +66,6 @@
 ********************************** 
 ### UserAccountService 
 #### Model
-
 - User - 1  
 
     - userId - 1: integer (Primary key)
@@ -87,6 +83,8 @@
 ### ServiceRegistry (TBA)
 ********************************* 
 ### GatewayService (TBA, will contain login/signup logic)
+********************************* 
+[Miro Wireframes Here](https://miro.com/welcomeonboard/WUxlT0RnUTg4b0hOODJpV2NVcmZMZ3laa3VNcTlORkVhckhTaTF6YVFFRGZJaTFOZnR0cDBzU0Fraks4cFBQd3wzMDc0NDU3MzY2MjM4MjQ4MDEx?share_link_id=423257455910)
 ********************************* 
 ### User View Expectations (Customer)
 #### Login/Signup
