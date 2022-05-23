@@ -6,7 +6,7 @@
 - ServiceRegistry
 - GatewayService
 ********************************* 
-### ProductService - 1
+### ProductService 
 #### Models 
 - Product - 1 
     - productId - 1: integer (Primary key)
@@ -21,7 +21,7 @@
 - /api/v1/products/{productId} - DELETE –- delete product   
 - /api/v1/products/{productId} - PUT –- edit product  
 ********************************* 
-### CartService - 1
+### CartService 
 #### Models 
 - Cart - 1 
     - cartId - 1: integer (Primary key)
@@ -40,7 +40,7 @@
 - /api/v1/cart/{cartId} - DELETE –- delete a cart  
 - /api/v1/cart/{cartId} - PUT –- edit cart   
 ********************************* 
-### OrderService - 1
+### OrderService 
 #### Models 
 - Order - 1 
     - orderId - 1: integer (Primary key)
@@ -62,7 +62,7 @@
 - /api/v1/orders/{orderId} - DELETE –- delete order   
 - /api/v1/orders/{orderId} - PUT –- edit order    
 ********************************** 
-### UserAccountService - n
+### UserAccountService 
 #### Models 
 - User - 1  
     - userId - 1: integer (Primary key)
