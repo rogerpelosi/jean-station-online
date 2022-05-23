@@ -91,7 +91,7 @@
 #### 'Placing' an Order 
 - customer will utilize inputs/forms to enter delivery address to create an order instance
 ********************************* 
-### Employee View Expectations
+### Employee View Expectations (Admin)
 #### Product CRUD (partial)
 - an employee will be able to post, edit, and delete products using inputs/forms and action buttons
 #### Order CRUD (partial)
