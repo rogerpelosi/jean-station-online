@@ -69,6 +69,7 @@
     - username - 2: string (required, max=25)
     - password - 3: string (required, max=35)
     - email - 4: string (required, max=35)
+    - role - 5: string (admin, user)
 
 #### Endpoints 
 - /api/v1/account/{userId} - GET –- get user account 
@@ -80,14 +81,19 @@
 ********************************* 
 ### GatewayService (TBA, will contain login/signup logic)
 ********************************* 
-### User View Expectations
+### User View Expectations (Customer)
 #### Login/Signup
+- customer will be able to login to their account or create a new one using forms/inputs
 #### Browsing Products 
-#### Adding Products to Cart 
+- customer will be able to browse the merchandise of store
+#### Adding Products to Cart
+- customer will be able to use action buttons located on product card to then add to their cart 
 #### 'Placing' an Order 
+- customer will utilize inputs/forms to enter delivery address to create an order instance
+********************************* 
 ### Employee View Expectations
 #### Product CRUD (partial)
-- an employee will be able to post, edit, and delete products 
+- an employee will be able to post, edit, and delete products using inputs/forms and action buttons
 #### Order CRUD (partial)
-- an employee will be able to edit and delete orders
+- an employee will be able to edit and delete orders using inputs/forms and action buttons
 
