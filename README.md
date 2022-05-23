@@ -1,5 +1,5 @@
 # MicroService Plans
-### List of Microservices Identified 
+### Microservices Identified: 
 - ProductService 
 - CartService 
 - OrderService
@@ -86,8 +86,8 @@
 ### GatewayService (TBA, will contain login/signup logic)
 ********************************* 
 # View Plans
-[Miro Wireframes Here](https://miro.com/welcomeonboard/WUxlT0RnUTg4b0hOODJpV2NVcmZMZ3laa3VNcTlORkVhckhTaTF6YVFFRGZJaTFOZnR0cDBzU0Fraks4cFBQd3wzMDc0NDU3MzY2MjM4MjQ4MDEx?share_link_id=423257455910)
-### User View Expectations (Customer)
+[_Miro Wireframes Here_](https://miro.com/welcomeonboard/WUxlT0RnUTg4b0hOODJpV2NVcmZMZ3laa3VNcTlORkVhckhTaTF6YVFFRGZJaTFOZnR0cDBzU0Fraks4cFBQd3wzMDc0NDU3MzY2MjM4MjQ4MDEx?share_link_id=423257455910)
+### **User View Expectations (Customer)**
 #### Login/Signup
 - customer will be able to login to their account or create a new one using forms/inputs
 #### Browsing Products 
@@ -96,8 +96,7 @@
 - customer will be able to use action buttons located on product card to then add to their cart 
 #### 'Placing' an Order 
 - customer will utilize inputs/forms to enter delivery address to create an order instance
-********************************* 
-### Employee View Expectations (Admin)
+### **Employee View Expectations (Admin)**
 #### Product CRUD (partial)
 - an employee will be able to post, edit, and delete products using inputs/forms and action buttons
 #### Order CRUD (partial)
