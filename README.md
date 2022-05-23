@@ -8,8 +8,8 @@
 - GatewayService
 ********************************* 
 ### -->ProductService 
-#### Model
-- Product
+#### Model:
+1. Product
     - productId - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - desc - 3: type (required, max=100)
@@ -23,13 +23,13 @@
 - /api/v1/products/{productId} - PUT –- edit product  
 ********************************* 
 ### -->CartService 
-#### Models 
-- Cart 
+#### Models: 
+1. Cart 
     - cartId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product) (min 1)
 
-- CartProduct
+2. CartProduct
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - price - 3: float (required, 1.00-1000.00)
@@ -41,15 +41,15 @@
 - /api/v1/cart/{cartId} - PUT –- edit cart   
 ********************************* 
 ### -->OrderService 
-#### Models 
-- Order 
+#### Models: 
+1. Order 
     - orderId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product)
     - deliveryAddress - 4: string (required, max=50)
     - status - 5: string (required, placed/shipped/delivered)
 
-- OrderProduct 
+2. OrderProduct 
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - price - 3: float (required, 1.00-1000.00)
@@ -62,8 +62,9 @@
 - /api/v1/orders/{orderId} - PUT –- edit order    
 ********************************** 
 ### -->UserAccountService 
-#### Model
-- User 
+#### Model:
+
+1. User 
     - userId - 1: integer (Primary key)
     - username - 2: string (required, max=25)
     - password - 3: string (required, max=35)
