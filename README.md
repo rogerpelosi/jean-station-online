@@ -7,7 +7,7 @@
 - GatewayService
 ********************************* 
 ### ProductService 
-#### Models 
+#### Model
 - Product - 1 
     - productId - 1: integer (Primary key)
     - title - 2: string (required, string-20)
@@ -63,7 +63,7 @@
 - /api/v1/orders/{orderId} - PUT –- edit order    
 ********************************** 
 ### UserAccountService 
-#### Models 
+#### Model
 - User - 1  
     - userId - 1: integer (Primary key)
     - username - 2: string (required, max=25)
