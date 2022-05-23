@@ -80,3 +80,14 @@
 ********************************* 
 ### GatewayService (TBA, will contain login/signup logic)
 ********************************* 
+### User View Expectations
+#### Login/Signup
+#### Browsing Products 
+#### Adding Products to Cart 
+#### 'Placing' an Order 
+### Employee View Expectations
+#### Product CRUD (partial)
+- an employee will be able to post, edit, and delete products 
+#### Order CRUD (partial)
+- an employee will be able to edit and delete orders
+
