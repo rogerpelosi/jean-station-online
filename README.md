@@ -7,9 +7,9 @@
 - ServiceRegistry
 - GatewayService
 ********************************* 
-### ProductService 
+### -->ProductService 
 #### Model
-- Product - 1 
+- Product
     - productId - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - desc - 3: type (required, max=100)
@@ -22,16 +22,14 @@
 - /api/v1/products/{productId} - DELETE –- delete product   
 - /api/v1/products/{productId} - PUT –- edit product  
 ********************************* 
-### CartService 
+### -->CartService 
 #### Models 
-- Cart - 1 
-
+- Cart 
     - cartId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product) (min 1)
 
-- CartProduct - 2 
-
+- CartProduct
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - price - 3: float (required, 1.00-1000.00)
@@ -42,18 +40,16 @@
 - /api/v1/cart/{cartId} - DELETE –- delete a cart  
 - /api/v1/cart/{cartId} - PUT –- edit cart   
 ********************************* 
-### OrderService 
+### -->OrderService 
 #### Models 
-- Order - 1 
-
+- Order 
     - orderId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product)
     - deliveryAddress - 4: string (required, max=50)
     - status - 5: string (required, placed/shipped/delivered)
 
-- OrderProduct - 2 
-
+- OrderProduct 
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - price - 3: float (required, 1.00-1000.00)
@@ -65,10 +61,9 @@
 - /api/v1/orders/{orderId} - DELETE –- delete order   
 - /api/v1/orders/{orderId} - PUT –- edit order    
 ********************************** 
-### UserAccountService 
+### -->UserAccountService 
 #### Model
-- User - 1  
-
+- User 
     - userId - 1: integer (Primary key)
     - username - 2: string (required, max=25)
     - password - 3: string (required, max=35)
@@ -81,23 +76,18 @@
 - /api/v1/account/{userId} - DELETE –- delete account   
 - /api/v1/account/{userId} - PUT –- edit user account
 ********************************** 
-### ServiceRegistry (TBA)
+### -->ServiceRegistry (TBA)
 ********************************* 
-### GatewayService (TBA, will contain login/signup logic)
+### -->GatewayService (TBA, will contain login/signup logic)
 ********************************* 
 # View Plans
 [_Miro Wireframes Here_](https://miro.com/welcomeonboard/WUxlT0RnUTg4b0hOODJpV2NVcmZMZ3laa3VNcTlORkVhckhTaTF6YVFFRGZJaTFOZnR0cDBzU0Fraks4cFBQd3wzMDc0NDU3MzY2MjM4MjQ4MDEx?share_link_id=423257455910)
 ### **User View Expectations (Customer)**
 Login/Signup - customer will be able to login to their account or create a new one using forms/inputs
-#### Browsing Products 
-- customer will be able to browse the merchandise of store, with dialog box feature for further description
-#### Adding Products to Cart
-- customer will be able to use action buttons located on product card to then add to their cart 
-#### 'Placing' an Order 
-- customer will utilize inputs/forms to enter delivery address to create an order instance
+Browsing Products - customer will be able to browse the merchandise of store, with dialog box feature for further description
+Adding Products to Cart - customer will be able to use action buttons located on product card to then add to their cart 
+'Placing' an Order - customer will utilize inputs/forms to enter delivery address to create an order instance
 ### **Employee View Expectations (Admin)**
-#### Product CRUD (partial)
-- an employee will be able to post, edit, and delete products using inputs/forms and action buttons
-#### Order CRUD (partial)
-- an employee will be able to edit and delete orders using inputs/forms and action buttons
+Product CRUD (partial) - an employee will be able to post, edit, and delete products using inputs/forms and action buttons
+Order CRUD (partial) - an employee will be able to edit and delete orders using inputs/forms and action buttons
 
