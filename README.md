@@ -8,6 +8,7 @@
 ********************************* 
 ### ProductService 
 #### Model
+
 - Product - 1 
     - productId - 1: integer (Primary key)
     - title - 2: string (required, string-20)
@@ -23,12 +24,15 @@
 ********************************* 
 ### CartService 
 #### Models 
+
 - Cart - 1 
+
     - cartId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product) (min 1)
 
 - CartProduct - 2 
+
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - price - 3: float (required, 1.00-1000.00)
@@ -41,7 +45,9 @@
 ********************************* 
 ### OrderService 
 #### Models 
+
 - Order - 1 
+
     - orderId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product)
@@ -49,6 +55,7 @@
     - status - 5: string (required, placed/shipped/delivered)
 
 - OrderProduct - 2 
+
     - product_id - 1: integer (Primary key)
     - title - 2: string (required, string-20)
     - price - 3: float (required, 1.00-1000.00)
@@ -62,7 +69,9 @@
 ********************************** 
 ### UserAccountService 
 #### Model
+
 - User - 1  
+
     - userId - 1: integer (Primary key)
     - username - 2: string (required, max=25)
     - password - 3: string (required, max=35)
