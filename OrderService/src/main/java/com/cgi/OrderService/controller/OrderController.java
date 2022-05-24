@@ -91,7 +91,12 @@ public class OrderController {
 		return responseEntity;
 	}
 	
-	@GetMapping("/orders/userId")
-	public ResponseEntity<?> getAllOrder
+	@GetMapping("/orders/user")
+	public ResponseEntity<?> getAllOrderByUserId(@RequestParam("userId") Integer userId){
+		ResponseEntity<?> responseEntity;
+		List<Order> orders = orderService.getOrderByUserId(userId);
+		responseEntity = new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
+		return responseEntity;
+	}
 
 }
