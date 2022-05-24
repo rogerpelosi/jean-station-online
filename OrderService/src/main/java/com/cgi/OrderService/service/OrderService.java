@@ -13,5 +13,8 @@ public interface OrderService {
 	Order addNewOrder(Order newOrder) throws OrderWithIDExists;
 	Order editOrderByID(Order updatedOrder) throws OrderWithIDNotFound;
 	void deleteOrderByID(int orderId) throws OrderWithIDNotFound;
+	
+	List<Order> getOrdersByDeliveryStatus(String deliveryStatus);
+	List<Order> getOrderByUserId(int userId);
 
 }

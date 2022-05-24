@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cgi.OrderService.exceptions.OrderWithIDExists;
@@ -83,6 +84,14 @@ public class OrderController {
 	}
 	
 	@GetMapping("/orders/status")
-	public ResponseEntity<List<Order>>
+	public ResponseEntity<?> getAllOrdersByDeliveryStatusHandler(@RequestParam("status") String deliveryStatus){
+		ResponseEntity<?> responseEntity;
+		List<Order> orders = orderService.getOrdersByDeliveryStatus(deliveryStatus);
+		responseEntity = new ResponseEntity<List<Order>>(orders, HttpStatus.OK);
+		return responseEntity;
+	}
+	
+	@GetMapping("/orders/userId")
+	public ResponseEntity<?> getAllOrder
 
 }

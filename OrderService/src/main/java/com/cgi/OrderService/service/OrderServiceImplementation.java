@@ -64,4 +64,14 @@ public class OrderServiceImplementation implements OrderService {
 		}
 	}
 
+	@Override
+	public List<Order> getOrdersByDeliveryStatus(String deliveryStatus) {
+		return orderRepository.findByDeliveryStatus(deliveryStatus);
+	}
+
+	@Override
+	public List<Order> getOrderByUserId(int userId) {
+		return orderRepository.findByUserId(userId);
+	}
+
 }
