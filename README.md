@@ -3,11 +3,10 @@
 - ProductService 
 - CartService 
 - OrderService
-- UserAccountService 
+- UserAccountService / GatewayService
 - ServiceRegistry
-- GatewayService
 ********************************* 
-### -->ProductService 
+### --> ProductService ()
 #### Model:
 1. Product
     - productId - 1: integer (Primary key)
@@ -22,9 +21,9 @@
 - /api/v1/products/{productId} - DELETE –- delete product   
 - /api/v1/products/{productId} - PUT –- edit product  
 ********************************* 
-### -->CartService 
+### --> CartService (MongoDB)
 #### Models: 
-1. Cart 
+1. Cart (Aggregate)
     - cartId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product) (min 1)
@@ -40,9 +39,9 @@
 - /api/v1/cart/{cartId} - DELETE –- delete a cart  
 - /api/v1/cart/{cartId} - PUT –- edit cart   
 ********************************* 
-### -->OrderService 
+### --> OrderService (MongoDB)
 #### Models: 
-1. Order 
+1. Order (Aggregate)
     - orderId - 1: integer (Primary key)
     - userId - 2: integer (required)
     - products - 3: List(Product)
@@ -61,7 +60,7 @@
 - /api/v1/orders/{orderId} - DELETE –- delete order   
 - /api/v1/orders/{orderId} - PUT –- edit order    
 ********************************** 
-### -->UserAccountService 
+### --> UserAccountService / GatewayService (MySQL)
 #### Model:
 
 1. User 
@@ -77,9 +76,7 @@
 - /api/v1/account/{userId} - DELETE –- delete account   
 - /api/v1/account/{userId} - PUT –- edit user account
 ********************************** 
-### -->ServiceRegistry (TBA)
-********************************* 
-### -->GatewayService (TBA, will contain login/signup logic)
+### --> ServiceRegistry (TBA)
 ********************************* 
 # View Plans
 [_Miro Wireframes Here_](https://miro.com/welcomeonboard/WUxlT0RnUTg4b0hOODJpV2NVcmZMZ3laa3VNcTlORkVhckhTaTF6YVFFRGZJaTFOZnR0cDBzU0Fraks4cFBQd3wzMDc0NDU3MzY2MjM4MjQ4MDEx?share_link_id=423257455910)
