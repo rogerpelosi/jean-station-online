@@ -6,7 +6,7 @@
 - UserAccountService / GatewayService
 - ServiceRegistry
 ********************************* 
-### --> ProductService ()
+### --> ProductService (MySQL)
 #### Model:
 1. Product
     - productId - 1: integer (Primary key)
