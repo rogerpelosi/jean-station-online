@@ -21,7 +21,7 @@ public class ProductController {
 
 
 
-    @GetMapping(value = "/Product")
+    @GetMapping(value = "/product")
     public ResponseEntity<List<Product>> getAllProducts(){
         ResponseEntity<List<Product>> responseEntity;
 
@@ -30,11 +30,11 @@ public class ProductController {
         return responseEntity;
     }
 
-    @PostMapping("/Product")
-    public ResponseEntity<?> addProduct(@RequestBody Product Product) {
+    @PostMapping("/product")
+    public ResponseEntity<?> addProduct(@RequestBody Product product) {
         ResponseEntity<?> responseEntity;
         try {
-            Product newProduct = productService.addProduct(Product);
+            Product newProduct = productService.addProduct(product);
             responseEntity = new ResponseEntity<Product>(newProduct, HttpStatus.CREATED);
         } catch (ProductWithTheIDAlreadyExistException e){
             responseEntity = new ResponseEntity<String>("Failed to store the Product", HttpStatus.CONFLICT);
@@ -42,8 +42,8 @@ public class ProductController {
         return responseEntity;
     }
 
-    @GetMapping("Product/{empId}")
-    public ResponseEntity<?> getProductById(@PathVariable("empId") Long id) {
+    @GetMapping("product/{proId}")
+    public ResponseEntity<?> getProductById(@PathVariable("proId") Long id) {
         ResponseEntity<?> responseEntity;
         try {
             Product product = productService.getProductById(id);
@@ -56,8 +56,8 @@ public class ProductController {
 
 
 
-    @PutMapping("Product/{empId}")
-    public ResponseEntity<?> updateProduct(@RequestBody Product product, @PathVariable ("empId") Long id){
+    @PutMapping("product/{proId}")
+    public ResponseEntity<?> updateProduct(@RequestBody Product product, @PathVariable ("proId") Long id){
         ResponseEntity<?> responseEntity;
         try {
             product.setId(id);
@@ -69,15 +69,20 @@ public class ProductController {
         return responseEntity;
     }
 
-    @DeleteMapping(value = "Product/{empId}")
-    public ResponseEntity<Long> deleteProduct(@PathVariable("empId") Long id){
-          try {
-              productService.deleteProductById(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(id, HttpStatus.OK);
+    @DeleteMapping( "product/{proId}")
+    public ResponseEntity<String> deleteProduct(@PathVariable("proId") Long id){
+
+            ResponseEntity<String> responseEntity;
+            try {
+                productService.deleteProductById(id);
+                responseEntity = new ResponseEntity<String>("Product Deleted", HttpStatus.OK);
+            } catch(ProductWithTheIDDoesNotExistException e) {
+                responseEntity = new ResponseEntity<String>("Product Not Found", HttpStatus.NOT_FOUND);
+            }
+            return responseEntity;
         }
-    }
+
+
 
 
 }

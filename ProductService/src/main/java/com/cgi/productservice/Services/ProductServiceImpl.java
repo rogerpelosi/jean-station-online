@@ -30,11 +30,11 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product addProduct(Product Product) throws ProductWithTheIDAlreadyExistException {
-        Optional<Product> optional = productRepository.findById(Product.getId());
+    public Product addProduct(Product product) throws ProductWithTheIDAlreadyExistException {
+        Optional<Product> optional = productRepository.findByIdAndTitle(product.getId(), product.getTitle());
         if(optional.isEmpty()){
-            productRepository.save(Product);
-            return Product;
+            productRepository.save(product);
+            return product;
         }
         throw new ProductWithTheIDAlreadyExistException();
     }

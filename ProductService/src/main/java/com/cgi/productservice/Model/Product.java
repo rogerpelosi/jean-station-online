@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 
 @Entity
-@Table
 public class Product {
 
     @Id
@@ -44,15 +43,15 @@ public class Product {
         this.title = title;
     }
 
-    public String getDesc() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDesc(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
