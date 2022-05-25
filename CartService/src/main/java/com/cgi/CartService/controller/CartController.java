@@ -66,7 +66,7 @@ public class CartController {
 	
 	
 	@PutMapping(value="/cart/{cartId}")
-	public ResponseEntity<?> updateCartHandler(@PathVariable("empId") int id, @RequestBody Cart cart){
+	public ResponseEntity<?> updateCartHandler(@PathVariable("cartId") int id, @RequestBody Cart cart){
 		
 		ResponseEntity<?> responseEntity;
 		
