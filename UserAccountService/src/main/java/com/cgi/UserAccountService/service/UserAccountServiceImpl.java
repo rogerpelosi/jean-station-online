@@ -1,14 +1,19 @@
 package com.cgi.UserAccountService.service;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.cgi.UserAccountService.exceptions.UserWithTheIDAlreadyPresentException;
 import com.cgi.UserAccountService.exceptions.UserWithTheIDNotPresentException;
 import com.cgi.UserAccountService.model.UserAccount;
 import com.cgi.UserAccountService.repository.UserAccountRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 
 @Service
 public class UserAccountServiceImpl implements UserAccountService{
@@ -60,6 +65,26 @@ public class UserAccountServiceImpl implements UserAccountService{
         }
         throw new UserWithTheIDNotPresentException();
     }
+    
+    public boolean verifyUser(String username, String password) {
+    	// TODO Auto-generated method stub
+    	return userAccountRepository.findByUsernameAndPassword(username, password).isPresent();
+    	}
+
+    	public String generateToken(String username) {
+    	// TODO Auto-generated method stub
+    	String jwtToken;
+    	jwtToken = Jwts.builder()
+    	.setSubject(username)
+//    	.setClaims()
+    	.setIssuedAt(new Date())
+    	.setExpiration(new Date(System.currentTimeMillis() + 500000))
+    	.signWith(SignatureAlgorithm.HS256, "stackroute")
+    	.compact();
+
+    	return jwtToken;
+    	}
+
 
 
 

@@ -1,6 +1,8 @@
 package com.cgi.UserAccountService.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,11 +18,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cgi.UserAccountService.exceptions.UserWithTheIDAlreadyPresentException;
 import com.cgi.UserAccountService.exceptions.UserWithTheIDNotPresentException;
+import com.cgi.UserAccountService.model.LoginUser;
 import com.cgi.UserAccountService.model.UserAccount;
 import com.cgi.UserAccountService.service.UserAccountService;
 
 @RestController
-@RequestMapping("/api/vi")
+@RequestMapping("/api/v1")
 public class UserAccountController {
     @Autowired
     private UserAccountService userAccountService;
@@ -33,7 +36,7 @@ public class UserAccountController {
         return responseEntity;
     }
 
-    @GetMapping("/account/{userId}")
+    @GetMapping("/accounts/{userId}")
     public ResponseEntity<?> getUserByIdHandler(@PathVariable("userId") int id) throws UserWithTheIDNotPresentException {
         ResponseEntity<?> responseEntity;
         try {
@@ -44,7 +47,7 @@ public class UserAccountController {
         }
         return responseEntity;
     }
-    @PostMapping("/account")
+    @PostMapping("/accounts/register")
     public ResponseEntity<?> addUserAccountHandler(@RequestBody UserAccount userAccount){
         ResponseEntity<?> responseEntity;
         try {
@@ -56,8 +59,35 @@ public class UserAccountController {
         }
         return responseEntity;
     }
+    
+    @PostMapping("/accounts/login")
+    public ResponseEntity<?> loginHandler(@RequestBody LoginUser loginUser ){
 
-    @DeleteMapping("/account/{userId}")
+    	ResponseEntity<?> responseEntity;
+
+    	Map<String, String> tokenMap = new HashMap<>();
+
+    	boolean isUserValid = userAccountService.verifyUser(loginUser.getUsername(),loginUser.getPassword());
+
+    	if(isUserValid) {
+    	// 
+    	String token = userAccountService.generateToken(loginUser.getUsername());
+    	tokenMap.put("token", token);
+    	responseEntity = new ResponseEntity<Map<String, String>>(tokenMap,HttpStatus.OK);
+    	} else {
+    	tokenMap.clear();
+    	tokenMap.put("token", null);
+    	tokenMap.put("message", "Invalid User Credentials");
+    	responseEntity = new ResponseEntity<Map<String,String>>(tokenMap,HttpStatus.FORBIDDEN);
+    	}
+
+    	return responseEntity;
+    	// return forbidden response;
+
+    	}
+
+
+    @DeleteMapping("/accounts/{userId}")
     public ResponseEntity<String> deleteUserAccountHandler(@PathVariable("userId") int id )throws UserWithTheIDNotPresentException{
         ResponseEntity<String> responseEntity;
         try {
@@ -69,7 +99,7 @@ public class UserAccountController {
         return responseEntity;
     }
 
-    @PutMapping("/account/{userId}")
+    @PutMapping("/accounts/{userId}")
     public ResponseEntity<?> updateUserHandler(@PathVariable("userId") int id) throws UserWithTheIDNotPresentException{
         ResponseEntity<?> responseEntity;
         try {

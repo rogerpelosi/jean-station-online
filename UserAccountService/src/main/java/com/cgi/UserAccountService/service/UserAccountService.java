@@ -12,7 +12,8 @@ public interface UserAccountService {
     UserAccount addNewUserAccount(UserAccount userAccount) throws UserWithTheIDAlreadyPresentException;
     void deleteUserAccount(int id) throws UserWithTheIDNotPresentException;
     UserAccount updateUserAccount(UserAccount userAccount) throws UserWithTheIDNotPresentException;
-
+    boolean verifyUser(String username, String password);
+    String generateToken(String username);
 
     //    Endpoints
 //
