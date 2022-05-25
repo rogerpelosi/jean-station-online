@@ -31,6 +31,7 @@ public class UserAccountServiceApplication {
 		return builder.routes()
 				.route((r)->{return r.path("/api/v1/orders/**").uri("lb://order-service");})
 				.route((r)->{return r.path("/api/v1/cart/**").uri("lb://cart-service");})
+				.route((r)->{return r.path("/api/v1/product/**").uri("lb://product-service");})
 				//add product route
 				.build();
 	}
