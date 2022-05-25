@@ -1,0 +1,29 @@
+.login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: auto;
+    height: 45vh;
+    margin-top: 15%;
+    background-color: cornflowerblue;
+}
+
+.heading{
+    display: flex;
+    flex-direction: row;
+}
+
+.login-container h2{
+    color: indigo;
+    font-size: 2em;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

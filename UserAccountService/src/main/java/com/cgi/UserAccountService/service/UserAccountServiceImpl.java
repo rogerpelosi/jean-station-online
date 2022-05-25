@@ -66,16 +66,20 @@ public class UserAccountServiceImpl implements UserAccountService{
         throw new UserWithTheIDNotPresentException();
     }
     
-    public boolean verifyUser(String username, String password) {
+    public UserAccount verifyUser(String username, String password)  throws UserWithTheIDNotPresentException{
     	// TODO Auto-generated method stub
-    	return userAccountRepository.findByUsernameAndPassword(username, password).isPresent();
+    	Optional<UserAccount> userOptional= userAccountRepository.findByUsernameAndPassword(username, password);
+    	if(userOptional.isPresent()) {
+    		return userOptional.get();
+    	}
+    	throw new UserWithTheIDNotPresentException();
     	}
 
-    	public String generateToken(String username) {
+    	public String generateToken(UserAccount user) {
     	// TODO Auto-generated method stub
     	String jwtToken;
     	jwtToken = Jwts.builder()
-    	.setSubject(username)
+    	.setSubject(Integer.toString(user.getUserId()))
 //    	.setClaims()
     	.setIssuedAt(new Date())
     	.setExpiration(new Date(System.currentTimeMillis() + 500000))
@@ -84,8 +88,5 @@ public class UserAccountServiceImpl implements UserAccountService{
 
     	return jwtToken;
     	}
-
-
-
 
 }
