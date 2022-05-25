@@ -1,11 +1,10 @@
 package com.cgi.UserAccountService.service;
 
+import java.util.List;
+
 import com.cgi.UserAccountService.exceptions.UserWithTheIDAlreadyPresentException;
 import com.cgi.UserAccountService.exceptions.UserWithTheIDNotPresentException;
 import com.cgi.UserAccountService.model.UserAccount;
-import org.apache.catalina.User;
-
-import java.util.List;
 
 public interface UserAccountService {
     List<UserAccount> getAllUserAccounts();

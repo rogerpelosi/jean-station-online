@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -24,14 +25,7 @@ public class CartController {
 	
 	@Autowired
 	private CartService cartService;
-	
-	
-	
-	
-	
-	
-	
-	
+
 	@PostMapping("/cart")
 	public ResponseEntity<?> createNewCartHandler(@RequestBody Cart cart){
 		
@@ -51,7 +45,7 @@ public class CartController {
 	
 	
 	
-	@PutMapping("/cart/{cartid}")
+	@GetMapping("/cart/{cartid}")
 	public ResponseEntity<?> getCartByIdHandler(@PathVariable("cartId") int id){
 		
 		ResponseEntity<?> responseEntity;
@@ -69,7 +63,7 @@ public class CartController {
 	
 	
 	
-	@PutMapping("/cart/{cartId")
+	@PutMapping("/cart/{cartId}")
 	public ResponseEntity<?> updateCartHandler(@PathVariable("empId") int id, @RequestBody Cart cart){
 		
 		ResponseEntity<?> responseEntity;
@@ -86,7 +80,7 @@ public class CartController {
 		return responseEntity;
 	}
 	
-	@DeleteMapping("/cart/{cartId")
+	@DeleteMapping("/cart/{cartId}")
 	public ResponseEntity<?> deleteCartHandler(@PathVariable("cartId") int id){
 		ResponseEntity<?> responseEntity;
 		
