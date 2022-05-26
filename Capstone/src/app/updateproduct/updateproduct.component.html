@@ -1,0 +1,17 @@
+<div class="form-update">
+  <mat-form-field>
+    <mat-label>Full Title</mat-label>
+    <input matInput placeholder="Enter Title"[(ngModel)]="product.title" >
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput placeholder="Enter Price"[(ngModel)]="product.price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <input matInput placeholder="Enter Description" [(ngModel)]="product.description">
+  </mat-form-field>
+
+  <button class="button-29" (click)="edit()" mat-raised-button color="primary">Update product</button>
+
+</div>
