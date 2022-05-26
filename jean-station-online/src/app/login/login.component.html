@@ -1,1 +1,27 @@
-<p>login works!</p>
+<section class="login-container">
+
+    <p *ngIf="error" color="accent">{{error}}</p>
+
+    <form [formGroup]="loginForm" class="login-form">
+
+        <mat-form-field appearance="outline">
+            <input matInput 
+                   type="username" 
+                   placeholder="enter username" 
+                   formControlName="username"
+            >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <input matInput 
+                   type="password" 
+                   placeholder="enter password" 
+                   formControlName="password"
+            >
+        </mat-form-field>
+    
+        <button mat-raised-button color="accent" [disabled]="loginForm.invalid" (click)="login()">login</button>
+    
+    </form>
+
+</section>

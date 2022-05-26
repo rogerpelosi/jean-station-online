@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,6 +22,9 @@ import com.cgi.UserAccountService.exceptions.UserWithTheIDNotPresentException;
 import com.cgi.UserAccountService.model.LoginUser;
 import com.cgi.UserAccountService.model.UserAccount;
 import com.cgi.UserAccountService.service.UserAccountService;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -67,14 +71,15 @@ public class UserAccountController {
 
     	Map<String, String> tokenMap = new HashMap<>();
 
-    	boolean isUserValid = userAccountService.verifyUser(loginUser.getUsername(),loginUser.getPassword());
+    	try {
+        	UserAccount userAccount = userAccountService.verifyUser(loginUser.getUsername(),loginUser.getPassword());
 
-    	if(isUserValid) {
-    	// 
-    	String token = userAccountService.generateToken(loginUser.getUsername());
-    	tokenMap.put("token", token);
-    	responseEntity = new ResponseEntity<Map<String, String>>(tokenMap,HttpStatus.OK);
-    	} else {
+            
+        	// 
+        	String token = userAccountService.generateToken(userAccount);
+        	tokenMap.put("token", token);
+        	responseEntity = new ResponseEntity<Map<String, String>>(tokenMap,HttpStatus.OK);
+    	} catch(UserWithTheIDNotPresentException e) {
     	tokenMap.clear();
     	tokenMap.put("token", null);
     	tokenMap.put("message", "Invalid User Credentials");
@@ -85,6 +90,33 @@ public class UserAccountController {
     	// return forbidden response;
 
     	}
+    
+    @PostMapping("/accounts/isAuthenticated")
+	public ResponseEntity<Map<String,Object>> verifyToken(@RequestHeader("Authorization") String authHeader){
+		System.out.println("Request received");
+		
+		ResponseEntity<Map<String, Object>> responseEntity;
+		HashMap<String, Object> map = new HashMap<>();
+		map.clear();
+		System.out.println(authHeader);
+		String token = authHeader.split(" ")[1];
+		try {
+			Claims claims =  Jwts.parser()
+			.setSigningKey("stackroute")
+			.parseClaimsJws(token)
+			.getBody();
+			map.put("isAuthenticated", true);
+			map.put("userId", claims.getSubject());
+			responseEntity = new ResponseEntity<Map<String,Object>>(map,HttpStatus.OK);
+			
+		}catch(Exception e) {
+			map.put("isAuthenticated", false);
+			responseEntity = new ResponseEntity<Map<String,Object>>(map,HttpStatus.FORBIDDEN);
+		}
+		
+		return responseEntity;
+		
+	}
 
 
     @DeleteMapping("/accounts/{userId}")
