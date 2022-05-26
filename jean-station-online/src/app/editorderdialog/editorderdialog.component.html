@@ -1,0 +1,16 @@
+<div class="order-edit">
+    <h2>OrderNo: {{order.orderNo}}</h2>
+
+    <form [formGroup]="editOrderForm" (ngSubmit)="edit()">
+        <mat-form-field appearance="fill">
+            <mat-label>current status: {{order.deliveryStatus}}</mat-label>
+            <mat-select formControlName="status">
+              <mat-option value="placed">placed</mat-option>
+              <mat-option value="shipped">shipped</mat-option>
+              <mat-option value="delivered">delivered</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <button mat-raised-button color="accent">Update Status</button>
+    </form>
+</div>

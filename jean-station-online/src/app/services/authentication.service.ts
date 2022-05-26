@@ -28,4 +28,8 @@ export class AuthenticationService {
     return localStorage.getItem('JeanBearerToken');
   }
 
+  removeToken(){
+    localStorage.clear();
+  }
+
 }

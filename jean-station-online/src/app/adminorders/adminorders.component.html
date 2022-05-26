@@ -1,0 +1,12 @@
+
+<section class="order-sorting">
+    <button (click)="viewAllOrders()">See All Orders</button>
+    <button (click)="sortByPlaced()">See Placed Orders</button>
+    <button (click)="sortByShipped()">See Shipped Orders</button>
+    <button (click)="sortByDelivered()">See Delivered Orders</button>
+</section>
+
+<section class="orders-container">
+    <app-order *ngFor="let oneOrder of filteredOrdersArr" [oneOrder]="oneOrder"
+    (handleDelete)="cancelOrder($event)"></app-order>
+</section>

@@ -1,7 +1,11 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserAccount } from '../models/UserAccount';
+import { AdminRoutingService } from '../services/admin-routing.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { RoutingService } from '../services/routing.service';
+import { UserRoutingService } from '../services/user-routing.service';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +16,10 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authentication: AuthenticationService,
-    private routing: RoutingService,
-    private formBuilder: FormBuilder){}
+    private formBuilder: FormBuilder,
+    private httpClient: HttpClient,
+    private admin: AdminRoutingService,
+    private user: UserRoutingService){}
 
   ngOnInit(): void {}
 
@@ -26,24 +32,28 @@ export class LoginComponent implements OnInit {
 
   login(){
     this.authentication.authenticateUser({username: this.loginForm.value['username'], password: this.loginForm.value['password']}).subscribe({
+
+      //if username and password combo is found, set token and check for role
       next: success=>{
         this.error = '';
-        console.log(success);
         this.authentication.setToken(success.token);
-        console.log(this.authentication.getToken());
-        console.log(this.authentication.authenticateToken(this.authentication.getToken()).subscribe({
-          next: success=>{
-            console.log(success);
-            //make call to useraccount/id to get user role
-            //if role = consumer make call to orders where id = user id
-          },
-          error: fail=>console.log(fail)
-        }))
+        this.authentication.authenticateToken(success.token).subscribe({
+          next: authenticTokenResp=>{
+            this.httpClient.get<UserAccount>(`http://localhost:9000/api/v1/accounts/${authenticTokenResp['userId']}`).subscribe({
+              next: user=>{
+                user.role == 'admin' ? this.admin.adminLandingRouting() : this.user.userLandingRouting()
+              },
+              error: fail=>console.log(fail)
+            });
+          }
+        });
       },
+
       error: failure=> {
         console.log(failure.error.message);
         this.error = failure.error.message;
       }
+
     });
   }
 
