@@ -8,16 +8,8 @@ export class RoutingService {
 
   constructor(private route: Router){}
 
-  // loginRouting(){
-  //   this.route.navigate(['login']);
-  // }
-
-  adminOrderRouting(){
-    this.route.navigate(['admin', 'orders']);
-  }
-
-  userOrderRouting(){
-    this.route.navigate(['user', 'orders'])
+  loginRouting(){
+    this.route.navigate(['landing', 'login']);
   }
 
 }

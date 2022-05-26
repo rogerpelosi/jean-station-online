@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
+import { RoutingService } from '../services/routing.service';
 
 @Component({
   selector: 'app-adminhome',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminhomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private authentication: AuthenticationService,
+    private routing: RoutingService){}
 
   ngOnInit(): void {
+  }
+
+  logout(){
+    this.authentication.removeToken();
+    this.routing.loginRouting();
   }
 
 }
