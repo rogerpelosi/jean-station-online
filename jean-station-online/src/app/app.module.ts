@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { HeaderComponent } from './header/header.component';
-import { EditproductdialogComponent } from './editproductdialog/editproductdialog.component';
 import { OrderComponent } from './order/order.component';
 
 //api consumption import:
@@ -38,7 +37,6 @@ import { UserordersComponent } from './userorders/userorders.component';
 import { EditorderdialogComponent } from './adminorderdialog/editorderdialog.component';
 import { AdminproductsComponent } from './adminproducts/adminproducts.component';
 import { UserproductsComponent } from './userproducts/userproducts.component';
-import { AdminnewproductComponent } from './adminnewproduct/adminnewproduct.component';
 import { ProductComponent } from './product/product.component';
 import { AdminproductdialogComponent } from './adminproductdialog/adminproductdialog.component';
 
@@ -88,7 +86,6 @@ const routes: Routes = [
     SignupComponent,
     AboutComponent,
     HeaderComponent,
-    EditproductdialogComponent,
     OrderComponent,
     AdminhomeComponent,
     UserhomeComponent,
@@ -98,7 +95,6 @@ const routes: Routes = [
     EditorderdialogComponent,
     AdminproductsComponent,
     UserproductsComponent,
-    AdminnewproductComponent,
     ProductComponent,
     AdminproductdialogComponent
   ],
