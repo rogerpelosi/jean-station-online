@@ -19,6 +19,9 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.productsArr = this.oneOrder.products;
     console.log(this.role);
+    if(this.oneOrder.deliveryStatus == "placed"){
+      this.customerCancel = 'available'
+    } else {this.customerCancel = '';}
   }
 
   @Input() oneOrder: Order;
@@ -29,6 +32,7 @@ export class OrderComponent implements OnInit {
   @Output() handleUpdate: EventEmitter<Order> = new EventEmitter<Order>();
 
   productsArr: OrderProduct[] = [];
+  customerCancel: string = '';
 
   edit(){
     console.log(`editing orderNo: ${this.oneOrder.orderNo}`);
