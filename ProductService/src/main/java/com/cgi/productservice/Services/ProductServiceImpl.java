@@ -44,8 +44,9 @@ public class ProductServiceImpl implements ProductService {
         Optional<Product> optional = productRepository.findById(id);
         if(optional.isPresent()){
             productRepository.deleteById(id);
-        }
+        } else {
         throw new ProductWithTheIDDoesNotExistException();
+        }
     }
 
     @Override

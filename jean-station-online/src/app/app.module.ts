@@ -6,12 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
-import { ProductcardComponent } from './productcard/productcard.component';
-import { ProductcardscontainerComponent } from './productcardscontainer/productcardscontainer.component';
 import { HeaderComponent } from './header/header.component';
 import { EditproductdialogComponent } from './editproductdialog/editproductdialog.component';
-import { NewproductComponent } from './newproductform/newproduct.component';
-import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 
 //api consumption import:
@@ -39,21 +35,14 @@ import { UserhomeComponent } from './userhome/userhome.component';
 import { LandingComponent } from './landing/landing.component';
 import { AdminordersComponent } from './adminorders/adminorders.component';
 import { UserordersComponent } from './userorders/userorders.component';
-import { EditorderdialogComponent } from './editorderdialog/editorderdialog.component';
+import { EditorderdialogComponent } from './adminorderdialog/editorderdialog.component';
+import { AdminproductsComponent } from './adminproducts/adminproducts.component';
+import { UserproductsComponent } from './userproducts/userproducts.component';
+import { AdminnewproductComponent } from './adminnewproduct/adminnewproduct.component';
+import { ProductComponent } from './product/product.component';
+import { AdminproductdialogComponent } from './adminproductdialog/adminproductdialog.component';
 
 const routes: Routes = [
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'signup',
-    component: SignupComponent
-  },
-  {
-    path: 'about',
-    component: AboutComponent
-  },
   {
     path: 'landing',
     component: LandingComponent,
@@ -68,7 +57,9 @@ const routes: Routes = [
     path: 'admin',
     component: AdminhomeComponent,
     children: [
-      {path: 'orders', component: AdminordersComponent}
+      {path: 'orders', component: AdminordersComponent},
+      {path: 'products', component: AdminproductsComponent},
+      {path: '', redirectTo: 'products', pathMatch: 'full'}
     ],
     canActivate: [CanactivateGuard]
   },
@@ -76,7 +67,8 @@ const routes: Routes = [
     path: 'user',
     component: UserhomeComponent,
     children: [
-      {path: 'orders', component: UserordersComponent}
+      {path: 'orders', component: UserordersComponent},
+      {path: 'about', component: AboutComponent}
     ],
     canActivate: [CanactivateGuard]
   },
@@ -93,19 +85,20 @@ const routes: Routes = [
     LoginComponent,
     SignupComponent,
     AboutComponent,
-    ProductcardComponent,
-    ProductcardscontainerComponent,
     HeaderComponent,
     EditproductdialogComponent,
-    NewproductComponent,
-    CartComponent,
     OrderComponent,
     AdminhomeComponent,
     UserhomeComponent,
     LandingComponent,
     AdminordersComponent,
     UserordersComponent,
-    EditorderdialogComponent
+    EditorderdialogComponent,
+    AdminproductsComponent,
+    UserproductsComponent,
+    AdminnewproductComponent,
+    ProductComponent,
+    AdminproductdialogComponent
   ],
   imports: [
     BrowserModule,

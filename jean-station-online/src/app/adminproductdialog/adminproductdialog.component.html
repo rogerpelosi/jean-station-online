@@ -1,0 +1,25 @@
+<div class="product-edit">
+    <h2>ProductNo: {{product.id}}</h2>
+
+    <form [formGroup]="editProductForm" (ngSubmit)="edit()">
+   
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Product Title</mat-label>
+            <input matInput placeholder="Ex. Blue Jeans" formControlName="title">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Product Description</mat-label>
+            <textarea matInput placeholder="Ex. The jeans are a faded blue with..." formControlName="description"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" floatLabel="always">
+            <mat-label>Amount</mat-label>
+            <input matInput type="number" class="example-right-align" placeholder="0" formControlName="price">
+            <span matPrefix>$&nbsp;</span>
+            <!-- <span matSuffix>.99</span> -->
+          </mat-form-field>
+    
+        <button mat-raised-button color="accent" [disabled]="editProductForm.invalid" (click)="edit()">Submit Changes</button>
+    </form>
+</div>
