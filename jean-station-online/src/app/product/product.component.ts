@@ -18,16 +18,12 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.role);
-    // if(this.role == 'admin'){this.admin == true && this.user == false}
-    // console.log(this.admin)
-    // console.log(this.user)
   }
 
   @Input() role: string;
   @Input() oneProduct: Product;
   @Output() handleDelete: EventEmitter<number> = new EventEmitter<number>();
-  // admin?: boolean = this.role == 'admin'? true : false;
-  // user?: boolean;
+  @Output() handleAddToCart: EventEmitter<Product> = new EventEmitter<Product>();
 
   edit(){
     console.log(`edit product with id: ${this.oneProduct.id}`);
@@ -52,7 +48,8 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(){
-    console.log(`adding ${this.oneProduct.id} to cart`)
+    console.log(`adding ${this.oneProduct.id} to cart`);
+    this.handleAddToCart.emit(this.oneProduct);
   }
 
 }

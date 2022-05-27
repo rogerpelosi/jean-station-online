@@ -1,2 +1,9 @@
-<p>userhome works!</p>
+<nav>
+    <a [routerLink]="['products']">Products</a>
+    <a href="">My Cart</a>
+    <a [routerLink]="['orders']">My Orders</a>
+    <a [routerLink]="['about']">About Jean Station</a>
+    <button (click)="logout()">Logout</button>
+</nav>
+
 <router-outlet></router-outlet>

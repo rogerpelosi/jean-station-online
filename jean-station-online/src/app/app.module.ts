@@ -68,7 +68,9 @@ const routes: Routes = [
     component: UserhomeComponent,
     children: [
       {path: 'orders', component: UserordersComponent},
-      {path: 'about', component: AboutComponent}
+      {path: 'products', component: UserproductsComponent},
+      {path: 'about', component: AboutComponent},
+      {path: '', redirectTo: 'products', pathMatch: 'full'}
     ],
     canActivate: [CanactivateGuard]
   },
