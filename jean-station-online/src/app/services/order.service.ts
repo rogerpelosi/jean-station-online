@@ -37,4 +37,10 @@ export class OrderService {
     });
   }
 
+  getOrdersByUserId(id: number): Observable<Order[]>{
+    return this.httpClient.get<Order[]>(`http://localhost:9000/api/v1/orders/user?userId=${id}`, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.authentication.getToken()}`)
+    });
+  }
+
 }

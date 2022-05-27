@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
         this.authentication.setToken(success.token);
         this.authentication.authenticateToken(success.token).subscribe({
           next: authenticTokenResp=>{
+            console.log(authenticTokenResp['userId']);
             this.httpClient.get<UserAccount>(`http://localhost:9000/api/v1/accounts/${authenticTokenResp['userId']}`).subscribe({
               next: user=>{
                 user.role == 'admin' ? this.admin.adminLandingRouting() : this.user.userLandingRouting()

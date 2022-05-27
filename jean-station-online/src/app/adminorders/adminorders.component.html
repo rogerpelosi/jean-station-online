@@ -6,6 +6,6 @@
 </section>
 
 <section class="orders-container">
-    <app-order *ngFor="let oneOrder of filteredOrdersArr" [oneOrder]="oneOrder"
+    <app-order *ngFor="let oneOrder of filteredOrdersArr" [oneOrder]="oneOrder" [role]="role"
     (handleDelete)="cancelOrder($event)"></app-order>
 </section>

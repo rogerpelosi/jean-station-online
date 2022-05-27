@@ -18,9 +18,11 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsArr = this.oneOrder.products;
+    console.log(this.role);
   }
 
   @Input() oneOrder: Order;
+  @Input() role: string;
 
   @Output() handleDelete: EventEmitter<number> = new EventEmitter<number>();
 

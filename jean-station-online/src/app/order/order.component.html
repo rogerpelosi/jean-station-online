@@ -1,4 +1,4 @@
-<mat-accordion>
+<mat-accordion *ngIf="role">
     <mat-expansion-panel hideToggle>
       <mat-expansion-panel-header>
         <mat-panel-title>
@@ -34,3 +34,5 @@
 
     </mat-expansion-panel>
 </mat-accordion>
+
+<p *ngIf="!role"> ORDER NO: {{oneOrder.orderNo}}</p>

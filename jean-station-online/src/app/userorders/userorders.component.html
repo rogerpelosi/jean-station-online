@@ -1,1 +1,3 @@
-<p>userorders works!</p>
+<section class="orders-container">
+    <app-order *ngFor="let oneOrder of userOrdersArr" [oneOrder]="oneOrder" [role]="role"></app-order>
+</section>

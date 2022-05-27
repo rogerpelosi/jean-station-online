@@ -24,10 +24,12 @@ export class EditorderdialogComponent implements OnInit {
   order: Order = this.data.order;
 
   editOrderForm: FormGroup = this.formBuilder.group({
+    userId: this.formBuilder.control(this.order.userId),
     status: this.formBuilder.control(this.order.deliveryStatus)
   })
 
   edit(){
+    this.order.userId = this.editOrderForm.value['userId'];
     this.order.deliveryStatus = this.editOrderForm.value['status'];
     this.dialogRef.close();
     this.orderService.editOrder(this.order).subscribe({

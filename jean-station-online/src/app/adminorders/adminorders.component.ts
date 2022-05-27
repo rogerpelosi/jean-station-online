@@ -25,6 +25,7 @@ export class AdminordersComponent implements OnInit {
 
   ordersArr: Order[] = [];
   filteredOrdersArr: Order[] = [];
+  role: string = 'admin';
 
   viewAllOrders(){
     this.filteredOrdersArr = this.ordersArr;
