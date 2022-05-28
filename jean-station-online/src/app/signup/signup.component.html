@@ -1,1 +1,31 @@
-<p>signup works!</p>
+<!-- <div><button >Create an Account</button></div> -->
+
+<body>
+    <section class="signup-container">
+
+        <p *ngIf="error" color="accent">{{error}}</p>
+
+        <form [formGroup]="signupForm" class="form-signup">
+            <div class="signup-form">
+                <mat-form-field appearance="outline">
+                    <input matInput class="form-control" id="email" type="email" placeholder="enter email" formControlName="email" autofocus>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <input matInput class="form-control" id="username" type="username" placeholder="enter username"
+                        formControlName="username">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <input matInput class="form-control" id="password" type="password" placeholder="enter password"
+                        formControlName="password">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <input matInput class="form-control" id="confirmPassword" type="confirmPassword" placeholder="confirm password"
+                        formControlName="confirmPassword">
+                </mat-form-field>
+                <div class="separation"></div>
+                <button mat-raised-button color="accent" [disabled]="signupForm.invalid" (click)="signup()">Create Account</button>
+            </div>
+        </form>
+
+    </section>
+</body>
