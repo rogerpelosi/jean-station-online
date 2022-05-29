@@ -1,5 +1,3 @@
-<!-- <div><button >Create an Account</button></div> -->
-
 <body>
     <section class="signup-container">
         <p *ngIf="error" color="accent">{{error}}</p>
@@ -34,7 +32,7 @@
                     </mat-form-field>
                 </div>
                 <div class="separation"></div>
-                <button id="button" mat-raised-button color="accent" [disabled]="signupForm.invalid" (click)="signup()">Create
+                <button mat-raised-button color="accent" [disabled]="signupForm.invalid" (click)="signup()"  id="button">Create
                     Account</button>
             </div>
            
