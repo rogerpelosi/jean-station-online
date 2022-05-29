@@ -1,55 +1,118 @@
+* {
+    margin: 0;
+    color: #dfe0e9; 
+    font-family: 'Times New Roman', Times, serif;
 
-body{
-	margin:0;
-    color:#dfe0e9;
-	background:#c8c8c8;
+    /* background: #c8c8c8; */
     /* overflow-y:scroll; */
     /* font:600 16px/18px 'Open Sans',sans-serif; */
-    width: auto;
-    
+    /* width: auto;*/
+
+} 
+
+
+
+.signup-container {
+    position: relative; 
+    /* justify-content:center; */
+    /* text-align: center; */
+    /* align-items:center; */
+    /* margin: auto; */
+    /* margin: auto; */
+    margin-top: 4%;
+    width: 100%;
+    height: 100%;
+    background: url(src\images\mnz-m1m2EZOZVwA-unsplash.jpg) no-repeat center;
+    background-size: cover;
+    /* box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19); */
+    display: flex;
+    /* flex-direction: column; */
+    /* border-radius: 40px; */
 }
-*,:after,:before {
-    box-sizing:border-box
+.form-signup{
+    margin: auto;
 }
-.signup-container{
-    width:100%;
-	margin:auto;
-	max-width:525px;
-	min-height:670px;    
-    position: relative;
-    background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
-	box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+h2{
+    width: 400px;
+    text-align:center;
+    font-size:40px;
+   margin-top: 10px;
+   color: whITE;
+   font-family: 'Times New Roman', Times, serif;
 
 }
-
 .signup-form{
-    min-height:345px;
-	position:relative;
-	perspective:1000px;
-    transform-style:preserve-3d;
+    background-color: rgba(36, 35, 33, 0.867);   
+    /* margin: 25% ; */
+	padding:20%;
+    border-radius: 15px;
 }
+
+
+#email,
+#username,
+#password,
+#confirmPassword {
+    position:relative;
+    background: rgba(255, 255, 255, 0.504);
+    color: black;
+    /* margin-left: 10px; */
+    padding: auto;
+    border-radius: 5px;
+}
+::placeholder{
+    color: black;
+}
+#button{
+    margin: 20px 20%;
+    background: rgba(255, 255, 255, 0.504);
+    /* justify-content: center; */
+
+}
+
 #email:hover,
 #username:hover,
 #password:hover,
 #confirmPassword:hover,
-button:hover{
-   background:rgba(255,255,255,.2);
+#button:hover{
+    background: rgba(255, 255, 255, .2);
+    transition-duration: 0.3s;
+
 }
+
 .signup-form .form-control {
-    margin-bottom:15px;
-      width:100%;
-      color:#fff;
-      display:block;
-        border:none;
-      padding:15px 20px;
-      border-radius:25px;
-      background:rgba(255,255,255,.1);
-  }
-  input{
-      caret-color: white;
-  }
-  .separation{
+    /* margin-bottom:15px; */
+    margin: -15px auto;
+	width:100%;
+	color:#fff;
+	display:block;
+  	border:none;
+	padding:8% 16%;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+}
+/* mat-form-field-appearance-outline {
+    color: red;
+} */
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color:transparent !important;
+    /* background: red; */
+}
+
+/* 
+.mat-form-field-wrapper {
+    position: fixed;
+} */
+input {
+    caret-color: black;
+    color: black;
+    /* background-color: red; */
+}
+
+.separation {
     height: 2px;
+    /* width: 100px; */
     margin: 30px 0;
-    background: #fff;
+    background: BLACK;
 }
