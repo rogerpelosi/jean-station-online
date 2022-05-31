@@ -60,7 +60,7 @@ export class SignupComponent implements OnInit {
       //   // role: 'user'
       // }
       ).pipe(
-        tap(() => this.router.navigate(['../login']))
+        tap(() => this.router.navigate(['landing', 'login']))
       ).subscribe();
     }
   }
