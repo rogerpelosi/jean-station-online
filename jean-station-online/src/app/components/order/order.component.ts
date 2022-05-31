@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditorderdialogComponent } from '../adminorderdialog/editorderdialog.component';
-import { Order } from '../models/Order';
-import { OrderProduct } from '../models/OrderProduct';
-import { OrderService } from '../services/order.service';
+import { Order } from '../../models/Order';
+import { OrderProduct } from '../../models/OrderProduct';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-order',

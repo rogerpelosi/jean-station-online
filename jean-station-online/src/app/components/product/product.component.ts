@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AdminproductdialogComponent } from '../adminproductdialog/adminproductdialog.component';
-import { Product } from '../models/Product';
-import { AuthenticationService } from '../services/authentication.service';
-import { ProductService } from '../services/product.service';
+import { Product } from '../../models/Product';
+import { AuthenticationService } from '../../services/authentication.service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-product',

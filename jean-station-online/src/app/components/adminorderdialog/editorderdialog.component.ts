@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Order } from '../models/Order';
-import { OrderService } from '../services/order.service';
+import { Order } from '../../models/Order';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-editorderdialog',

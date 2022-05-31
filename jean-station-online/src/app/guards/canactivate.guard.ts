@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { AuthenticationService } from '../services/authentication.service';
 
@@ -9,16 +9,12 @@ import { AuthenticationService } from '../services/authentication.service';
 export class CanactivateGuard implements CanActivate {
 
   constructor(
-    private authentication: AuthenticationService,
-    private router: Router){}
+    private authentication: AuthenticationService){}
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot): Observable<boolean> {
 
-      this.router.navigate(['']);
-      return false;
-      
     let token = this.authentication.getToken();
 
     return this.authentication.authenticateToken(token).pipe(map((res:any)=>{

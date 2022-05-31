@@ -1,11 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserAccount } from '../models/UserAccount';
-import { AdminRoutingService } from '../services/admin-routing.service';
-import { AuthenticationService } from '../services/authentication.service';
-import { RoutingService } from '../services/routing.service';
-import { UserRoutingService } from '../services/user-routing.service';
+import { UserAccount } from '../../models/UserAccount';
+import { AdminRoutingService } from '../../services/admin-routing.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { RoutingService } from '../../services/routing.service';
+import { UserRoutingService } from '../../services/user-routing.service';
 
 @Component({
   selector: 'app-login',

@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { UserAccount } from '../models/UserAccount';
-import { AdminRoutingService } from '../services/admin-routing.service';
-import { AuthenticationService } from '../services/authentication.service';
-import { RoutingService } from '../services/routing.service';
-import { UserRoutingService } from '../services/user-routing.service';
-import { AppModule } from '../app.module';
+import { UserAccount } from '../../models/UserAccount';
+import { AdminRoutingService } from '../../services/admin-routing.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { RoutingService } from '../../services/routing.service';
+import { UserRoutingService } from '../../services/user-routing.service';
+import { AppModule } from '../../app.module';
 import { CustomValidators } from './custom-validators';
-import { UserAccountService } from '../services/user-account.service';
+import { UserAccountService } from '../../services/user-account.service';
 import { Router } from '@angular/router';
 import { tap } from 'rxjs';
 @Component({

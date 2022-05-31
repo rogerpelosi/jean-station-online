@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from '../services/authentication.service';
-import { RoutingService } from '../services/routing.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { RoutingService } from '../../services/routing.service';
 
 @Component({
   selector: 'app-adminhome',

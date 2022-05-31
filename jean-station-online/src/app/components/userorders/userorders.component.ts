@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../models/Order';
-import { AuthenticationService } from '../services/authentication.service';
-import { OrderService } from '../services/order.service';
+import { Order } from '../../models/Order';
+import { AuthenticationService } from '../../services/authentication.service';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-userorders',
