@@ -36,11 +36,14 @@ public class UserAccountServiceImpl implements UserAccountService{
     @Override
     public UserAccount addNewUserAccount(UserAccount userAccount) throws UserWithTheIDAlreadyPresentException {
         Optional<UserAccount> optional = userAccountRepository.findById(userAccount.getUserId());
-        if(optional.isEmpty()){
+        Optional<UserAccount> optional2 = userAccountRepository.findByUsernameAndPassword(userAccount.getUsername(), userAccount.getPassword());
+
+        if(optional2.isEmpty()){
             userAccountRepository.save(userAccount);
             return userAccount;
+        } else {
+        throw new UserWithTheIDAlreadyPresentException();  }
         }
-        throw new UserWithTheIDAlreadyPresentException();    }
 
     @Override
     public void deleteUserAccount(int id) throws UserWithTheIDNotPresentException {

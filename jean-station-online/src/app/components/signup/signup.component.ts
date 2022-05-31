@@ -25,6 +25,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void { }
 
   error?: string;
+  newUser: UserAccount = new UserAccount();
 
   signupForm: FormGroup = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
@@ -43,13 +44,23 @@ export class SignupComponent implements OnInit {
 
   signup() {
     if (this.signupForm.valid) {
-      this.userAccountService.create({
-        email: this.email.value,
-        username: this.username.value,
-        password: this.password.value,
-        role: this.role.value
-      }).pipe(
-        tap(() => this.router.navigate(['../login']))
+
+      this.newUser.email = this.email.value;
+      this.newUser.username = this.username.value
+      this.newUser.password = this.password.value;
+      this.newUser.role = 'user';
+      console.log(this.newUser)
+
+      this.userAccountService.create(
+        this.newUser
+      //   {
+      //   // email: this.email.value,
+      //   // username: this.username.value,
+      //   // password: this.password.value,
+      //   // role: 'user'
+      // }
+      ).pipe(
+        tap(() => this.router.navigate(['landing', 'login']))
       ).subscribe();
     }
   }
