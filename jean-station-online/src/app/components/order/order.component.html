@@ -1,0 +1,69 @@
+<mat-accordion *ngIf="role">
+    <mat-expansion-panel class="order-card" hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="title">
+          OrderNo: {{oneOrder.orderNo}}
+        </mat-panel-title>
+        <mat-panel-description class="desc">
+          Click to see order details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+    <mat-card class="example-card">
+
+        <mat-card-header>
+          <mat-card-title>Order Number: {{oneOrder.orderNo}}</mat-card-title>
+          <mat-card-subtitle>CustomerID: {{oneOrder.userId}}</mat-card-subtitle>
+        </mat-card-header>
+    
+        <mat-card-content>
+          <p>Shipping Address: {{oneOrder.deliveryAddress}}</p>
+          <p>Order Status: {{oneOrder.deliveryStatus}}</p>
+          <h3>Products:</h3>
+          <ul>
+              <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+          </ul>
+        </mat-card-content>
+    
+        <mat-card-actions>
+          <button mat-raised-button (click)="edit()">Edit</button>
+          <button mat-raised-button (click)="delete()">Cancel Order</button>
+        </mat-card-actions>
+    
+    </mat-card>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<mat-accordion *ngIf="!role">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        OrderNo: {{oneOrder.orderNo}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Click to see order details
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+  <mat-card class="example-card">
+
+      <mat-card-header>
+        <mat-card-title>Order Number: {{oneOrder.orderNo}}</mat-card-title>
+        <mat-card-subtitle>Your Account ID: {{oneOrder.userId}}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p>Your Shipping Address: {{oneOrder.deliveryAddress}}</p>
+        <p>Order Status: {{oneOrder.deliveryStatus}}</p>
+        <h3>Products:</h3>
+        <ul>
+            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+        </ul>
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-raised-button *ngIf="customerCancel" (click)="delete()">Cancel Order</button>
+      </mat-card-actions>
+  
+  </mat-card>

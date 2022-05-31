@@ -1,0 +1,14 @@
+.order-card{
+    box-shadow: none;
+    border-radius: 0%;
+    border: none !important;
+    background-color: rgba(191, 191, 191, 0.518);
+    color: #1a1a6a;
+    color: #1a1a6a;
+    margin-bottom: 1vh;
+
+}
+
+.title, .desc{
+    color: #1a1a6a;
+}
