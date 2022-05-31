@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
             console.log(authenticTokenResp['userId']);
             this.httpClient.get<UserAccount>(`http://localhost:9000/api/v1/accounts/${authenticTokenResp['userId']}`).subscribe({
               next: user=>{
+                console.log(user.role);
                 user.role == 'admin' ? this.admin.adminLandingRouting() : this.user.userLandingRouting()
               },
               error: fail=>console.log(fail)

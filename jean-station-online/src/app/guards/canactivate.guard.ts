@@ -16,8 +16,8 @@ export class CanactivateGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-      this.router.navigate(['']);
-      return false;
+      // this.router.navigate(['']);
+      // return false;
       
     let token = this.authentication.getToken();
 
