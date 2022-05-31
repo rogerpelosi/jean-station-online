@@ -11,5 +11,8 @@ export class RoutingService {
   loginRouting(){
     this.route.navigate(['landing', 'login']);
   }
+  registerRouting(){
+    this.route.navigate(['landing', 'signup']);
+  }
 
 }

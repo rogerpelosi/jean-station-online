@@ -1,8 +1,8 @@
-export class UserAccount{
-    userId:number;
-    username:string;
-    password:string;
-    email:string;
-    role:string;
-    constructor(){}
+export interface UserAccount{
+    // userId:number;  have to assign automatically to user after registration
+    username?:string;
+    password?:string;
+    email?:string;
+    role? :string;
+    // constructor(){}
 }

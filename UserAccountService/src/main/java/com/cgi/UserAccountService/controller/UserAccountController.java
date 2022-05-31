@@ -51,7 +51,7 @@ public class UserAccountController {
         }
         return responseEntity;
     }
-    @PostMapping("/accounts/register")
+    @PostMapping("/accounts/signup")
     public ResponseEntity<?> addUserAccountHandler(@RequestBody UserAccount userAccount){
         ResponseEntity<?> responseEntity;
         try {

@@ -21,8 +21,9 @@
                 </div>
                 <div class="separation"></div>
 
-                    <button mat-raised-button color="accent" [disabled]="loginForm.invalid"
-                        (click)="login()" id="button">Enter</button>
+                <button mat-raised-button color="accent" [disabled]="loginForm.invalid" (click)="login()"
+                    id="button">Enter</button>
+                    <button mat-button [routerLink]="['../signup']">Need an Account?</button>
             </div>
         </form>
 

@@ -28,6 +28,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { UserhomeComponent } from './userhome/userhome.component';
@@ -112,7 +113,8 @@ const routes: Routes = [
     MatCardModule,
     MatExpansionModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

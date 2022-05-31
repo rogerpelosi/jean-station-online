@@ -31,5 +31,8 @@ export class AuthenticationService {
   removeToken(){
     localStorage.clear();
   }
-
+  /* register(user) {
+    return this.https.post<any>(`http://localhost.../register`, user)
+  }
+*/
 }

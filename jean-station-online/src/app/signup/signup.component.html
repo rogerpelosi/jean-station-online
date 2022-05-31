@@ -1,42 +1,44 @@
-<body>
-    <section class="signup-container">
-        <p *ngIf="error" color="accent">{{error}}</p>
+<body class="signup-container">
+    <section>
+        <!-- <p *ngIf="error" color="accent">{{error}}</p> -->
+        <div class="login">
+            <a [routerLink]="['../login']">Have an Account?</a>
+        </div>
+        <div>
+            <mat-card>
+                <mat-card-title>Create an Account</mat-card-title>
+                <mat-card-content>
+                    <form [formGroup]="signupForm" (ngSubmit)="signup()">
 
-        <form [formGroup]="signupForm" class="form-signup">
-            
-            <h2>Create an Account</h2>
+                        <mat-form-field>
+                            <input type="email" matInput placeholder="Enter Email" formControlName="email" autofocus />
+                            <mat-error *ngIf="email.touched && email.hasError('required')">Email is required</mat-error>
+                            <mat-error *ngIf="email.touched && email.hasError('email')">Email is invalid</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input  type="text" matInput placeholder="Enter Username" formControlName="username" />
+                            <mat-error *ngIf="username.touched && username.hasError('required')">Username is required</mat-error>
 
-            <div class="signup-form">
-                <div>
-                    <mat-form-field appearance="outline">
-                        <input matInput class="form-control" id="email" type="email" placeholder="Enter Email"
-                            formControlName="email" autofocus>
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <input matInput class="form-control" id="username" type="username" placeholder="Enter Username"
-                            formControlName="username">
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <input matInput class="form-control" id="password" type="password" placeholder="Enter Password"
-                            formControlName="password">
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <input matInput class="form-control" id="confirmPassword" type="confirmPassword"
-                            placeholder="Confirm Password" formControlName="confirmPassword">
-                    </mat-form-field>
-                </div>
-                <div class="separation"></div>
-                <button mat-raised-button color="accent" [disabled]="signupForm.invalid" (click)="signup()"  id="button">Create
-                    Account</button>
-            </div>
-           
-        </form>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input  type="password" matInput placeholder="Enter Password" formControlName="password" />
+                            <mat-error *ngIf="password.touched && password.hasError('required')">Password is required</mat-error>
+                        </mat-form-field>
 
+                        <mat-form-field>
+                            <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword" />
+                            <mat-error *ngIf="confirmPassword.touched && signupForm.hasError('passwordsNotMatching')">Passwords not matching</mat-error>
+                        </mat-form-field>
+                        <div class="separation"></div>
+                        <div class="button">
+                            <button mat-button type="submit" [disabled]="!signupForm.valid">
+                                Create Account
+                            </button>
+                        </div>
+
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </section>
 </body>

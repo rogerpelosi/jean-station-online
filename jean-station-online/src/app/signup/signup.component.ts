@@ -1,12 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserAccount } from '../models/UserAccount';
 import { AdminRoutingService } from '../services/admin-routing.service';
 import { AuthenticationService } from '../services/authentication.service';
 import { RoutingService } from '../services/routing.service';
 import { UserRoutingService } from '../services/user-routing.service';
 import { AppModule } from '../app.module';
+import { CustomValidators } from './custom-validators';
+import { UserAccountService } from '../services/user-account.service';
+import { Router } from '@angular/router';
+import { tap } from 'rxjs';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -15,46 +19,57 @@ import { AppModule } from '../app.module';
 export class SignupComponent implements OnInit {
 
   constructor(
-    private authentication: AuthenticationService,
-    private formBuilder: FormBuilder,
-    private httpClient: HttpClient,
-    private admin: AdminRoutingService,
-    private user: UserRoutingService){}
-
-  ngOnInit(): void {}
+    private userAccountService: UserAccountService,
+    private router: Router
+  ) { }
+  ngOnInit(): void { }
 
   error?: string;
 
-  signupForm: FormGroup = this.formBuilder.group({
-    username: this.formBuilder.control('',[Validators.required]),
-    password: this.formBuilder.control('', [Validators.required])
-  })
+  signupForm: FormGroup = new FormGroup({
+    email: new FormControl(null, [Validators.required, Validators.email]),
+    username: new FormControl(null, [Validators.required]),
+    password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
+    confirmPassword: new FormControl(null, [Validators.required]),
+    role: new FormControl(null)
 
-  signup(){
-    this.authentication.authenticateUser({username: this.signupForm.value['username'], password: this.signupForm.value['password']}).subscribe({
+  },
+    { validators: CustomValidators.confirmPasswords })
 
-      //if username and password combo is found, set token and check for role
-      next: success=>{
-        this.error = '';
-        this.authentication.setToken(success.token);
-        this.authentication.authenticateToken(success.token).subscribe({
-          next: authenticTokenResp=>{
-            this.httpClient.get<UserAccount>(`http://localhost:9000/api/v1/accounts/${authenticTokenResp['userId']}`).subscribe({
-              next: user=>{
-                user.role == 'admin' ? this.admin.adminLandingRouting() : this.user.userLandingRouting()
-              },
-              error: fail=>console.log(fail)
-            });
-          }
-        });
-      },
 
-      error: failure=> {
-        console.log(failure.error.message);
-        this.error = failure.error.message;
-      }
 
-    });
+  // registrationErrors: false;
+  // registraionErrMsg: "There were problems registering this user.";
+
+  signup() {
+    if (this.signupForm.valid) {
+      this.userAccountService.create({
+        email: this.email.value,
+        username: this.username.value,
+        password: this.password.value,
+        role: this.role.value
+      }).pipe(
+        tap(() => this.router.navigate(['../login']))
+      ).subscribe();
+    }
   }
+
+  get email(): FormControl {
+    return this.signupForm.get('email') as FormControl;
+  }
+  get username(): FormControl {
+    return this.signupForm.get('username') as FormControl;
+  }
+  get password(): FormControl {
+    return this.signupForm.get('password') as FormControl;
+  }
+  get confirmPassword(): FormControl {
+    return this.signupForm.get('confirmPassword') as FormControl;
+  }
+  get role(): FormControl {
+    return this.signupForm.get('role') as FormControl;
+  }
+
+
 
 }
