@@ -1,7 +1,18 @@
-<nav>
+<!-- <nav>
+    <h1>The Jean Station</h1>
     <a [routerLink]="['orders']">Orders</a>
     <a [routerLink]="['products']">Products</a>
-    <button (click)="logout()">Logout</button>
+    <button  mat-raised-button color="accent" id="button" (click)="logout()">Logout</button>
 </nav>
+ -->
+<mat-toolbar class="nav-container">
+        <h1>The Jean Station</h1>
+
+        <nav id="nav-bar">
+            <a class="hover-underline-animation" [routerLink]="['orders']">Orders</a>
+            <a class="hover-underline-animation" [routerLink]="['products']">Products</a>
+            <button  mat-raised-button color="accent" id="button" (click)="logout()">Logout</button>
+        </nav>
+</mat-toolbar>
 
 <router-outlet></router-outlet>

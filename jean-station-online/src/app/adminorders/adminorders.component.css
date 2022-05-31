@@ -1,0 +1,14 @@
+.order-sorting{
+    width: 20vw;
+    background-color: rgba(255, 255, 255, 0);
+    color: #1a1a6a;
+    margin-bottom: 5vh;
+    border-radius: 0%;
+    box-shadow: none;
+    border: none;
+}
+
+.title{
+    background-color: rgba(255, 255, 255, 0);
+    color: #1a1a6a;
+}
