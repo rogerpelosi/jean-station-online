@@ -33,6 +33,7 @@ export class OrderComponent implements OnInit {
 
   productsArr: OrderProduct[] = [];
   customerCancel: string = '';
+  panelOpenState: boolean = false;
 
   edit(){
     console.log(`editing orderNo: ${this.oneOrder.orderNo}`);

@@ -29,9 +29,9 @@ public class UserAccountServiceApplication {
 	@Bean
 	public RouteLocator getRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
-				.route((r)->{return r.path("/api/v1/orders/**").uri("lb://order-service");})
-				.route((r)->{return r.path("/api/v1/cart/**").uri("lb://cart-service");})
-				.route((r)->{return r.path("/api/v1/product/**").uri("lb://product-service");})
+				.route((r)->{return r.path("/api/v1/orders/**").uri("http://localhost:9003");})
+				.route((r)->{return r.path("/api/v1/cart/**").uri("http://localhost:9006");})
+				.route((r)->{return r.path("/api/v1/product/**").uri("http://localhost:9009");})
 				//add product route
 				.build();
 	}
