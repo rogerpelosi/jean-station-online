@@ -1,0 +1,115 @@
+<!-- ADMIN CARD VIEW BELOW -->
+<!-- <mat-accordion *ngIf="role">
+    <mat-expansion-panel class="order-card" hideToggle>
+
+      <mat-expansion-panel-header>
+        <mat-panel-title class="title">
+          OrderNo: {{oneOrder.orderNo}}
+        </mat-panel-title>
+        <mat-panel-description class="desc">
+          Click to see order details
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+    <mat-card class="order-card">
+
+        <mat-card-header>
+          <mat-card-title class="title">Order Number: {{oneOrder.orderNo}}</mat-card-title>
+          <mat-card-subtitle>CustomerID: {{oneOrder.userId}}</mat-card-subtitle>
+        </mat-card-header>
+    
+        <mat-card-content>
+          <p>Shipping Address: {{oneOrder.deliveryAddress}}</p>
+          <p>Order Status: {{oneOrder.deliveryStatus}}</p>
+          <h3>Products:</h3>
+          <ul>
+              <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+          </ul>
+        </mat-card-content>
+    
+        <mat-card-actions>
+          <button mat-raised-button (click)="edit()">Edit</button>
+          <button mat-raised-button (click)="delete()">Cancel Order</button>
+        </mat-card-actions>
+    
+    </mat-card>
+
+    </mat-expansion-panel>
+</mat-accordion> -->
+
+<mat-card class="order-card" *ngIf="role">
+
+  <mat-card-header>
+    <mat-card-title class="title">Order Number: {{oneOrder.orderNo}}</mat-card-title>
+    <mat-card-subtitle class="desc">CustomerID: {{oneOrder.userId}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <!-- <mat-card-actions>
+    <button mat-raised-button (click)="edit()">Edit</button>
+    <button mat-raised-button (click)="delete()">Cancel Order</button>
+  </mat-card-actions> -->
+
+  <mat-card-content>
+    <mat-accordion>
+      <mat-expansion-panel class="order-card" hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            Click to {{panelOpenState? 'hide' : 'see'}} order details <mat-icon>{{panelOpenState? 'chevron_right' : 'expand_more'}}</mat-icon>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Shipping Address: {{oneOrder.deliveryAddress}}</p>
+        <p>Order Status: {{oneOrder.deliveryStatus}}</p>
+        <h3>Products:</h3>
+        <ul>
+            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+        </ul>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button (click)="edit()">Edit</button>
+    <button mat-raised-button (click)="delete()">Cancel Order</button>
+  </mat-card-actions>
+
+</mat-card>
+
+<!-- CUSTOMER CARD VIEW BELOW -->
+
+<mat-accordion *ngIf="!role">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        OrderNo: {{oneOrder.orderNo}}
+      </mat-panel-title>
+      <mat-panel-description>
+        Click to see order details
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+  <mat-card class="example-card">
+
+      <mat-card-header>
+        <mat-card-title>Order Number: {{oneOrder.orderNo}}</mat-card-title>
+        <mat-card-subtitle>Your Account ID: {{oneOrder.userId}}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p>Your Shipping Address: {{oneOrder.deliveryAddress}}</p>
+        <p>Order Status: {{oneOrder.deliveryStatus}}</p>
+        <h3>Products:</h3>
+        <ul>
+            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+        </ul>
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <button mat-raised-button *ngIf="customerCancel" (click)="delete()">Cancel Order</button>
+      </mat-card-actions>
+  
+  </mat-card>
+</mat-expansion-panel>
+</mat-accordion>
