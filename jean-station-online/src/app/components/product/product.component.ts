@@ -11,6 +11,7 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  cartService: any;
 
   constructor(
     private productService: ProductService,
@@ -50,6 +51,7 @@ export class ProductComponent implements OnInit {
   addToCart(){
     console.log(`adding ${this.oneProduct.id} to cart`);
     this.handleAddToCart.emit(this.oneProduct);
+    this.cartService.updateCart(this.oneProduct);
   }
 
 }

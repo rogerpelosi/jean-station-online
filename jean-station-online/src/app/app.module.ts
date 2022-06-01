@@ -41,6 +41,7 @@ import { AdminproductsComponent } from './components/adminproducts/adminproducts
 import { UserproductsComponent } from './components/userproducts/userproducts.component';
 import { ProductComponent } from './components/product/product.component';
 import { AdminproductdialogComponent } from './components/adminproductdialog/adminproductdialog.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,7 @@ const routes: Routes = [
     children: [
       {path: 'orders', component: AdminordersComponent},
       {path: 'products', component: AdminproductsComponent},
+      {path: 'cart', component: CartComponent},
       {path: '', redirectTo: 'products', pathMatch: 'full'}
     ],
     canActivate: [CanactivateGuard]
@@ -99,7 +101,8 @@ const routes: Routes = [
     AdminproductsComponent,
     UserproductsComponent,
     ProductComponent,
-    AdminproductdialogComponent
+    AdminproductdialogComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
