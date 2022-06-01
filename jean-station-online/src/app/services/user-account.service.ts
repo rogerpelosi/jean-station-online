@@ -10,7 +10,9 @@ import { UserAccount } from '../models/UserAccount';
 
 export class UserAccountService {
 
-  constructor(private httpClient: HttpClient, private snackbar: MatSnackBar) { }
+  constructor(
+    private httpClient: HttpClient, 
+    private snackbar: MatSnackBar){}
 
   create(user: UserAccount): Observable<UserAccount> {
     console.log(user);
@@ -26,4 +28,6 @@ export class UserAccountService {
       })
     )
   }
+
+
 }

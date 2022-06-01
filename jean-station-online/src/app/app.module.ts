@@ -42,6 +42,7 @@ import { UserproductsComponent } from './components/userproducts/userproducts.co
 import { ProductComponent } from './components/product/product.component';
 import { AdminproductdialogComponent } from './components/adminproductdialog/adminproductdialog.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CartproductComponent } from './components/cartproduct/cartproduct.component';
 
 const routes: Routes = [
   {
@@ -72,7 +73,7 @@ const routes: Routes = [
       {path: 'orders', component: UserordersComponent},
       {path: 'products', component: UserproductsComponent},
       {path: 'about', component: AboutComponent},
-      {path: 'cart', component: AboutComponent}, //change component used
+      {path: 'cart', component: CartComponent}, //change component used
       {path: '', redirectTo: 'products', pathMatch: 'full'}
     ],
     canActivate: [CanactivateGuard]
@@ -102,7 +103,8 @@ const routes: Routes = [
     UserproductsComponent,
     ProductComponent,
     AdminproductdialogComponent,
-    CartComponent
+    CartComponent,
+    CartproductComponent
   ],
   imports: [
     BrowserModule,

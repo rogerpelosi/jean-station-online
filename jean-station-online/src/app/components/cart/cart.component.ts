@@ -3,6 +3,7 @@ import { FormArray } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Cart } from 'src/app/models/Cart';
 import { CartProduct } from 'src/app/models/CartProduct';
+import { ProductDTO } from 'src/app/models/ProductDTO';
 import { UserAccount } from 'src/app/models/UserAccount';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CartService } from 'src/app/services/cart.service';
@@ -15,8 +16,11 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  cartProductsArr: CartProduct[] = [];
   UserAccount: any;
+  userCart: Cart;
+  productsArr: ProductDTO[] = [];
+  usercartid: number;
+
   
 
   constructor( private cartService: CartService,
@@ -33,12 +37,30 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     //Get request for cart.
     this.authentication.authenticateToken(this.authentication.getToken()).subscribe
-    ({next: x=> console.log(x)})
-    this.cartService.getCartById(this.UserAccount.userId).subscribe({
-      next:(cart)=>{
-        console.log(cart);
-      }
+    ({
+      next:authToken=>{
+        this.usercartid = authToken.userId;
+        this.cartService.getCartById(this.usercartid).subscribe({
+          next:cart=>{
+            console.log(cart);
+            this.userCart = cart;
+            this.productsArr = cart.products;
+          },
+          error:fail=>console.log(fail)
+        })
+      },
+      error:fail=>console.log(fail)
     })
+    // console.log(this.usercartid)
+    // this.cartService.getCartById(this.usercartid).subscribe({
+    //   next:success=>console.log(success),
+    //   error:fail=>console.log(fail)
+    // })
+    // this.cartService.getCartById(this.UserAccount.userId).subscribe({
+    //   next:(cart)=>{
+    //     console.log(cart);
+    //   }
+    // })
   }
 
   
@@ -59,6 +81,14 @@ export class CartComponent implements OnInit {
   updateCart(){
 
     
+  }
+
+  removeProduct(id: number){
+    //console.log(`delete ${id} from productsARR`)
+    this.productsArr = this.productsArr.filter(prod=>prod.productId !== id);
+    this.userCart.products = this.userCart.products.filter(prod=>prod.productId !== id);
+    //console.log(this.userCart)
+    this.cartService.updateCart(this.userCart).subscribe({})
   }
 
   

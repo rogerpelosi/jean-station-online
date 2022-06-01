@@ -1,4 +1,4 @@
-import { CartProduct } from "./CartProduct";
+import { ProductDTO } from "./ProductDTO";
 
 
 export class Cart{
@@ -7,7 +7,7 @@ export class Cart{
 cartId: number;
 userId: number;
 
-products: CartProduct[];
+products: ProductDTO[];
 
 constructor(){}
 

@@ -4,6 +4,8 @@ import { AdminproductdialogComponent } from '../adminproductdialog/adminproductd
 import { Product } from '../../models/Product';
 import { AuthenticationService } from '../../services/authentication.service';
 import { ProductService } from '../../services/product.service';
+import { ProductDTO } from 'src/app/models/ProductDTO';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -15,14 +17,22 @@ export class ProductComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private dialog: MatDialog){}
+    private dialog: MatDialog,
+    private auth: AuthenticationService,
+    private cart: CartService){}
 
   ngOnInit(): void {
-    console.log(this.role);
+    // console.log(this.role);
+    // console.log(this.usercartid)
   }
+
+  productDTO: ProductDTO = new ProductDTO();
+  usercartid: number;
 
   @Input() role: string;
   @Input() oneProduct: Product;
+  // @Input() usercartid: number;
+  
   @Output() handleDelete: EventEmitter<number> = new EventEmitter<number>();
   @Output() handleAddToCart: EventEmitter<Product> = new EventEmitter<Product>();
 
@@ -49,9 +59,18 @@ export class ProductComponent implements OnInit {
   }
 
   addToCart(){
-    console.log(`adding ${this.oneProduct.id} to cart`);
+    //console.log(`adding ${this.oneProduct.id} to cart`);
+    // this.auth.authenticateToken(this.auth.getToken()).subscribe({
+    //   next:authToken=>{
+    //     this.usercartid = authToken.userId;
+    //     this.cart.updateCart
+    //     console.log(this.usercartid)
+    //   },
+    //   error:fail=> console.log(fail)
+    // })
+
     this.handleAddToCart.emit(this.oneProduct);
-    this.cartService.updateCart(this.oneProduct);
+    // this.cartService.updateCart(this.oneProduct);
   }
 
 }

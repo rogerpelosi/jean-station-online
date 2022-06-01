@@ -47,8 +47,10 @@ public class CartServiceImpl implements CartService {
 		
 		if(optional.isPresent()) {
 			cartRepository.delete(optional.get());
-		}
+			return optional.get();
+		} else {
 		throw new CartWithTheIdNotPresentException();
+		}
 	}
 
 	

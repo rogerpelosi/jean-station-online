@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Cart } from 'src/app/models/Cart';
+import { ProductDTO } from 'src/app/models/ProductDTO';
+import { CartService } from 'src/app/services/cart.service';
 import { UserAccount } from '../../models/UserAccount';
 import { AdminRoutingService } from '../../services/admin-routing.service';
 import { AuthenticationService } from '../../services/authentication.service';
@@ -19,11 +22,15 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private httpClient: HttpClient,
     private admin: AdminRoutingService,
-    private user: UserRoutingService){}
+    private user: UserRoutingService,
+    private cart: CartService){}
 
   ngOnInit(): void {}
 
   error?: string;
+  usercartId: number;
+  newCart: Cart = new Cart();
+  products: ProductDTO[] = [];
 
   loginForm: FormGroup = this.formBuilder.group({
     username: this.formBuilder.control('',[Validators.required]),
@@ -35,15 +42,31 @@ export class LoginComponent implements OnInit {
 
       //if username and password combo is found, set token and check for role
       next: success=>{
+
         this.error = '';
         this.authentication.setToken(success.token);
+
         this.authentication.authenticateToken(success.token).subscribe({
           next: authenticTokenResp=>{
-            console.log(authenticTokenResp['userId']);
-            this.httpClient.get<UserAccount>(`http://localhost:9000/api/v1/accounts/${authenticTokenResp['userId']}`).subscribe({
+            this.usercartId = authenticTokenResp['userId'];
+            console.log(this.usercartId);
+            this.httpClient.get<UserAccount>(`http://localhost:9000/api/v1/accounts/${this.usercartId}`).subscribe({
               next: user=>{
                 console.log(user.role);
-                user.role == 'admin' ? this.admin.adminLandingRouting() : this.user.userLandingRouting()
+                if(user.role == 'admin'){
+                  this.admin.adminLandingRouting();
+                } else {
+                  this.newCart.userId = this.usercartId;
+                  this.newCart.cartId = this.usercartId;
+                  this.newCart.products = this.products;
+                  console.log(this.newCart)
+                  this.cart.createNewCart(this.newCart).subscribe({
+                    next:success=>console.log(success),
+                    error:fail=>console.log(fail)
+                  })
+                  this.user.userLandingRouting();
+                }
+                // user.role == 'admin' ? this.admin.adminLandingRouting() : this.user.userLandingRouting()
               },
               error: fail=>console.log(fail)
             });

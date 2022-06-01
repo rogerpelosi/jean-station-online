@@ -11,6 +11,8 @@ import { RoutingService } from '../../services/routing.service';
 export class UserhomeComponent implements OnInit {
   CartService: any;
 
+  usercartid: number;
+
   constructor(
     private authentication: AuthenticationService,
     private routing: RoutingService,
@@ -22,18 +24,26 @@ export class UserhomeComponent implements OnInit {
       //this.CartService.cartId = this.UserAccount.userId;
       this.authentication.authenticateToken(this.authentication.getToken()).subscribe({
        next:authToken=> {
-        console.log(authToken.userId);
-        this.cartService.createNewCart(this.CartService.cart).subscribe({
-          //this.CartService.cartId === this.UserAccount.userId,
-        })
-       }
+        this.usercartid = authToken.userId;
+        // this.cartService.createNewCart(this.CartService.cart).subscribe({
+        //   //this.CartService.cartId === this.UserAccount.userId,
+        // })
+       },
+       error:fail=>console.log(fail)
       })
      
       
     }
 
   logout(){
+    //delete cart on logout
+    this.cartService.deleteCart(this.usercartid).subscribe({
+      next:x=>console.log(x),
+      error:del=>console.log(del)
+    })
+    //remove token
     this.authentication.removeToken();
+    //route to login landing page
     this.routing.loginRouting();
   }
   

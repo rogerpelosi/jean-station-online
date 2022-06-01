@@ -25,6 +25,7 @@
 
 <mat-accordion>
     <mat-expansion-panel hideToggle>
+      
       <mat-expansion-panel-header>
         <mat-panel-title>
           This is the expansion title
@@ -33,6 +34,8 @@
           This is a summary of the content
         </mat-panel-description>
       </mat-expansion-panel-header>
-      <p>This is the primary content of the panel.</p>
+
+      <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct" (removeProduct)="removeProduct($event)"></app-cartproduct>
+
     </mat-expansion-panel>
   </mat-accordion>

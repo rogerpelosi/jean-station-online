@@ -61,7 +61,13 @@ export class SignupComponent implements OnInit {
       // }
       ).pipe(
         tap(() => this.router.navigate(['landing', 'login']))
-      ).subscribe();
+      ).subscribe({
+        next:x=>{
+          console.log(x)
+          
+        },
+        error:c=>console.log(c)
+      });
     }
   }
 
