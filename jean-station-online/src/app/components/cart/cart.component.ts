@@ -21,6 +21,8 @@ export class CartComponent implements OnInit {
   productsArr: ProductDTO[] = [];
   usercartid: number;
 
+  cartTotal: number = 0;
+
   
 
   constructor( private cartService: CartService,
@@ -45,6 +47,7 @@ export class CartComponent implements OnInit {
             console.log(cart);
             this.userCart = cart;
             this.productsArr = cart.products;
+            this.productsArr.forEach(product=>this.cartTotal+=product.price)
           },
           error:fail=>console.log(fail)
         })
@@ -83,11 +86,23 @@ export class CartComponent implements OnInit {
     
   }
 
-  removeProduct(id: number){
+  removeProduct(id:number){
     //console.log(`delete ${id} from productsARR`)
+    let removedProduct = this.productsArr.find(prod=>prod.productId == id);
     this.productsArr = this.productsArr.filter(prod=>prod.productId !== id);
     this.userCart.products = this.userCart.products.filter(prod=>prod.productId !== id);
+    if(removedProduct){
+      this.cartTotal = this.cartTotal - removedProduct.price;
+      this.cartTotal.toPrecision()
+    }
     //console.log(this.userCart)
+    this.cartService.updateCart(this.userCart).subscribe({})
+  }
+
+  clearCart(){
+    this.productsArr = [];
+    this.cartTotal = 0;
+    this.userCart.products = [];
     this.cartService.updateCart(this.userCart).subscribe({})
   }
 

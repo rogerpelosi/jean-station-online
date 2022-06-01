@@ -23,7 +23,16 @@
 </div>
 </div> -->
 
-<mat-accordion>
+<div class="cart">
+  <h1>Your Cart Contains: </h1>
+  <div class="products-container">
+    <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct" (removeProduct)="removeProduct($event)"></app-cartproduct>
+  </div>
+  <button (click)="clearCart()">Clear Cart</button>
+  <h3>Order total: ${{cartTotal}}</h3>
+</div>
+
+<!-- <mat-accordion>
     <mat-expansion-panel hideToggle>
       
       <mat-expansion-panel-header>
@@ -38,4 +47,4 @@
       <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct" (removeProduct)="removeProduct($event)"></app-cartproduct>
 
     </mat-expansion-panel>
-  </mat-accordion>
+  </mat-accordion> -->
