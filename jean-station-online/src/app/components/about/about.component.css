@@ -6,7 +6,7 @@
 
 .background-container {
   position: absolute;
-  margin-top: 4%;
+  /* margin-top: 4%; */
   height: 100vh;
   background: url(src\images\mnz-m1m2EZOZVwA-unsplash.jpg) no-repeat center;
   background-size: cover;
@@ -29,8 +29,9 @@
 
 .about-us-container {
   margin-top: 5rem;
+  text-align: justify;
   color: transparent;
-  background-color: rgb(210, 180, 140, .8);
+  background-color: rgba(3, 3, 2, 0.8);
 }
 .about-us p{
   font-size: large;

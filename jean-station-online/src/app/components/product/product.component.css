@@ -1,30 +1,22 @@
 * {
-    margin: 0;
     color: #dfe0e9;
     font-family: 'Times New Roman', Times, serif;
 }
 
 
-/* .product-container { */
-
-    /* justify-content: center; */
-    /* padding:10px; */
-    /* margin:  10px;
-    min-width: 350px;
-    background-color: red;
-} */
-
-
-
 .example-card {
-    display: inline-block;
-    width:25vw;
-    height: 35vh;
-    margin: 15px;
-    background-color: rgb(210, 180, 140, .8);
-    border-radius: 5px;
-    min-width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
+    margin: auto;
+    text-align: center;
+    display:inline-block;
+    margin :15px;
+
+}
+.example-card mat-panel-title:hover,
+button:hover{
+    opacity: .7;
+    transition-duration: .3s;
 
 }
 mat-card-header{
@@ -33,104 +25,52 @@ mat-card-header{
     justify-content: center;
     /* background-color: red; */
 }
+mat-card-content{
+    background-color: white;
+    border-radius:5px ;
+}
 
 mat-card-title {
     width: 100%;
     text-align: center;
     font-size: 35px;
-    /* padding-top: 30px; */
-    margin-bottom: 0;
-    /* padding-bottom: 10px; */
     color: white;
     font-family: 'Times New Roman', Times, serif;
-
 }
 mat-card-subtitle{
-    /* background-color: blue; */
-    /* width: 100%; */
-    text-align: center;
-    font-size:15px;
+    color: grey;
+    font-size: 22px;
 }
 mat-card-content {
     /* padding: 0 80px 0 50px; */
     /* border-radius: 65px; */
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
+    justify-content: flex-start;
     /* justify-content: center; */
     /* border: none; */
-    background-color: black;
+    /* background-color: black; */
 
 }
+mat-expansion-panel-header{
+    background-color: white;
+}
+mat-expansion-panel{
+    background-color: white;;
+}
 
-input,
-button {
-    position: relative;
-    /* background-color: rgb(255, 255, 255); */
+mat-panel-title {
     color: black;
-    /* padding: auto; */
-    border-radius: 5px;
+    text-align: left;
 }
-
-input {
-    width: 100%;
-    min-width: 200px;
-    caret-color: black;
-    padding:14px;
-    /* color: black; */
-}
-
-/* #matInput{
-    color: black;
-} */
-::placeholder {
-    color: black;
-    text-align: center;
-}
-
-.button {
-    display: flex;
-    justify-content: center;
-}
-input:hover,
-#button:hover {
-    background-color: rgb(255, 255, 255, .3);
-    transition-duration: 0.3s;
-
-}
-#button{    
-    background-color: rgb(255, 255, 255);
-    color: #000;
-}
-
-
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-    color: transparent !important;
-}
-
-
-
-/* .separation {
-    height: 2px;
-    margin: 0 0 30px 30px;
-    background: white;
-} */
-.login {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-}
-a {
-    /* display: block; */
+.example-card button{
+    border: none;
+    outline: 0;
+    padding: 12px;
     color: white;
-    /* text-align: center; */
-    padding: 5px;
-    text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
-    height: 10%;
-    font-size: 19px;
-}
-
-a:hover {
-    color: black;
-    transition-duration: 0.3s;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
 }
