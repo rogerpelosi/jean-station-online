@@ -44,6 +44,7 @@ import { AdminproductdialogComponent } from './components/adminproductdialog/adm
 import { CartComponent } from './components/cart/cart.component';
 import { CartproductComponent } from './components/cartproduct/cartproduct.component';
 import { UserorderdialogComponent } from './components/userorderdialog/userorderdialog.component';
+import { CanactivateadminGuard } from './guards/canactivateadmin.guard';
 
 const routes: Routes = [
   {
@@ -65,7 +66,7 @@ const routes: Routes = [
       {path: 'cart', component: CartComponent},
       {path: '', redirectTo: 'products', pathMatch: 'full'}
     ],
-    canActivate: [CanactivateGuard]
+    canActivate: [CanactivateadminGuard]
   },
   {
     path: 'user',

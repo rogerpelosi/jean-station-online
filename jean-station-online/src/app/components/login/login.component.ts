@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
               next: user=>{
                 console.log(user.role);
                 if(user.role == 'admin'){
+                  this.authentication.setUserRole('admin');
                   this.admin.adminLandingRouting();
                 } else {
                   this.newCart.userId = this.usercartId;
