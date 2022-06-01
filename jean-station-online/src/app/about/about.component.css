@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  color: #dfe0e9;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.background-container {
+  position: absolute;
+  margin-top: 4%;
+  height: 100vh;
+  background: url(src\images\mnz-m1m2EZOZVwA-unsplash.jpg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.separation {
+  height: 2px;
+  margin: 30px ;
+  background: white;
+}
+
+#team-container {
+  margin: 1rem 0 !important;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.about-us-container {
+  margin-top: 5rem;
+  color: transparent;
+  background-color: rgb(210, 180, 140, .8);
+}
+.about-us p{
+  font-size: large;
+  width: 70%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  display: inline-block;
+  margin: 1em;
+}
+
+h1{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  margin: 0 1rem;
+}
+
+.card {
+  position: relative;
+  width: 350px;
+  height: 450px;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: .5s;
+  margin: 1rem 1rem;
+}
+
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transition: .5s;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.card-image img {
+  display: block;
+  width: 100%;
+}
+
+.headshot-ian {
+  width: 350px;
+  height: 450px;
+  background: url("src/images/IanMcConihay.jpeg") no-repeat center;
+  background-size: 450px;
+}
+.headshot-reshmi {
+  width: 350px;
+  height: 450px;
+  background: url("src/images/ReshmiJoseph.jpg") no-repeat center;
+  background-size: 450px;
+}
+.headshot-roger {
+  width: 350px;
+  height: 450px;
+  background: url("src/images/RogerPelosi.jpg") no-repeat center;
+  background-size: 450px;
+}
+.headshot-darwin {
+  width: 350px;
+  height: 450px;
+  background: url("src/images/DarwinMathis.jpg") no-repeat center;
+  background-size: 450px;
+}
+.social-icons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  display: flex;
+  z-index: 3;
+
+}
+
+.social-icons li {
+  list-style-type: none;
+  border-radius: 20px;
+}
+
+.social-icons li a {
+  border-radius: 25px;
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: rgb(210, 180, 140, .8);
+  font-size: 24px;
+  color: #333;
+  margin: 0 5px;
+  transition: .5s;
+  transform: translateY(200px);
+  opacity: 0;
+  visibility: hidden;
+}
+.social-icons li i {
+  width: 30px;
+  height: 30px;
+  border-radius: 25px;
+}
+
+.details {
+  background-color: rgb(210, 180, 140, .8);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.details h2 {
+  margin: 0;
+  color: #333;
+}
+
+.job-title {
+  font-size: 1rem;
+  line-height: 2.5rem;
+  color: #333;
+  font-weight: 300;
+}
+
+.card:hover img {
+  opacity: .4;
+  transition: .5s;
+}
+
+.card:hover li a {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.card:hover li:nth-child(1) a {
+  transition-delay: .1s;
+}
+
+.card:hover li:nth-child(2) a {
+  transition-delay: .2s;
+}
+
+.card:hover li:nth-child(3) a {
+  transition-delay: .3s;
+}
+
+.card:hover li:nth-child(4) a {
+  transition-delay: .4s;
+}
+
+.card:hover .card-image {
+  transform: translateY(-120px);
+  transition: .5s;
+}
