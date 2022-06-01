@@ -30,6 +30,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav'
 
 import { AdminhomeComponent } from './components/adminhome/adminhome.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
@@ -124,7 +125,8 @@ const routes: Routes = [
     MatDialogModule,
     MatSelectModule,
     MatSnackBarModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
