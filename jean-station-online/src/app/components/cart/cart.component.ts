@@ -16,14 +16,13 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  UserAccount: any;
+  // UserAccount: any;
   userCart: Cart;
   productsArr: ProductDTO[] = [];
   usercartid: number;
+  emptyCart?:boolean = true;
 
   cartTotal: number = 0;
-
-  
 
   constructor( private cartService: CartService,
     private dialog: MatDialog,
@@ -32,8 +31,8 @@ export class CartComponent implements OnInit {
 
     @Input() role: string;
     @Input() oneCart: Cart;
-    @Output() handleDelete: EventEmitter<number> = new EventEmitter<number>();
-    @Output() handleUpdate: EventEmitter<Cart> = new EventEmitter<Cart>();
+    // @Output() handleDelete: EventEmitter<number> = new EventEmitter<number>();
+    // @Output() handleUpdate: EventEmitter<Cart> = new EventEmitter<Cart>();
     
 
   ngOnInit(): void {
@@ -47,6 +46,7 @@ export class CartComponent implements OnInit {
             console.log(cart);
             this.userCart = cart;
             this.productsArr = cart.products;
+            this.productsArr.length > 0? this.emptyCart = false: this.emptyCart == true
             this.productsArr.forEach(product=>this.cartTotal+=product.price)
           },
           error:fail=>console.log(fail)
@@ -54,36 +54,6 @@ export class CartComponent implements OnInit {
       },
       error:fail=>console.log(fail)
     })
-    // console.log(this.usercartid)
-    // this.cartService.getCartById(this.usercartid).subscribe({
-    //   next:success=>console.log(success),
-    //   error:fail=>console.log(fail)
-    // })
-    // this.cartService.getCartById(this.UserAccount.userId).subscribe({
-    //   next:(cart)=>{
-    //     console.log(cart);
-    //   }
-    // })
-  }
-
-  
-
-  deleteCart(){
-    let id:number = this.oneCart.cartId;
-    this.cartService.deleteCart(id).subscribe({
-      next:success=>console.log(success),
-      error:failure=>{
-        console.log(failure);
-        if(failure.error.text === "Cart Deleted"){
-          this.handleDelete.emit(id);
-        }
-      }
-    })
-  }
-
-  updateCart(){
-
-    
   }
 
   removeProduct(id:number){
@@ -91,7 +61,9 @@ export class CartComponent implements OnInit {
     let removedProduct = this.productsArr.find(prod=>prod.productId == id);
     this.productsArr = this.productsArr.filter(prod=>prod.productId !== id);
     this.userCart.products = this.userCart.products.filter(prod=>prod.productId !== id);
-    if(removedProduct){
+    if(this.productsArr.length < 1){
+      this.clearCart();
+    }else if(removedProduct){
       this.cartTotal = this.cartTotal - removedProduct.price;
       this.cartTotal.toPrecision()
     }
@@ -103,9 +75,13 @@ export class CartComponent implements OnInit {
     this.productsArr = [];
     this.cartTotal = 0;
     this.userCart.products = [];
+    this.emptyCart = true
     this.cartService.updateCart(this.userCart).subscribe({})
   }
 
-  
+  checkOut(){
+    console.log(this.userCart)
+  }
 
+  
 }

@@ -25,10 +25,14 @@
 
 <div class="cart">
   <h1>Your Cart Contains: </h1>
-  <div class="products-container">
+  <div *ngIf="!emptyCart" class="products-container">
     <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct" (removeProduct)="removeProduct($event)"></app-cartproduct>
   </div>
-  <button (click)="clearCart()">Clear Cart</button>
+  <div *ngIf="emptyCart" class="empty-container">
+    <h2>No items to show</h2>
+  </div>
+  <button (click)="clearCart()" [disabled]="productsArr.length == 0">Clear Cart</button>
+  <button (click)="checkOut()" [disabled]="productsArr.length == 0">Check Out</button>
   <h3>Order total: ${{cartTotal}}</h3>
 </div>
 

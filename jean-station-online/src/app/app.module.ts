@@ -43,6 +43,7 @@ import { ProductComponent } from './components/product/product.component';
 import { AdminproductdialogComponent } from './components/adminproductdialog/adminproductdialog.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartproductComponent } from './components/cartproduct/cartproduct.component';
+import { UserorderdialogComponent } from './components/userorderdialog/userorderdialog.component';
 
 const routes: Routes = [
   {
@@ -104,7 +105,8 @@ const routes: Routes = [
     ProductComponent,
     AdminproductdialogComponent,
     CartComponent,
-    CartproductComponent
+    CartproductComponent,
+    UserorderdialogComponent
   ],
   imports: [
     BrowserModule,
