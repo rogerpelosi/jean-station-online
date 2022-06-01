@@ -7,6 +7,7 @@ import { ProductDTO } from 'src/app/models/ProductDTO';
 import { UserAccount } from 'src/app/models/UserAccount';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { CartService } from 'src/app/services/cart.service';
+import { UserorderdialogComponent } from '../userorderdialog/userorderdialog.component';
 
 
 @Component({
@@ -26,8 +27,7 @@ export class CartComponent implements OnInit {
 
   constructor( private cartService: CartService,
     private dialog: MatDialog,
-    private authentication: AuthenticationService,
-    ) { }
+    private authentication: AuthenticationService,) { }
 
     @Input() role: string;
     @Input() oneCart: Cart;
@@ -80,7 +80,11 @@ export class CartComponent implements OnInit {
   }
 
   checkOut(){
-    console.log(this.userCart)
+    console.log(this.userCart);
+    this.dialog.open(UserorderdialogComponent, {
+      width: '300px',
+      data: this.userCart
+    }).afterClosed().subscribe(()=>this.clearCart())
   }
 
   

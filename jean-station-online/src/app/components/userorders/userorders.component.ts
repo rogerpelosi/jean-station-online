@@ -30,4 +30,8 @@ export class UserordersComponent implements OnInit {
   userOrdersArr: Order[] = [];
   role: string = '';
 
+  cancelOrder(id:number){
+    this.ngOnInit()
+  }
+
 }

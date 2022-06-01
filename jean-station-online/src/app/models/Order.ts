@@ -1,10 +1,10 @@
-import { OrderProduct } from "./OrderProduct";
+import { ProductDTO } from "./ProductDTO";
 
 export class Order{
     orderNo:number
     userId:number;
     deliveryAddress:string;
     deliveryStatus:string;
-    products: OrderProduct[];
+    products: ProductDTO[];
     constructor(){}
 }

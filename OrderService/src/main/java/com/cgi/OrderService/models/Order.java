@@ -3,10 +3,14 @@ package com.cgi.OrderService.models;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Order {
+	
+//	@Transient
+//    public static final String SEQUENCE_NAME = "orders_sequence";
 	
 	@Id
 	private int orderNo;
