@@ -1,5 +1,15 @@
 <div class="newproductform-container">
-    <form [formGroup]="newProductForm">
+    <mat-expansion-panel hideToggle class="input-panel">
+
+        <!-- <p *ngIf="error" color="accent">{{error}}</p> -->
+    
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+        <mat-icon>add</mat-icon>
+        Add New Product
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <form class="newproductform" [formGroup]="newProductForm">
 
         <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Product Title</mat-label>
@@ -15,12 +25,13 @@
             <mat-label>Amount</mat-label>
             <input matInput type="number" class="example-right-align" placeholder="0" formControlName="price">
             <span matPrefix>$&nbsp;</span>
-            <!-- <span matSuffix>.99</span> -->
           </mat-form-field>
     
         <button mat-raised-button color="accent" [disabled]="newProductForm.invalid" (click)="addProduct()">Add Product</button>
     
     </form>
+
+    </mat-expansion-panel>
 </div>
 
 <section class="products-container">

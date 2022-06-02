@@ -19,7 +19,7 @@ export class AdminproductsComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe({
       next:success=>{
-        // console.log(success.reverse());
+        success.reverse();
         this.productsArr = success.reverse();
         this.filteredProductsArr = success.reverse();
       },
@@ -50,6 +50,7 @@ export class AdminproductsComponent implements OnInit {
     this.productService.addNewProduct(this.newProduct).subscribe({
       next:success=>{
         // console.log(success),
+        this.newProductForm.reset();
         this.filteredProductsArr.unshift(success);
       },
       error:failure=>console.log(failure)
