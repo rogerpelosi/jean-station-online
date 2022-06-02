@@ -18,7 +18,7 @@ export class AdminproductdialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) private data: any){}
 
   ngOnInit(): void {
-    console.log(this.product)
+    // console.log(this.product)
   }
 
   product: Product = this.data.product;
@@ -35,8 +35,8 @@ export class AdminproductdialogComponent implements OnInit {
     this.product.price = this.editProductForm.value['price'];
     this.dialogRef.close();
     this.productService.updateProduct(this.product).subscribe({
-      next:success=>console.log(success),
-      error:failure=>console.log(failure)
+      // next:success=>console.log(success),
+      // error:failure=>console.log(failure)
     })
   }
 

@@ -38,8 +38,8 @@ export class UserhomeComponent implements OnInit {
   logout(){
     //delete cart on logout
     this.cartService.deleteCart(this.usercartid).subscribe({
-      next:x=>console.log(x),
-      error:del=>console.log(del)
+      // next:x=>console.log(x),
+      // error:del=>console.log(del)
     })
     //remove token
     this.authentication.removeToken();

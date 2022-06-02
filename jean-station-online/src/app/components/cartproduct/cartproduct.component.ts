@@ -11,7 +11,7 @@ export class CartproductComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.oneProduct)
+    // console.log(this.oneProduct)
   }
 
   @Input() oneProduct: ProductDTO;
@@ -20,7 +20,7 @@ export class CartproductComponent implements OnInit {
 
 
   handleDelete(){
-    console.log(`delete product no: ${this.oneProduct.productId}`)
+    // console.log(`delete product no: ${this.oneProduct.productId}`)
     this.removeProduct.emit(this.oneProduct.productId);
   }
 

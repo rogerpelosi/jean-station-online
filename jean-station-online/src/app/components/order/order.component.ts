@@ -18,7 +18,7 @@ export class OrderComponent implements OnInit {
 
   ngOnInit(): void {
     this.productsArr = this.oneOrder.products;
-    console.log(this.role);
+    // console.log(this.role);
     if(this.oneOrder.deliveryStatus == "placed"){
       this.customerCancel = 'available'
     } else {this.customerCancel = '';}
@@ -36,7 +36,7 @@ export class OrderComponent implements OnInit {
   panelOpenState: boolean = false;
 
   edit(){
-    console.log(`editing orderNo: ${this.oneOrder.orderNo}`);
+    // console.log(`editing orderNo: ${this.oneOrder.orderNo}`);
     this.dialog.open(EditorderdialogComponent, {
       width: '300px',
       data: {order: this.oneOrder}
@@ -48,7 +48,7 @@ export class OrderComponent implements OnInit {
     this.orderService.deleteOrder(id).subscribe({
       next:success=>console.log(success),
       error:failure=>{
-        console.log(failure);
+        // console.log(failure);
         if(failure.error.text === 'Order Deleted'){
           this.handleDelete.emit(id)
         }

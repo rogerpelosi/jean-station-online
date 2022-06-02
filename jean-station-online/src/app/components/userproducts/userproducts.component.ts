@@ -22,7 +22,7 @@ export class UserproductsComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getAllProducts().subscribe({
       next:success=>{
-        // console.log(success.reverse());
+        success.reverse();
         this.productsArr = success.reverse();
         this.filteredProductsArr = success.reverse();
       },

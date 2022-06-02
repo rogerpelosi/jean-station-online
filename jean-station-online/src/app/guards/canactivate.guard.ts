@@ -18,7 +18,7 @@ export class CanactivateGuard implements CanActivate {
     let token = this.authentication.getToken();
 
     return this.authentication.authenticateToken(token).pipe(map((res: any) => {
-      console.log(`authentic token?: ${res['isAuthenticated']}`);
+      // console.log(`authentic token?: ${res['isAuthenticated']}`);
       return res['isAuthenticated'];
     }));
 

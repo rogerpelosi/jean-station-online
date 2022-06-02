@@ -37,7 +37,7 @@ export class ProductComponent implements OnInit {
   @Output() handleAddToCart: EventEmitter<Product> = new EventEmitter<Product>();
 
   edit(){
-    console.log(`edit product with id: ${this.oneProduct.id}`);
+    // console.log(`edit product with id: ${this.oneProduct.id}`);
     this.dialog.open(AdminproductdialogComponent, {
       width: '300px',
       data: {product: this.oneProduct}
@@ -45,12 +45,12 @@ export class ProductComponent implements OnInit {
   }
 
   delete(){
-    console.log(`delete product with id: ${this.oneProduct.id}`);
+    // console.log(`delete product with id: ${this.oneProduct.id}`);
     let id: number = this.oneProduct.id;
     this.productService.deleteProduct(id).subscribe({
       next:success=>console.log(success),
       error:failure=>{
-        console.log(failure);
+        // console.log(failure);
         if(failure.error.text == "Product Deleted"){
           this.handleDelete.emit(id);
         }
