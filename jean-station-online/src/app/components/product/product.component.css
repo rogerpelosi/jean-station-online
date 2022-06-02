@@ -46,18 +46,19 @@
       font-family: "Istok Web", sans-serif;
   }
   body{
-      display: flex;
+      display: inline-block;
       justify-content: center;
+      margin: 0 10px;
       align-items: center;
       min-height: 100vh;
-      background: rgb(33, 33, 33);
+      background: white;
   }
 
   .example-card{
       position: relative;
       width: 320px;
       height: 480px;
-      background: #191919;
+      background: tan;
       border-radius: 20px;
       overflow: hidden;
   }
@@ -67,9 +68,9 @@
       top: -5%;
       width: 100%;
       height: 100%;
-      background: #ffce00;
+      background: rgb(255, 255, 255, .6);
       transform: skewY(345deg);
-      transition: 0.5s;
+      transition: 0.9s;
   }
 
   .example-card:hover::before{
@@ -77,13 +78,14 @@
       transform: skewY(390deg);
   }
   .example-card::after{
-      content: "STATION";
+      content: "THE JEAN STATION";
       position: absolute;
+      text-align: center;
       bottom: 0;
       left:0;
       font-weight: 600;
-      font-size: 6em;
-      color: rgb(0,0,0,0.1);
+      font-size: 2.5em;
+      color: rgb(0,0,0,0.06);
   }
   .example-card .imgbox{
       position: relative;
@@ -129,15 +131,17 @@
       opacity: 0;
       padding: 10px 30px;
       margin-top: 15px;
-      color: #000000;
+      color: tan;
       text-decoration: none;
-      background: #ffce00;
+      background: white;
       border-radius: 30px;
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: 0.5s;
   }
-
+  .example-card .button-holder .button:hover {
+  background-color: black;
+}
   .example-card:hover .button-holder .button{
       top:0;
       opacity: 1;
