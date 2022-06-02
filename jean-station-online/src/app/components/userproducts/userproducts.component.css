@@ -1,0 +1,37 @@
+
+.img-1{
+  min-height: 500px;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  object-fit: cover;
+
+  background-image: url("src/app/images/carousel-one.png");
+}
+.img-2{
+  min-height: 500px;
+
+  height: 100%;
+  /*position: absolute;*/
+  background-size: cover;
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  background-image: url("src/app/images/carousel-two.png") ;
+}
+.img-3{
+  min-height: 500px;
+  height: 100%;
+  width: 100%;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("src/app/images/carousel-three.png");
+}
+.carousel-container img{
+  /*height: 100%;*/
+}

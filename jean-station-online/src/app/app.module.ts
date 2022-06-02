@@ -31,7 +31,6 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav'
-
 import { AdminhomeComponent } from './components/adminhome/adminhome.component';
 import { UserhomeComponent } from './components/userhome/userhome.component';
 import { LandingComponent } from './components/landing/landing.component';
@@ -46,6 +45,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartproductComponent } from './components/cartproduct/cartproduct.component';
 import { UserorderdialogComponent } from './components/userorderdialog/userorderdialog.component';
 import { CanactivateadminGuard } from './guards/canactivateadmin.guard';
+import {CarouselModule} from "ngx-bootstrap/carousel";
 
 const routes: Routes = [
   {
@@ -127,7 +127,8 @@ const routes: Routes = [
     MatSelectModule,
     MatSnackBarModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
