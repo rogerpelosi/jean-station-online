@@ -95,8 +95,8 @@
       z-index: 1;
   }
   .productimage{
-      background:url( "src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg");
+    background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg) no-repeat center;
   }
   .example-card .header{
-
+      position: relative;
   }
