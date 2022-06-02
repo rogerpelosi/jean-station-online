@@ -43,4 +43,10 @@ export class OrderService {
     });
   }
 
+  placeOrder(newOrder: Order): Observable<Order>{
+    return this.httpClient.post<Order>(`http://localhost:9000/api/v1/orders`, newOrder, {
+      headers: new HttpHeaders().set('Authorization', `Bearer ${this.authentication.getToken()}`)
+    });
+  }
+
 }

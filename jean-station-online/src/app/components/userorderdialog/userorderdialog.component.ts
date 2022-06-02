@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Order } from 'src/app/models/Order';
+import { ProductDTO } from 'src/app/models/ProductDTO';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-userorderdialog',
@@ -7,9 +12,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserorderdialogComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private orderService: OrderService,
+    private forBuilder: FormBuilder,
+    private dialogRef: MatDialogRef<UserorderdialogComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: any){}
 
   ngOnInit(): void {
+    console.log(this.data)
+  }
+
+  productsArr: ProductDTO[] = this.data.products;
+  newOrder: Order = new Order();
+
+  orderForm: FormGroup = this.forBuilder.group({
+    street: this.forBuilder.control('', [Validators.required]),
+    city: this.forBuilder.control('', [Validators.required]),
+    state: this.forBuilder.control('', [Validators.required]),
+    zipcode: this.forBuilder.control('', [Validators.required])
+  });
+
+  placeOrder(){
+    this.newOrder.products = this.data.products;
+    this.newOrder.deliveryStatus = 'placed';
+    this.newOrder.userId = this.data.userId;
+    this.newOrder.deliveryAddress = `${this.orderForm.value['street']} ${this.orderForm.value['city']}, ${this.orderForm.value['state']} ${this.orderForm.value['zipcode']}`;
+    this.newOrder.orderNo = 7;
+    console.log(this.newOrder);
+    this.dialogRef.close();
+    this.orderService.placeOrder(this.newOrder).subscribe({
+      next:placedOrder=>console.log(placedOrder),
+      error:failedOrder=>console.log(failedOrder)
+    })
   }
 
 }

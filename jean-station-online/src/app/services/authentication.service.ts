@@ -31,8 +31,13 @@ export class AuthenticationService {
   removeToken(){
     localStorage.clear();
   }
-  /* register(user) {
-    return this.https.post<any>(`http://localhost.../register`, user)
+
+  setUserRole(role: string){
+    localStorage.setItem('JeansRole', role);
   }
-*/
+
+  getUserRole(){
+    return localStorage.getItem('JeansRole')
+  }
+
 }
