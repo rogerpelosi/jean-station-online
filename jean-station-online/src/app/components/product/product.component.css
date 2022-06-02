@@ -93,10 +93,53 @@
       align-items: center;
       padding-top: 20px;
       z-index: 1;
+      background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);
+      background-size: cover;
+      height: 280px;
+      /* width: 250px; */
+
   }
-  .productimage{
-    background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg) no-repeat center;
-  }
+
   .example-card .header{
       position: relative;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 2;
   }
+
+  .example-card .header mat-card-title{
+      font-size: 18px;
+      color: white;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+  }
+  .example-card .header mat-card-subtitle {
+      font-size:24px;
+      color: white;
+      font-weight: 700;
+      letter-spacing: 1px;
+  }
+  .example-card .button-holder .button {
+      position: relative;
+      top: 100px;
+      opacity: 0;
+      padding: 10px 30px;
+      margin-top: 15px;
+      color: #000000;
+      text-decoration: none;
+      background: #ffce00;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.5s;
+  }
+
+  .example-card:hover .button-holder .button{
+      top:0;
+      opacity: 1;
+  }
+
