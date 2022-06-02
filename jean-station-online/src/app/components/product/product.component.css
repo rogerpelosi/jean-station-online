@@ -39,3 +39,64 @@
     opacity: 0.7;
   } */
   @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+  *{
+      margin:0;
+      padding:0;
+      font-family: "Istok Web", sans-serif;
+  }
+  body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: rgb(33, 33, 33);
+  }
+
+  .example-card{
+      position: relative;
+      width: 320px;
+      height: 480px;
+      background: #191919;
+      border-radius: 20px;
+      overflow: hidden;
+  }
+  .example-card::before{
+      content: "";
+      position: absolute;
+      top: -5%;
+      width: 100%;
+      height: 100%;
+      background: #ffce00;
+      transform: skewY(345deg);
+      transition: 0.5s;
+  }
+
+  .example-card:hover::before{
+      top: -70%;
+      transform: skewY(390deg);
+  }
+  .example-card::after{
+      content: "STATION";
+      position: absolute;
+      bottom: 0;
+      left:0;
+      font-weight: 600;
+      font-size: 6em;
+      color: rgb(0,0,0,0.1);
+  }
+  .example-card .imgbox{
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+      z-index: 1;
+  }
+  .productimage{
+      background:url( "src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg");
+  }
+  .example-card .header{
+
+  }

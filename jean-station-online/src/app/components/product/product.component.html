@@ -1,6 +1,11 @@
 <!-- <div class="product-container"> -->
+  <body>
   <mat-card *ngIf="role" class="example-card">
-
+    <div class="imgbox">
+      <img src="https://unsplash.com/photos/4IULxF9Z0YA"
+      alt="Flower inside of jean back pocket" class="pants">
+    </div>
+    <div class="contentBox">
     <mat-card-header>
       <mat-card-title>{{oneProduct.title}}-No. {{oneProduct.id}}</mat-card-title>
       <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
@@ -23,11 +28,14 @@
       <button mat-raised-button (click)="edit()">Edit</button>
       <button mat-raised-button (click)="delete()">Delete Product</button>
     </mat-card-actions>
-
+    </div>
   </mat-card>
 
   <mat-card *ngIf="!role" class="example-card">
-
+    <div class="imgbox">
+      <img class="productimage"
+      alt="Flower inside of jean back pocket" class="pants">
+    </div>
     <mat-card-header>
       <mat-card-title>{{oneProduct.title}}</mat-card-title>
       <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
@@ -52,3 +60,4 @@
 
   </mat-card>
 <!-- </div> -->
+</body>
