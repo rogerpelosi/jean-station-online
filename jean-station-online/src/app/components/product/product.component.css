@@ -1,150 +1,118 @@
-/* *{
-    font-family: 'Times New Roman', Times, serif;
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    font-family: "Istok Web", sans-serif;
 }
-.example-card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    min-width: 250px;
-    max-width: 300px;
-    text-align: center;
-    margin : 10px;
+
+body{
     display: inline-block;
-    min-height: min-content;
-    max-height: max-content;
-    background-color: tan;
-  }
+    justify-content: center;
+    margin: 0 10px;
+    align-items: center;
+    min-height: 100vh;
+    background: white;
+}
 
-  mat-panel-subtitle {
-    color: white;
-    font-size: 22px;
-  }
-  mat-expansion-panel,
-  mat-panel-title{
-      background-color: white;
-      color: black;
-  }
+.example-card{
+    position: relative;
+    width: 320px;
+    height: 480px;
+    background: tan;
+    border-radius: 20px;
+    overflow: hidden;
+}
 
-  button {
-    border: none;
-    outline: 0;
-    padding: 12px;
-    color: black;
-    background-color: white;
-    text-align: center;
-    cursor: pointer;
+.example-card::before{
+    content: "";
+    position: absolute;
+    top: -5%;
     width: 100%;
-    font-size: 18px;
-  }
-  mat-expansion-panel:hover,
-   button:hover {
-    opacity: 0.7;
-  } */
-  @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+    height: 100%;
+    background: rgb(255, 255, 255, .6);
+    transform: skewY(345deg);
+    transition: 0.9s;
+}
 
-  *{
-      margin:0;
-      padding:0;
-      font-family: "Istok Web", sans-serif;
-  }
-  body{
-      display: inline-block;
-      justify-content: center;
-      margin: 0 10px;
-      align-items: center;
-      min-height: 100vh;
-      background: white;
-  }
+.example-card:hover::before{
+    top: -70%;
+    transform: skewY(390deg);
+}
 
-  .example-card{
-      position: relative;
-      width: 320px;
-      height: 480px;
-      background: tan;
-      border-radius: 20px;
-      overflow: hidden;
-  }
-  .example-card::before{
-      content: "";
-      position: absolute;
-      top: -5%;
-      width: 100%;
-      height: 100%;
-      background: rgb(255, 255, 255, .6);
-      transform: skewY(345deg);
-      transition: 0.9s;
-  }
+.example-card::after{
+    content: "THE JEAN STATION";
+    position:absolute;
+    text-align: center;
+    z-index: 0;
+    bottom: 0;
+    left:0;
+    font-weight: 600;
+    font-size: 2.5em;
+    color: rgb(0,0,0,0.06);
+}
 
-  .example-card:hover::before{
-      top: -70%;
-      transform: skewY(390deg);
-  }
-  .example-card::after{
-      content: "THE JEAN STATION";
-      position: absolute;
-      text-align: center;
-      bottom: 0;
-      left:0;
-      font-weight: 600;
-      font-size: 2.5em;
-      color: rgb(0,0,0,0.06);
-  }
-  .example-card .imgbox{
-      position: relative;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding-top: 20px;
-      z-index: 1;
-      background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);
-      background-size: cover;
-      height: 280px;
-      /* width: 250px; */
+.example-card .imgbox{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+    background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);
+    background-size: cover;
+    height: 280px;
+}
 
-  }
+.example-card .header{
+    position: relative;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+}
 
-  .example-card .header{
-      position: relative;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 2;
-  }
-
-   mat-card-title{
+mat-card-title{
        margin-top: 5px;
       font-size: 18px;
       color: white;
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 1px;
-  }
-  mat-card-subtitle {
-      font-size:24px;
-      color: white;
-      font-weight: 500;
-      letter-spacing: 1px;
-  }
-  .example-card .button-holder .button-card {
-      position: relative;
-      top: 100px;
-      opacity: 0;
-      padding: 10px 30px;
-      margin-top: 15px;
-      color: tan;
-      text-decoration: none;
-      background: white;
-      border-radius: 30px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: 0.5s;
-  }
-  .example-card .button-holder .button-card:hover {
-  background-color: black;
 }
-  .example-card:hover .button-holder .button-card{
-      top:0;
-      opacity: 1;
-  }
+
+mat-card-subtitle {
+    font-size:24px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.example-card .button-holder .button-card {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: tan;
+    text-decoration: none;
+    background: white;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.example-card .button-holder .button-card:hover {
+    background-color: black;
+}
+
+.example-card:hover .button-holder .button-card{
+    top:0;
+    opacity: 1;
+}
 
