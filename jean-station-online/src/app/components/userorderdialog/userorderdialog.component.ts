@@ -19,7 +19,7 @@ export class UserorderdialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) private data: any){}
 
   ngOnInit(): void {
-    console.log(this.data)
+    // console.log(this.data)
   }
 
   productsArr: ProductDTO[] = this.data.products;
@@ -38,11 +38,11 @@ export class UserorderdialogComponent implements OnInit {
     this.newOrder.userId = this.data.userId;
     this.newOrder.deliveryAddress = `${this.orderForm.value['street']} ${this.orderForm.value['city']}, ${this.orderForm.value['state']} ${this.orderForm.value['zipcode']}`;
     this.newOrder.orderNo = 7;
-    console.log(this.newOrder);
+    // console.log(this.newOrder);
     this.dialogRef.close();
     this.orderService.placeOrder(this.newOrder).subscribe({
-      next:placedOrder=>console.log(placedOrder),
-      error:failedOrder=>console.log(failedOrder)
+      // next:placedOrder=>console.log(placedOrder),
+      // error:failedOrder=>console.log(failedOrder)
     })
   }
 

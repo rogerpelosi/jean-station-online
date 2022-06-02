@@ -43,7 +43,7 @@ export class CartComponent implements OnInit {
         this.usercartid = authToken.userId;
         this.cartService.getCartById(this.usercartid).subscribe({
           next:cart=>{
-            console.log(cart);
+            // console.log(cart);
             this.userCart = cart;
             this.productsArr = cart.products;
             this.productsArr.length > 0? this.emptyCart = false: this.emptyCart == true
@@ -80,7 +80,7 @@ export class CartComponent implements OnInit {
   }
 
   checkOut(){
-    console.log(this.userCart);
+    // console.log(this.userCart);
     this.dialog.open(UserorderdialogComponent, {
       width: '300px',
       data: this.userCart

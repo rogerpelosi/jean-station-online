@@ -18,7 +18,7 @@ export class EditorderdialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) private data: any){}
 
   ngOnInit(): void {
-    console.log(this.order)
+    // console.log(this.order)
   }
 
   order: Order = this.data.order;
@@ -33,8 +33,8 @@ export class EditorderdialogComponent implements OnInit {
     this.order.deliveryStatus = this.editOrderForm.value['status'];
     this.dialogRef.close();
     this.orderService.editOrder(this.order).subscribe({
-      next:success=>console.log(success),
-      error:failure=>console.log(failure)
+      // next:success=>console.log(success),
+      // error:failure=>console.log(failure)
     })
   }
 

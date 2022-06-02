@@ -15,7 +15,7 @@ export class AdminordersComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.getAllOrders().subscribe({
       next:orders=>{
-        console.log(orders);
+        // console.log(orders);
         this.ordersArr = orders;
         this.filteredOrdersArr = orders; 
       },
@@ -29,25 +29,25 @@ export class AdminordersComponent implements OnInit {
 
   viewAllOrders(){
     this.filteredOrdersArr = this.ordersArr;
-    console.log(this.filteredOrdersArr);
+    // console.log(this.filteredOrdersArr);
   }
 
   sortByPlaced(){
     this.filteredOrdersArr = this.ordersArr;
     this.filteredOrdersArr = this.filteredOrdersArr.filter(order=>order.deliveryStatus === 'placed');
-    console.log(this.filteredOrdersArr);
+    // console.log(this.filteredOrdersArr);
   }
 
   sortByShipped(){
     this.filteredOrdersArr = this.ordersArr;
     this.filteredOrdersArr = this.filteredOrdersArr.filter(order=> order.deliveryStatus === 'shipped');
-    console.log(this.filteredOrdersArr);
+    // console.log(this.filteredOrdersArr);
   }
 
   sortByDelivered(){
     this.filteredOrdersArr = this.ordersArr;
     this.filteredOrdersArr = this.filteredOrdersArr.filter(order=> order.deliveryStatus === 'delivered');
-    console.log(this.filteredOrdersArr);
+    // console.log(this.filteredOrdersArr);
   }
 
   cancelOrder(id:number){

@@ -19,7 +19,7 @@ export class CanactivateadminGuard implements CanActivate {
       let userRole = this.authentication.getUserRole();
 
       return this.authentication.authenticateToken(token).pipe(map((res: any) => {
-        console.log(`authentic role?: ${userRole}`);
+        // console.log(`authentic role?: ${userRole}`);
         return res['isAuthenticated'] && userRole == 'admin';
       }));
 

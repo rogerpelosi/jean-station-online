@@ -49,10 +49,10 @@ export class LoginComponent implements OnInit {
         this.authentication.authenticateToken(success.token).subscribe({
           next: authenticTokenResp=>{
             this.usercartId = authenticTokenResp['userId'];
-            console.log(this.usercartId);
+            // console.log(this.usercartId);
             this.httpClient.get<UserAccount>(`http://localhost:9000/api/v1/accounts/${this.usercartId}`).subscribe({
               next: user=>{
-                console.log(user.role);
+                // console.log(user.role);
                 if(user.role == 'admin'){
                   this.authentication.setUserRole('admin');
                   this.admin.adminLandingRouting();
@@ -60,10 +60,10 @@ export class LoginComponent implements OnInit {
                   this.newCart.userId = this.usercartId;
                   this.newCart.cartId = this.usercartId;
                   this.newCart.products = this.products;
-                  console.log(this.newCart)
+                  // console.log(this.newCart)
                   this.cart.createNewCart(this.newCart).subscribe({
-                    next:success=>console.log(success),
-                    error:fail=>console.log(fail)
+                    // next:success=>console.log(success),
+                    // error:fail=>console.log(fail)
                   })
                   this.user.userLandingRouting();
                 }

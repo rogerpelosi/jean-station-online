@@ -17,7 +17,7 @@ export class UserordersComponent implements OnInit {
   ngOnInit(): void {
     this.authentication.authenticateToken(this.authentication.getToken()).subscribe({
       next:authToken=>{
-        console.log(authToken.userId);
+        // console.log(authToken.userId);
         this.orderService.getOrdersByUserId(authToken.userId).subscribe({
           next:orders=>this.userOrdersArr = orders.reverse(),
           error:failure=>console.log(failure)
