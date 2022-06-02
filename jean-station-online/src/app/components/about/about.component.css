@@ -8,7 +8,7 @@
   position: absolute;
   /* margin-top: 4%; */
   height: 100vh;
-  background: url(src\images\mnz-m1m2EZOZVwA-unsplash.jpg) no-repeat center;
+  background: url(src\app\images\mnz-m1m2EZOZVwA-unsplash.jpg) no-repeat center;
   background-size: cover;
   display: flex;
   flex-wrap: wrap;
