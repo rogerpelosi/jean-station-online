@@ -85,7 +85,7 @@ public class UserAccountServiceImpl implements UserAccountService{
     	.setSubject(Integer.toString(user.getUserId()))
 //    	.setClaims()
     	.setIssuedAt(new Date())
-    	.setExpiration(new Date(System.currentTimeMillis() + 500000))
+    	.setExpiration(new Date(System.currentTimeMillis() + 5000000))
     	.signWith(SignatureAlgorithm.HS256, "stackroute")
     	.compact();
 

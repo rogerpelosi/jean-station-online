@@ -38,7 +38,8 @@ export class OrderComponent implements OnInit {
   edit(){
     // console.log(`editing orderNo: ${this.oneOrder.orderNo}`);
     this.dialog.open(EditorderdialogComponent, {
-      width: '300px',
+      width: '30vw',
+      panelClass: 'custom-dialog',
       data: {order: this.oneOrder}
     })
   }

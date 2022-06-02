@@ -38,4 +38,8 @@ export class EditorderdialogComponent implements OnInit {
     })
   }
 
+  cancelEdit(){
+    this.dialogRef.close();
+  }
+
 }

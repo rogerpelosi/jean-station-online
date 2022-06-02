@@ -38,11 +38,15 @@ mat-expansion-panel-header{
     background-color: rgba(191, 191, 191, 0.441);
 }
 
-mat-card-actions button{
+mat-card-actions button, button{
     background-color: #1a1a6a;
 }
 
-mat-card-actions button:hover{
+mat-card-actions button:hover, button:hover{
     background-color: #a9a9dc;
     color: #1a1a6a;
 }
+
+::ng-deep .custom-dialog > mat-dialog-container {
+    background-color: rgba(214, 160, 78, 0.954);
+  }

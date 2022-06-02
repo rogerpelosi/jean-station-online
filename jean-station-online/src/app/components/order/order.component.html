@@ -79,7 +79,7 @@
 
 <!-- CUSTOMER CARD VIEW BELOW -->
 
-<mat-accordion *ngIf="!role">
+<!-- <mat-accordion *ngIf="!role">
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -112,4 +112,38 @@
   
   </mat-card>
 </mat-expansion-panel>
-</mat-accordion>
+</mat-accordion> -->
+<!-- --------------------------------------------------------------------------------------------------- -->
+<mat-card class="order-card" *ngIf="!role">
+
+  <mat-card-header>
+    <mat-card-title class="title">ConfirmationNo: {{oneOrder.orderNo}}</mat-card-title>
+    <mat-card-subtitle class="desc">Order Status: {{oneOrder.deliveryStatus}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-accordion>
+      <mat-expansion-panel class="order-card" hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  
+        <mat-expansion-panel-header>
+          <mat-panel-title class="title">
+            Click to {{panelOpenState? 'hide' : 'see'}} order details <mat-icon>{{panelOpenState? 'chevron_right' : 'expand_more'}}</mat-icon>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>Your Address: {{oneOrder.deliveryAddress}}</p>
+        <p>Order Status: {{oneOrder.deliveryStatus}}</p>
+        <h3>Products:</h3>
+        <ul>
+            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+        </ul>
+        <button mat-raised-button *ngIf="customerCancel" (click)="delete()">Cancel Order</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+
+  <!-- <mat-card-actions>
+    <button mat-raised-button *ngIf="customerCancel" (click)="delete()">Cancel Order</button>
+  </mat-card-actions> -->
+
+</mat-card>

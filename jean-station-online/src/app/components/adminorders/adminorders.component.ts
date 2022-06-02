@@ -16,7 +16,7 @@ export class AdminordersComponent implements OnInit {
     this.orderService.getAllOrders().subscribe({
       next:orders=>{
         // console.log(orders);
-        this.ordersArr = orders;
+        this.ordersArr = orders.reverse();
         this.filteredOrdersArr = orders; 
       },
       error:failure=>console.log(failure)
