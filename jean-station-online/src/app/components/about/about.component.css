@@ -8,7 +8,7 @@
   position: absolute;
   /* margin-top: 4%; */
   height: 100vh;
-  background: url(src\images\mnz-m1m2EZOZVwA-unsplash.jpg) no-repeat center;
+  background: url(src\app\images\mnz-m1m2EZOZVwA-unsplash.jpg) no-repeat center;
   background-size: cover;
   display: flex;
   flex-wrap: wrap;
@@ -87,25 +87,25 @@ h1{
 .headshot-ian {
   width: 350px;
   height: 450px;
-  background: url("src/images/IanMcConihay.jpeg") no-repeat center;
+  background: url("src/app/images/IanMcConihay.jpeg") no-repeat center;
   background-size: 450px;
 }
 .headshot-reshmi {
   width: 350px;
   height: 450px;
-  background: url("src/images/ReshmiJoseph.jpg") no-repeat center;
+  background: url("src/app/images/ReshmiJoseph.jpg") no-repeat center;
   background-size: 450px;
 }
 .headshot-roger {
   width: 350px;
   height: 450px;
-  background: url("src/images/RogerPelosi.jpg") no-repeat center;
+  background: url("src/app/images/RogerPelosi.jpg") no-repeat center;
   background-size: 450px;
 }
 .headshot-darwin {
   width: 350px;
   height: 450px;
-  background: url("src/images/DarwinMathis.jpg") no-repeat center;
+  background: url("src/app/images/DarwinMathis.jpg") no-repeat center;
   background-size: 450px;
 }
 .social-icons {
