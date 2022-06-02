@@ -7,6 +7,7 @@ import { Product } from '../../models/Product';
 import { ProductService } from '../../services/product.service';
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'app-userproducts',
   templateUrl: './userproducts.component.html',
   styleUrls: ['./userproducts.component.css']
@@ -45,7 +46,7 @@ export class UserproductsComponent implements OnInit {
   role: string = '';
 
   usercartid: number;
-  usercart: Cart;
+  usercart: Cart = new Cart();
 
   handleAddToCart(product: Product){
     let newProduct = new ProductDTO();

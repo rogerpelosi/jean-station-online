@@ -12,7 +12,7 @@
     max-height: max-content;
     background-color: tan;
   }
-  
+
   mat-panel-subtitle {
     color: white;
     font-size: 22px;
@@ -22,7 +22,7 @@
       background-color: white;
       color: black;
   }
-  
+
   button {
     border: none;
     outline: 0;
@@ -125,7 +125,7 @@
       font-weight: 700;
       letter-spacing: 1px;
   }
-  .example-card .button-holder .button {
+  .example-card .button-holder .button-card {
       position: relative;
       top: 100px;
       opacity: 0;
@@ -139,10 +139,10 @@
       letter-spacing: 1px;
       transition: 0.5s;
   }
-  .example-card .button-holder .button:hover {
+  .example-card .button-holder .button-card:hover {
   background-color: black;
 }
-  .example-card:hover .button-holder .button{
+  .example-card:hover .button-holder .button-card{
       top:0;
       opacity: 1;
   }
