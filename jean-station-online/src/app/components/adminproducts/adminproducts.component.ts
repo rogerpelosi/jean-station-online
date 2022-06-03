@@ -35,7 +35,8 @@ export class AdminproductsComponent implements OnInit {
   newProductForm: FormGroup = this.formBuilder.group({
     title: this.formBuilder.control('', [Validators.required]),
     description: this.formBuilder.control('', [Validators.required]),
-    price: this.formBuilder.control('', [Validators.required])
+    price: this.formBuilder.control('', [Validators.required]),
+    url: this.formBuilder.control('', [Validators.required])
   });
 
   deleteProduct(id: number){
@@ -46,6 +47,7 @@ export class AdminproductsComponent implements OnInit {
     this.newProduct.title = this.newProductForm.value['title'];
     this.newProduct.description = this.newProductForm.value['description'];
     this.newProduct.price = this.newProductForm.value['price'];
+    this.newProduct.url = this.newProductForm.value['url'];
     // console.log(this.newProduct);
     this.productService.addNewProduct(this.newProduct).subscribe({
       next:success=>{

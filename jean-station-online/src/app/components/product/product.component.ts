@@ -24,10 +24,12 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     // console.log(this.role);
     // console.log(this.usercartid)
+    this.img = this.oneProduct.url?  this.oneProduct.url: "https://st.depositphotos.com/2815243/3698/i/950/depositphotos_36987435-stock-photo-old-blue-jeans-background-and.jpg"
   }
 
   productDTO: ProductDTO = new ProductDTO();
   usercartid: number;
+  img:string;
 
   @Input() role: string;
   @Input() oneProduct: Product;
