@@ -1,41 +1,28 @@
-<!-- <div class="product-container"> -->
-
-  <body>
-  <mat-card *ngIf="role" class="example-card">
-    <div class="imgbox">
-      <!-- <img src="https://unsplash.com/photos/4IULxF9Z0YA"
-      alt="Flower inside of jean back pocket" class="pants"> -->
+<!-- ADMIN PRODUCT VIEW -->
+<div class="col m-1" *ngIf="role">
+  <div class="admin-card">
+    <div class="underlay">
+      <p>THE JEAN <br> STATION</p>
     </div>
-    <div class="contentBox">
-    <mat-card-header>
-      <mat-card-title>{{oneProduct.title}}-No. {{oneProduct.id}}</mat-card-title>
-      <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
-    </mat-card-header>
-
-    <mat-card-content>
-      <mat-accordion>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Details:
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p>{{oneProduct.description}}</p>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-card-content>
-
-    <mat-card-actions>
+    <img src="https://st.depositphotos.com/2815243/3698/i/950/depositphotos_36987435-stock-photo-old-blue-jeans-background-and.jpg" class="card-img-top" alt="medium-wash-denim-swatch">
+    <div class="card-body">
+      <h4 class="card-title mb-1">No. {{oneProduct.id}}-{{oneProduct.title}}</h4>
+      <h5>${{oneProduct.price}}</h5>
+      <p class="card-text">{{oneProduct.description}}</p>
       <button mat-raised-button (click)="edit()">Edit</button>
-      <button mat-raised-button (click)="delete()">Delete Product</button>
-    </mat-card-actions>
+      <button mat-raised-button (click)="delete()">Delete</button>
     </div>
-  </mat-card>
+  </div>
+</div>
 
-  <mat-card *ngIf="!role" class="example-card">
+<!-- USER PRODUCT VIEW -->
+<div class="product-container col" *ngIf="!role">
+  <mat-card class="example-card">
+
     <div class="imgbox">
       <img class="productimage" class="pants">
     </div>
+
     <mat-card-header>
       <mat-card-title>{{oneProduct.title}}</mat-card-title>
       <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
@@ -59,5 +46,4 @@
     </mat-card-actions>
 
   </mat-card>
-<!-- </div> -->
-</body>
+</div>

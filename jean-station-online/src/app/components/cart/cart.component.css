@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
 /* .expansion-container{
 display: flex;
 } */
@@ -32,7 +34,9 @@ body {
 
 .Heading{
     text-align: center;
-    font-family: cursive;
+    /* font-family: cursive; */
+    font-family: "Istok Web", sans-serif;
+
     font-size: x-large;
     font-weight: 700;
     
@@ -60,7 +64,24 @@ body {
     text-align: center;
 }
 
- .button{
+.button:disabled{
+    width: 15%;
+    height: 40px;
+    border: none;
+    background: linear-gradient(to bottom right, #8b8b8b, #c1c1c1);
+    border-radius: 200px;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    color: #202020;
+    transition-duration: 0.4s;
+    float: right;
+    justify-content: space-around;
+    margin-right: 5%;
+    position: relative;
+} 
+
+ .button:enabled{
     
     width: 15%;
     height: 40px;
@@ -79,7 +100,7 @@ body {
     position: relative;
 } 
 
- .button:hover {
+ .button:enabled:hover {
 
     background-color: rgb(210, 180, 140, .8);
     color: white;

@@ -24,7 +24,9 @@
   </div>
 </section>
 
-
+<!-- <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 p-3">
+  <app-product *ngFor="let oneProduct of filteredProductsArr" [oneProduct]="oneProduct" (handleAddToCart)="handleAddToCart($event)" [role]="role" ></app-product>
+</div> -->
 
 <section class="products-container" style="margin-top: 3em">
     <app-product *ngFor="let oneProduct of filteredProductsArr" [oneProduct]="oneProduct" (handleAddToCart)="handleAddToCart($event)" [role]="role" ></app-product>

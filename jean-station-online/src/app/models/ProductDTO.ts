@@ -2,6 +2,7 @@ export class ProductDTO {
     public productId: number;
     public title: string;
     public price: number;
+    public quantity: number;
   
   
     constructor() {

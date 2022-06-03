@@ -32,6 +32,12 @@
   background-size: cover;
   background-image: url("src/app/images/carousel-three.png");
 }
-.carousel-container img{
-  /*height: 100%;*/
+/* .carousel-container img{
+  height: 100%;
+} */
+
+.products-container{
+  /* justify-content: center;
+  align-items: center; */
+  text-align: center;
 }

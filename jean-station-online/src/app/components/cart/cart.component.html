@@ -44,14 +44,14 @@
           <h2 *ngIf="emptyCart" class="none">No items in cart.</h2>
       </div>
       <hr>
-      <h3 style="text-align: left; margin-left: 0.9cm;">Number of items: </h3>
+      <h3 style="text-align: left; margin-left: 0.9cm;">Number of items: {{noItems}}</h3>
       <br>
       <h3 style="text-align: left; margin-left: 1cm;">Order total: ${{cartTotal}}</h3>
       <img style="float: right; border-radius: 20px; margin-right: 1cm;" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/buy-logo-large.png" alt="Buy now with PayPal" />
       <div class="total-amount">
         
         <button class="button" (click)="clearCart()" [disabled]="productsArr.length == 0">Clear Cart</button>
-        <button class="button" [disabled]="productsArr.length == 0">Place Order</button>
+        <button class="button" (click)="checkOut()" [disabled]="productsArr.length == 0">Place Order</button>
       </div>
   
   </div> 
