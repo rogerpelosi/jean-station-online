@@ -61,9 +61,10 @@ body, .product-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 5px;
     z-index: 1;
-    background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);
+
+    /*background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);*/
     background-size: cover;
     height: 280px;
 }
@@ -165,18 +166,7 @@ mat-card-subtitle {
     color: aliceblue;
 }
 
-.imgbox{
-    position: relative;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    z-index: 1;
-    background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);
-    background-size: cover;
-    height: 280px;
-}
+
 
 h4, h5, p{
     font-family:'Times New Roman', Times, serif;

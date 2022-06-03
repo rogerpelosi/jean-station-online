@@ -33,6 +33,7 @@ export class AdminproductdialogComponent implements OnInit {
     this.product.title = this.editProductForm.value['title'];
     this.product.description = this.editProductForm.value['description'];
     this.product.price = this.editProductForm.value['price'];
+    this.product.url = this.editProductForm.value['url'];
     this.dialogRef.close();
     this.productService.updateProduct(this.product).subscribe({
       // next:success=>console.log(success),
