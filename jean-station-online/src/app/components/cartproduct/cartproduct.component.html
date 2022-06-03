@@ -1,11 +1,11 @@
-<mat-card>
+<!-- <mat-card class="card-class">
     <mat-card-title>{{oneProduct.title}}</mat-card-title>
     <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
     <p>Quantity: {{oneProduct.quantity}}</p>
     <mat-card-actions>
-      <button mat-button (click)="handleDelete()">Remove</button>
+      <button mat-button class="button" (click)="handleDelete()">Remove</button>
     </mat-card-actions>
-  </mat-card>
+  </mat-card> -->
   <!-- <br>
   <mat-card>
     <mat-card-title>Actions Buttons</mat-card-title>
@@ -15,3 +15,30 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card> -->
+  
+  <figure class="snip1224">
+    <!-- <h4>Casual Top</h4> -->
+    <div class="image">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="sq-sample17"/></div>
+    <div class="rating"><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star-outline"></i></div>
+    <figcaption>
+      <p>{{oneProduct.title}}</p>
+      <div class="price">
+        ${{oneProduct.price}}
+      </div>
+    </figcaption>
+    <button (click)="handleDelete()" class="add-to-cart">Remove</button>
+  </figure>
+  <!-- <figure class="snip1224 hover">
+    <h4>Footwear</h4>
+    <div class="image">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample15.jpg" alt="sq-sample15"/></div>
+    <div class="rating"><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star-outline"></i></div>
+    <figcaption>
+      <p>I suppose if we couldn't laugh at things that don't make sense, we couldn't react to a lot of life.</p>
+      <div class="price">
+        <s>$29.00</s>$24.00
+      </div>
+    </figcaption>
+    <a href="#" class="add-to-cart">Remove</a>
+  </figure> -->

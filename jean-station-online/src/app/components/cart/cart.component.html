@@ -1,54 +1,59 @@
 
-
-<!-- <div class="card-container">
-<div *ngFor="let CartProducts of cartProductsArr">
-
-    <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{CartProducts.title}}</mat-card-title>
-          <mat-card-subtitle>{{CartProducts.price}}</mat-card-subtitle>
-        </mat-card-header>
-        
-        <mat-card-content>
-          <p>
-           
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-         
-        </mat-card-actions>
-      </mat-card>
-
-</div>
-</div> -->
-
-<div class="cart">
-  <h1>Your Cart Contains: </h1>
-  <div *ngIf="!emptyCart" class="products-container">
-    <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct" (removeProduct)="removeProduct($event)"></app-cartproduct>
+<!-- <body>
+  <div class="Header">
+    <h3 class="Heading">My Cart</h3>
   </div>
-  <div *ngIf="emptyCart" class="empty-container">
-    <h2>No items to show</h2>
-  </div>
-  <button (click)="clearCart()" [disabled]="productsArr.length == 0">Clear Cart</button>
-  <button (click)="checkOut()" [disabled]="productsArr.length == 0">Check Out</button>
-  <h3>Order total: ${{cartTotal}}</h3>
-</div>
-
-<!-- <mat-accordion>
-    <mat-expansion-panel hideToggle>
+  <div class="CartContainer">
+    
+    <div class="Cart-Items">
+      <div class="cart">
+        <div *ngIf="!emptyCart" class="products-container">
+          <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct"
+            (removeProduct)="removeProduct($event)"></app-cartproduct>
+        </div>
+        <div *ngIf="emptyCart" class="empty-container">
+          <h2>No items in cart.</h2>
+        </div>
+      </div> -->
       
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          This is the expansion title
-        </mat-panel-title>
-        <mat-panel-description>
-          This is a summary of the content
-        </mat-panel-description>
-      </mat-expansion-panel-header>
+      
+      <!-- </div> -->
+      <!-- <div class="checkout">
+        <div class="total">
+          <div class="total-amount">
+            <h3>Order total: ${{cartTotal}}</h3>
+          </div>
+        </div>
+        <button class="button" (click)="clearCart()" [disabled]="productsArr.length == 0">Clear Cart</button>
+        <button class="button">Place Order</button>
+      </div> -->
+    
+  <!-- </div>
+</body> -->
 
-      <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct" (removeProduct)="removeProduct($event)"></app-cartproduct>
-
-    </mat-expansion-panel>
-  </mat-accordion> -->
+<body>
+  <div class="cart-container">
+    <div class="Heading">My Cart</div>
+      
+      <div cart-items>
+        <div *ngIf="!emptyCart" class="grid">
+          <app-cartproduct *ngFor="let oneProduct of productsArr" [oneProduct]="oneProduct"
+            (removeProduct)="removeProduct($event)"></app-cartproduct>
+        </div>
+        
+          <h2 *ngIf="emptyCart" class="none">No items in cart.</h2>
+      </div>
+      <hr>
+      <h3 style="text-align: left; margin-left: 0.9cm;">Number of items: </h3>
+      <br>
+      <h3 style="text-align: left; margin-left: 1cm;">Order total: ${{cartTotal}}</h3>
+      <img style="float: right; border-radius: 20px; margin-right: 1cm;" src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/buy-logo-large.png" alt="Buy now with PayPal" />
+      <div class="total-amount">
+        
+        <button class="button" (click)="clearCart()" [disabled]="productsArr.length == 0">Clear Cart</button>
+        <button class="button" [disabled]="productsArr.length == 0">Place Order</button>
+      </div>
+  
+  </div> 
+  
+</body>
