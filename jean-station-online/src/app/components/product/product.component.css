@@ -6,13 +6,15 @@
     font-family: "Istok Web", sans-serif;
 }
 
-body{
+body, .product-container{
     display: inline-block;
     justify-content: center;
     margin: 0 10px;
     align-items: center;
-    min-height: 100vh;
+    min-height: 75vh;
     background: white;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .example-card{
@@ -22,6 +24,7 @@ body{
     background: tan;
     border-radius: 20px;
     overflow: hidden;
+
 }
 
 .example-card::before{
@@ -116,3 +119,74 @@ mat-card-subtitle {
     opacity: 1;
 }
 
+/* ADMIN CSS */
+.admin-card{
+    background: tan;
+    border-radius: 20px;
+    border: 5px solid rgb(255, 255, 255, .6);
+    overflow:auto;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    /* height: 30vh; */
+    font-family: "Istok Web", sans-serif;
+
+}
+
+.underlay{
+    z-index: 1;
+    margin-top: 10%;
+    padding: 2.5%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.295);
+    color: rgba(210, 180, 140, 0.767);
+    font-family: "Istok Web", sans-serif !important;
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.underlay p{
+    font-family: "Istok Web", sans-serif !important;
+}
+
+.card-body{
+    padding: 8%;
+}
+
+.admin-card button{
+    background-color: rgb(255, 255, 255, .6);
+    color: #1a1a6a;
+    margin: 5px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.admin-card button:hover{
+    background-color: rgb(142, 121, 93);
+    color: aliceblue;
+}
+
+.imgbox{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+    background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);
+    background-size: cover;
+    height: 280px;
+}
+
+h4, h5, p{
+    font-family:'Times New Roman', Times, serif;
+}
+
+h4{
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+h5{
+    font-size: 1em;
+}

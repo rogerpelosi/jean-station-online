@@ -10,17 +10,20 @@ public class Product {
 	
 	private String title;
 	
-	
 	private float price;
+	
+	private int quantity;
 	
 
 	public Product() {}
 
 
-	public Product(int productId, String title, float price) {
+	public Product(int productId, String title, float price, int quantity) {
+		super();
 		this.productId = productId;
 		this.title = title;
 		this.price = price;
+		this.quantity = quantity;
 	}
 
 
@@ -52,20 +55,22 @@ public class Product {
 	public void setPrice(float price) {
 		this.price = price;
 	}
+	
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
 
 
 	@Override
 	public String toString() {
-		return "Product [productId=" + productId + ", title=" + title + ", price=" + price + "]";
+		return "Product [productId=" + productId + ", title=" + title + ", price=" + price + ", quantity=" + quantity
+				+ "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

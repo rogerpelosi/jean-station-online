@@ -34,6 +34,10 @@
     </mat-expansion-panel>
 </div>
 
-<section class="products-container">
+<!-- <section class="products-container">
     <app-product *ngFor="let oneProduct of filteredProductsArr" [oneProduct]="oneProduct" (handleDelete)="deleteProduct($event)" [role]="role"></app-product>
-</section>
+</section> -->
+
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 p-3">
+    <app-product *ngFor="let oneProduct of filteredProductsArr" [oneProduct]="oneProduct" (handleDelete)="deleteProduct($event)" [role]="role"></app-product>
+</div>

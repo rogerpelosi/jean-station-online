@@ -1,6 +1,7 @@
 <!-- <mat-card class="card-class">
     <mat-card-title>{{oneProduct.title}}</mat-card-title>
     <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
+    <p>Quantity: {{oneProduct.quantity}}</p>
     <mat-card-actions>
       <button mat-button class="button" (click)="handleDelete()">Remove</button>
     </mat-card-actions>
@@ -21,7 +22,8 @@
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="sq-sample17"/></div>
     <div class="rating"><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star"></i><i class="ion-ios-star-outline"></i></div>
     <figcaption>
-      <p>{{oneProduct.title}}</p>
+      <h5>{{oneProduct.title}}</h5>
+      <p>Quantity: {{oneProduct.quantity}}</p>
       <div class="price">
         ${{oneProduct.price}}
       </div>
