@@ -1,14 +1,14 @@
 <!-- ADMIN PRODUCT VIEW -->
 <div class="col mb-4" *ngIf="role">
   <div class="admin-card">
-    <div class="underlay">
+    <!-- <div class="underlay">
       THE JEAN <br> STATION
-    </div>
+    </div> -->
     <img src="https://st.depositphotos.com/2815243/3698/i/950/depositphotos_36987435-stock-photo-old-blue-jeans-background-and.jpg" class="card-img-top" alt="...">
     <div class="card-body">
       <h4 class="card-title mb-1">No. {{oneProduct.id}}-{{oneProduct.title}}</h4>
       <h5>${{oneProduct.price}}</h5>
-      <p class="card-text">{{oneProduct.description}}</p>
+      <!-- <p class="card-text">{{oneProduct.description}}</p> -->
       <button mat-raised-button (click)="edit()">Edit</button>
       <button mat-raised-button (click)="delete()">Delete</button>
     </div>

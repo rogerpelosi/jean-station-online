@@ -20,7 +20,7 @@
         <p>Order Status: {{oneOrder.deliveryStatus}}</p>
         <h3>Products:</h3>
         <ul>
-            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}} x{{oneProduct.quantity? oneProduct.quantity: 1}}, ${{oneProduct.price}} each</li>
         </ul>
 
       </mat-expansion-panel>
@@ -55,7 +55,7 @@
         <p>Order Status: {{oneOrder.deliveryStatus}}</p>
         <h3>Products:</h3>
         <ul>
-            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}}, ${{oneProduct.price}}</li>
+            <li *ngFor="let oneProduct of productsArr">Product: {{oneProduct.productId}}-{{oneProduct.title}} x{{oneProduct.quantity? oneProduct.quantity: 1}}, ${{oneProduct.price}} each</li>
         </ul>
         <button mat-raised-button *ngIf="customerCancel" (click)="delete()">Cancel Order</button>
 

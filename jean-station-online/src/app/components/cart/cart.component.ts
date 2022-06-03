@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
             this.userCart = cart;
             this.productsArr = cart.products;
             this.productsArr.length > 0? this.emptyCart = false: this.emptyCart == true
-            this.productsArr.forEach(product=>this.cartTotal+=product.price)
+            this.productsArr.forEach(product=>this.cartTotal+=(product.price*product.quantity))
           },
           error:fail=>console.log(fail)
         })
@@ -68,7 +68,7 @@ export class CartComponent implements OnInit {
     if(this.productsArr.length < 1){
       this.clearCart();
     }else if(removedProduct){
-      this.cartTotal = this.cartTotal - removedProduct.price;
+      this.cartTotal = this.cartTotal - (removedProduct.price*removedProduct.quantity);
       this.cartTotal.toPrecision()
     }
     //console.log(this.userCart)

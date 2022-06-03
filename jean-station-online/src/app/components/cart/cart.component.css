@@ -10,7 +10,7 @@ display: flex;
 body {
     margin: 0;
     padding: 0;
-    background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center; 
+    /* background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center;  */
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -60,7 +60,24 @@ body {
     text-align: center;
 }
 
- .button{
+.button:disabled{
+    width: 15%;
+    height: 40px;
+    border: none;
+    background: linear-gradient(to bottom right, #8b8b8b, #c1c1c1);
+    border-radius: 200px;
+    font-size: 16px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    color: #202020;
+    transition-duration: 0.4s;
+    float: right;
+    justify-content: space-around;
+    margin-right: 5%;
+    position: relative;
+} 
+
+ .button:enabled{
     
     width: 15%;
     height: 40px;
@@ -79,7 +96,7 @@ body {
     position: relative;
 } 
 
- .button:hover {
+ .button:enabled:hover {
 
     background-color: rgb(210, 180, 140, .8);
     color: white;

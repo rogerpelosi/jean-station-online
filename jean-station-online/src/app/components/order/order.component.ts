@@ -4,6 +4,7 @@ import { EditorderdialogComponent } from '../adminorderdialog/editorderdialog.co
 import { Order } from '../../models/Order';
 import { OrderProduct } from '../../models/OrderProduct';
 import { OrderService } from '../../services/order.service';
+import { ProductDTO } from 'src/app/models/ProductDTO';
 
 @Component({
   selector: 'app-order',
@@ -31,7 +32,7 @@ export class OrderComponent implements OnInit {
 
   @Output() handleUpdate: EventEmitter<Order> = new EventEmitter<Order>();
 
-  productsArr: OrderProduct[] = [];
+  productsArr: ProductDTO[] = [];
   customerCancel: string = '';
   panelOpenState: boolean = false;
 

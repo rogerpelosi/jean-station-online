@@ -51,7 +51,7 @@
       <div class="total-amount">
         
         <button class="button" (click)="clearCart()" [disabled]="productsArr.length == 0">Clear Cart</button>
-        <button class="button" [disabled]="productsArr.length == 0">Place Order</button>
+        <button class="button" (click)="checkOut()" [disabled]="productsArr.length == 0">Place Order</button>
       </div>
   
   </div> 
