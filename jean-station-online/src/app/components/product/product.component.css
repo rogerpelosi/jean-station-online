@@ -6,7 +6,7 @@
     font-family: "Istok Web", sans-serif;
 }
 
-body{
+body, .product-container{
     display: inline-block;
     justify-content: center;
     margin: 0 10px;
@@ -116,3 +116,50 @@ mat-card-subtitle {
     opacity: 1;
 }
 
+/* ADMIN CSS */
+
+.admin-card{
+    background: tan;
+    border-radius: 20px;
+    border: 5px solid rgb(255, 255, 255, .6);
+    overflow:auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.underlay{
+    z-index: 1;
+    margin-top: 10%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.295);
+    color: tan;
+    font-family: "Istok Web", sans-serif;
+}
+
+.card-body{
+    padding: 8%;
+}
+
+.card-body button{
+    background-color: rgb(255, 255, 255, .6);
+    color: #1a1a6a;
+    margin: 5px;
+}
+
+.card-body button:hover{
+    background-color: rgb(142, 121, 93);
+    color: aliceblue;
+}
+
+.imgbox{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    z-index: 1;
+    background: url(src\app\images\jasmin-chew-KNu2oQ69bMw-unsplash.jpg);
+    background-size: cover;
+    height: 280px;
+}

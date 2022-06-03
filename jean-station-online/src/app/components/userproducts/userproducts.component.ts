@@ -49,12 +49,39 @@ export class UserproductsComponent implements OnInit {
   usercart: Cart = new Cart();
 
   handleAddToCart(product: Product){
-    let newProduct = new ProductDTO();
-    newProduct.productId = product.id;
-    newProduct.title = product.title;
-    newProduct.price = product.price;
-    //console.log(newProduct);
-    this.usercart.products.push(newProduct);
+    // let newProduct = new ProductDTO();
+    // newProduct.productId = product.id;
+    // newProduct.title = product.title;
+    // newProduct.price = product.price;
+    // newProduct.quantity = 1;
+
+    if(this.usercart.products.length){
+      if(this.usercart.products.find(prd=>prd.productId == product.id)){
+        //console.log('product already in cart');
+        //dont create new product
+        //just edit that products quantity
+        this.usercart.products.forEach(prd=>{
+          if(prd.productId == product.id){prd.quantity+=1}
+        })
+      } else {
+        //console.log('new product!!')
+        //create new product
+        //push product to array
+        let newProduct = new ProductDTO();
+        newProduct.productId = product.id;
+        newProduct.title = product.title;
+        newProduct.price = product.price;
+        newProduct.quantity = 1;
+        this.usercart.products.push(newProduct);
+      }
+    } else {
+      let newProduct = new ProductDTO();
+      newProduct.productId = product.id;
+      newProduct.title = product.title;
+      newProduct.price = product.price;
+      newProduct.quantity = 1;
+      this.usercart.products.push(newProduct);
+    }
     //console.log(this.usercart)
     this.cartService.updateCart(this.usercart).subscribe({
       // next:cart=>console.log(cart),

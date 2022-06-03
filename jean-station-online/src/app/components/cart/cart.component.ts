@@ -59,6 +59,10 @@ export class CartComponent implements OnInit {
   removeProduct(id:number){
     //console.log(`delete ${id} from productsARR`)
     let removedProduct = this.productsArr.find(prod=>prod.productId == id);
+    // let removedProductInd = this.productsArr.findIndex(prod=>prod.productId == id);
+    // for(let i =0; i < this.productsArr.length; i++){
+    //   console.log(i)
+    // }
     this.productsArr = this.productsArr.filter(prod=>prod.productId !== id);
     this.userCart.products = this.userCart.products.filter(prod=>prod.productId !== id);
     if(this.productsArr.length < 1){
