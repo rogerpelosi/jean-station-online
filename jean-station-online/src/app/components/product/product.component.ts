@@ -6,6 +6,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { ProductService } from '../../services/product.service';
 import { ProductDTO } from 'src/app/models/ProductDTO';
 import { CartService } from 'src/app/services/cart.service';
+import {DescriptiondialogComponent} from "../descriptiondialog/descriptiondialog.component";
 
 @Component({
   selector: 'app-product',
@@ -19,7 +20,7 @@ export class ProductComponent implements OnInit {
     private productService: ProductService,
     private dialog: MatDialog,
     private auth: AuthenticationService,
-    private cart: CartService){}
+    private cart: CartService,){}
 
   ngOnInit(): void {
     // console.log(this.role);
@@ -32,7 +33,7 @@ export class ProductComponent implements OnInit {
   @Input() role: string;
   @Input() oneProduct: Product;
   // @Input() usercartid: number;
-  
+
   @Output() handleDelete: EventEmitter<number> = new EventEmitter<number>();
   @Output() handleAddToCart: EventEmitter<Product> = new EventEmitter<Product>();
 
@@ -73,5 +74,27 @@ export class ProductComponent implements OnInit {
     this.handleAddToCart.emit(this.oneProduct);
     // this.cartService.updateCart(this.oneProduct);
   }
+
+
+
+
+
+
+
+
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open( DescriptiondialogComponent, {
+      width: '250px',
+      data: {product: this.oneProduct.description}
+    })
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
+  }
+
+
+
 
 }

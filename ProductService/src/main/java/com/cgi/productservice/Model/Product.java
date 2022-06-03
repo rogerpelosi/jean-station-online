@@ -19,7 +19,7 @@ public class Product {
     @Column(nullable = false, length = 240)
     private Double price;
 
-    @Column(nullable = false, length = 240)
+    @Column(nullable = true, length = 240)
     private String url;
 
     public Product(){}

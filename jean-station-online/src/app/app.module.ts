@@ -47,6 +47,7 @@ import { CartproductComponent } from './components/cartproduct/cartproduct.compo
 import { UserorderdialogComponent } from './components/userorderdialog/userorderdialog.component';
 import { CanactivateadminGuard } from './guards/canactivateadmin.guard';
 import { FooterComponent } from './footer/footer.component';
+import { DescriptiondialogComponent } from './components/descriptiondialog/descriptiondialog.component';
 
 const routes: Routes = [
   {
@@ -110,7 +111,8 @@ const routes: Routes = [
     CartComponent,
     CartproductComponent,
     UserorderdialogComponent,
-    FooterComponent
+    FooterComponent,
+    DescriptiondialogComponent
   ],
   imports: [
     BrowserModule,
