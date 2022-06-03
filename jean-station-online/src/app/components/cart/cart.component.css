@@ -3,14 +3,14 @@ display: flex;
 } */
 
 /* .card-container{
-     color: transparent; 
+     color: transparent;
    background-color: rgb(111, 143, 175);
 } */
 
 body {
     margin: 0;
     padding: 0;
-    background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center; 
+    /*background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center; */
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -35,8 +35,8 @@ body {
     font-family: cursive;
     font-size: x-large;
     font-weight: 700;
-    
-    
+
+
 }
 
 
@@ -47,7 +47,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: center;
-    
+
 }
 
 .grid{
@@ -61,7 +61,7 @@ body {
 }
 
  .button{
-    
+
     width: 15%;
     height: 40px;
     border: none;
@@ -77,17 +77,17 @@ body {
     justify-content: space-around;
     margin-right: 5%;
     position: relative;
-} 
+}
 
  .button:hover {
 
     background-color: rgb(210, 180, 140, .8);
     color: white;
     transform: scale(1.2);
-} 
+}
 
 
-    
+
 
 /*
 .Header {
@@ -114,7 +114,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 
 }
 
