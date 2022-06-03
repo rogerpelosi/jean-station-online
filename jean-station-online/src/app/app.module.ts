@@ -46,6 +46,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartproductComponent } from './components/cartproduct/cartproduct.component';
 import { UserorderdialogComponent } from './components/userorderdialog/userorderdialog.component';
 import { CanactivateadminGuard } from './guards/canactivateadmin.guard';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   {
@@ -108,7 +109,8 @@ const routes: Routes = [
     AdminproductdialogComponent,
     CartComponent,
     CartproductComponent,
-    UserorderdialogComponent
+    UserorderdialogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
