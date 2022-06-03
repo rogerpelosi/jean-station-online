@@ -26,7 +26,8 @@ export class AdminproductdialogComponent implements OnInit {
   editProductForm: FormGroup = this.formBuilder.group({
     title: this.formBuilder.control(this.product.title, [Validators.required]),
     description: this.formBuilder.control(this.product.description, [Validators.required]),
-    price: this.formBuilder.control(this.product.price, [Validators.min(1.00)])
+    price: this.formBuilder.control(this.product.price, [Validators.min(1.00)]),
+    url: this.formBuilder.control(this.product.url, [Validators.required])
   })
 
   edit(){
