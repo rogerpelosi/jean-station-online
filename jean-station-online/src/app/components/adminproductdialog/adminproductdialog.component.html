@@ -12,7 +12,7 @@
             <mat-label>Product Description</mat-label>
             <textarea matInput placeholder="Ex. The jeans are a faded blue with..." formControlName="description"></textarea>
         </mat-form-field>
-      
+
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Product Image</mat-label>
           <textarea matInput placeholder="Copy Img Url and paste" formControlName="url"></textarea>
@@ -25,6 +25,7 @@
             <!-- <span matSuffix>.99</span> -->
           </mat-form-field>
 
-        <button mat-raised-button color="accent" [disabled]="editProductForm.invalid" (click)="edit()">Submit Changes</button>
+          <button mat-raised-button (click)="cancelEdit()">Cancel</button>
+        <button mat-raised-button [disabled]="editProductForm.invalid" (click)="edit()">Submit Changes</button>
     </form>
 </div>

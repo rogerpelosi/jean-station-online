@@ -41,4 +41,8 @@ export class AdminproductdialogComponent implements OnInit {
     })
   }
 
+  cancelEdit(){
+    this.dialogRef.close();
+  }
+
 }

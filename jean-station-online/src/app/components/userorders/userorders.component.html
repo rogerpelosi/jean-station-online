@@ -1,4 +1,4 @@
-
+<h2>Your Order History</h2>
 <section class="orders-container">
     <app-order *ngFor="let oneOrder of userOrdersArr" [oneOrder]="oneOrder" [role]="role" (handleDelete)="cancelOrder($event)"></app-order>
 </section>

@@ -13,8 +13,8 @@ body, .product-container{
     align-items: center;
     min-height: 75vh;
     background: white;
-    margin-left: 10px;
-    margin-right: 10px;
+    /* margin-left: 10px;
+    margin-right: 10px; */
 }
 
 .example-card{
@@ -180,3 +180,8 @@ h4{
 h5{
     font-size: 1em;
 }
+
+/* FOR DIALOG */
+::ng-deep .custom-dialog > mat-dialog-container {
+    background-color: rgba(214, 160, 78, 0.954);
+  }
