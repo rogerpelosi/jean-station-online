@@ -23,7 +23,7 @@ figure.snip1224 {
   min-width: 400px;
   max-width: 480px;
   width: 100%;
-  background: #1a1a1a;
+  background: tan;
   color: #ffffff;
   text-align: center;
   border-radius: 8px;
@@ -103,7 +103,8 @@ figure.snip1224 .add-to-cart {
   left: 0;
   font-weight: 600;
   width: 50%;
-  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: tan;
   line-height: 44px;
   font-size: 0.75em;
   text-transform: uppercase;
@@ -117,5 +118,5 @@ figure.snip1224.hover img {
 }
 figure.snip1224:hover .add-to-cart,
 figure.snip1224.hover .add-to-cart {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(164, 139, 106);
 }
