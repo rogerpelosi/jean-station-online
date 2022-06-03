@@ -12,7 +12,7 @@ display: flex;
 body {
     margin: 0;
     padding: 0;
-     background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center;
+     /*background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center;*/
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -64,10 +64,6 @@ body {
     text-align: center;
 }
 
-<<<<<<< HEAD
- .button{
-
-=======
 .button:disabled{
     width: 15%;
     height: 40px;
@@ -87,7 +83,6 @@ body {
 
  .button:enabled{
 
->>>>>>> d31dc25c176e2c8ba92a45bbd509c550148bfc5b
     width: 15%;
     height: 40px;
     border: none;

@@ -19,12 +19,17 @@ public class Product {
     @Column(nullable = false, length = 240)
     private Double price;
 
+    @Column(nullable = false, length = 240)
+    private String url;
+
     public Product(){}
-    public Product(Long id, String title, String description, Double price) {
+
+    public Product(Long id, String title, String description, Double price, String url) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
+        this.url = url;
     }
 
     public Long getId() {
@@ -57,5 +62,13 @@ public class Product {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
