@@ -12,7 +12,7 @@ display: flex;
 body {
     margin: 0;
     padding: 0;
-    /* background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center;  */
+     background: url(src\app\images\jeans-back-side-texture-black-leather-label-178377040.jpg) no-repeat center;  
     background-size: cover;
     display: flex;
     justify-content: center;
