@@ -19,7 +19,7 @@
             <span matPrefix>$&nbsp;</span>
             <!-- <span matSuffix>.99</span> -->
           </mat-form-field>
-    
-        <button mat-raised-button color="accent" [disabled]="editProductForm.invalid" (click)="edit()">Submit Changes</button>
+          <button mat-raised-button (click)="cancelEdit()">Cancel</button>
+        <button mat-raised-button [disabled]="editProductForm.invalid" (click)="edit()">Submit Changes</button>
     </form>
 </div>

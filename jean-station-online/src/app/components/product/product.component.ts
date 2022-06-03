@@ -40,6 +40,7 @@ export class ProductComponent implements OnInit {
     // console.log(`edit product with id: ${this.oneProduct.id}`);
     this.dialog.open(AdminproductdialogComponent, {
       width: '300px',
+      panelClass: 'custom-dialog',
       data: {product: this.oneProduct}
     })
   }

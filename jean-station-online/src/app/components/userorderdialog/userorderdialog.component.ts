@@ -39,6 +39,7 @@ export class UserorderdialogComponent implements OnInit {
     this.newOrder.deliveryAddress = `${this.orderForm.value['street']} ${this.orderForm.value['city']}, ${this.orderForm.value['state']} ${this.orderForm.value['zipcode']}`;
     this.newOrder.orderNo = 7;
     // console.log(this.newOrder);
+    // this.dialogRef.
     this.dialogRef.close();
     this.orderService.placeOrder(this.newOrder).subscribe({
       // next:placedOrder=>console.log(placedOrder),

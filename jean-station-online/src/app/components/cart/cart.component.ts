@@ -83,6 +83,7 @@ export class CartComponent implements OnInit {
     this.cartTotal = 0;
     this.userCart.products = [];
     this.emptyCart = true
+    this.noItems = 0;
     this.cartService.updateCart(this.userCart).subscribe({})
   }
 
@@ -91,8 +92,11 @@ export class CartComponent implements OnInit {
     this.dialog.open(UserorderdialogComponent, {
       width: '300px',
       data: this.userCart
-    }).afterClosed().subscribe(()=>this.clearCart())
+    }).afterClosed().subscribe({
+      next: success=>console.log('success'),
+      error: fail=>console.log('fail')
+    })
   }
 
-  
+  //()=>this.clearCart()
 }
