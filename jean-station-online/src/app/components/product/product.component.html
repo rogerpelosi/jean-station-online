@@ -23,7 +23,7 @@
   <mat-card class="example-card">
 
     <div class="imgbox" >
-      <img src="{{oneProduct.url}}" class="imgbox" >
+      <img (click)="openDialog()" src="{{oneProduct.url}}" class="imgbox" >
     </div>
 
     <mat-card-header style="margin-top: 10px;">
