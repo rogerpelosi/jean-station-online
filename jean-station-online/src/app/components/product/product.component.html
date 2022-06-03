@@ -1,44 +1,22 @@
 <!-- ADMIN PRODUCT VIEW -->
-<div class="col mb-4" *ngIf="role">
+<div class="col m-1" *ngIf="role">
   <div class="admin-card">
-    <!-- <div class="underlay">
-      THE JEAN <br> STATION
-    </div> -->
-    <img src="https://st.depositphotos.com/2815243/3698/i/950/depositphotos_36987435-stock-photo-old-blue-jeans-background-and.jpg" class="card-img-top" alt="...">
+    <div class="underlay">
+      <p>THE JEAN <br> STATION</p>
+    </div>
+    <img src="https://st.depositphotos.com/2815243/3698/i/950/depositphotos_36987435-stock-photo-old-blue-jeans-background-and.jpg" class="card-img-top" alt="medium-wash-denim-swatch">
     <div class="card-body">
       <h4 class="card-title mb-1">No. {{oneProduct.id}}-{{oneProduct.title}}</h4>
       <h5>${{oneProduct.price}}</h5>
-      <!-- <p class="card-text">{{oneProduct.description}}</p> -->
+      <p class="card-text">{{oneProduct.description}}</p>
       <button mat-raised-button (click)="edit()">Edit</button>
       <button mat-raised-button (click)="delete()">Delete</button>
     </div>
   </div>
 </div>
 
-<!-- <div class="product-container" *ngIf="role">
-  <mat-card class="example-card">
-
-    <div class="imgbox"></div>
-
-    <mat-card-header>
-      <mat-card-title>{{oneProduct.title}}-No. {{oneProduct.id}}</mat-card-title>
-      <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
-    </mat-card-header>
-
-    <mat-card-content>
-      <p>{{oneProduct.description}}</p>
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button mat-raised-button (click)="edit()">Edit</button>
-      <button mat-raised-button (click)="delete()">Delete</button>
-    </mat-card-actions>
-
-  </mat-card>
-</div> -->
-
 <!-- USER PRODUCT VIEW -->
-<div class="product-container" *ngIf="!role">
+<div class="product-container col" *ngIf="!role">
   <mat-card class="example-card">
 
     <div class="imgbox">

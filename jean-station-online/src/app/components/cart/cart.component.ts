@@ -24,6 +24,7 @@ export class CartComponent implements OnInit {
   emptyCart?:boolean = true;
 
   cartTotal: number = 0;
+  noItems: number = 0;
 
   constructor( private cartService: CartService,
     private dialog: MatDialog,
@@ -48,6 +49,7 @@ export class CartComponent implements OnInit {
             this.productsArr = cart.products;
             this.productsArr.length > 0? this.emptyCart = false: this.emptyCart == true
             this.productsArr.forEach(product=>this.cartTotal+=(product.price*product.quantity))
+            this.productsArr.forEach(prod=>this.noItems+=(prod.quantity) )
           },
           error:fail=>console.log(fail)
         })
@@ -69,6 +71,7 @@ export class CartComponent implements OnInit {
       this.clearCart();
     }else if(removedProduct){
       this.cartTotal = this.cartTotal - (removedProduct.price*removedProduct.quantity);
+      this.noItems = this.noItems - (removedProduct.quantity)
       this.cartTotal.toPrecision()
     }
     //console.log(this.userCart)
