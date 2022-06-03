@@ -183,6 +183,14 @@ h5{
     font-size: 1em;
 }
 
+.img-div{
+    width: auto;
+    background-size:contain;
+    max-height: 280px;
+    overflow-y: hidden;
+
+}
+
 /* FOR DIALOG */
 ::ng-deep .custom-dialog > mat-dialog-container {
     background-color: rgba(214, 160, 78, 0.954);

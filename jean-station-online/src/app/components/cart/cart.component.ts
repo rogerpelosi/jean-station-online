@@ -91,11 +91,10 @@ export class CartComponent implements OnInit {
     // console.log(this.userCart);
     this.dialog.open(UserorderdialogComponent, {
       width: '300px',
+      panelClass: 'custom-dialog',
       data: this.userCart
-    }).afterClosed().subscribe({
-      next: success=>console.log('success'),
-      error: fail=>console.log('fail')
-    })
+    }).backdropClick().subscribe()
+    //.afterClosed().subscribe(()=>this.clearCart())
   }
 
   //()=>this.clearCart()

@@ -22,7 +22,7 @@
             <mat-label>Postal Zipcode</mat-label>
             <input matInput placeholder="11115" formControlName="zipcode">
         </mat-form-field>
-    
-        <button mat-raised-button color="accent" [disabled]="orderForm.invalid" (click)="placeOrder">Place Order</button>
+        <button mat-raised-button (click)="cancel()">Cancel</button>
+        <button mat-raised-button [disabled]="orderForm.invalid" (click)="placeOrder">Place Order</button>
     </form>
 </div>

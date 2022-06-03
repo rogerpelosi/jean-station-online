@@ -40,11 +40,15 @@ export class UserorderdialogComponent implements OnInit {
     this.newOrder.orderNo = 7;
     // console.log(this.newOrder);
     // this.dialogRef.
-    this.dialogRef.close();
+    // this.dialogRef.close();
     this.orderService.placeOrder(this.newOrder).subscribe({
-      // next:placedOrder=>console.log(placedOrder),
-      // error:failedOrder=>console.log(failedOrder)
+      next:()=>{this.dialogRef.close();},
+      error:failedOrder=>console.log(failedOrder)
     })
+  }
+
+  cancel(){
+    this.dialogRef.close()
   }
 
 }
