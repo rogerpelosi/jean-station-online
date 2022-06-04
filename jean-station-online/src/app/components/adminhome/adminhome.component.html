@@ -1,4 +1,4 @@
-<mat-toolbar class="nav-container">
+<!-- <mat-toolbar class="nav-container">
         <h1>The Jean Station</h1>
 
         <nav id="nav-bar">
@@ -6,6 +6,7 @@
             <a class="hover-underline-animation" [routerLink]="['orders']">Orders</a>
             <button  mat-raised-button color="accent" id="button" (click)="logout()">Logout</button>
         </nav>
-</mat-toolbar>
+</mat-toolbar> -->
+<app-header [role]="role"></app-header>
 <div class="router-outlet-container"></div>
 <router-outlet></router-outlet>

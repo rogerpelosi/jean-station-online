@@ -9,6 +9,8 @@ import { RoutingService } from '../../services/routing.service';
 })
 export class AdminhomeComponent implements OnInit {
 
+  role:string = 'admin';
+
   constructor(
     private authentication: AuthenticationService,
     private routing: RoutingService){}

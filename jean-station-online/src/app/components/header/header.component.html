@@ -1,1 +1,65 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h1>The Jean Station</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav" *ngIf="role">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link"[routerLink]="['products']">Products<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['orders']">Orders</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav" *ngIf="!role">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" [routerLink]="['products']">Products<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['cart']">My Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['orders']">My Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['about']">About Jean Station</a>
+          </li>
+        </ul>
+      </div>
+
+      <button  mat-raised-button (click)="adminLogout()" *ngIf="role">Logout</button>
+      <button  mat-raised-button (click)="logout()" *ngIf="!role">Logout</button>
+
+
+  </nav>
+
+  <!-- <mat-toolbar class="mat-elevation-z10" color="primary" fxLayout="row">
+    <div>
+        <a class="valign-center" mat-icon-button [routerLink]="['']">
+            <mat-icon>home</mat-icon>
+            <div style="margin-left:5px;">Jeff Schoonover</div>
+        </a> 
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="20px" class="menu-items">
+            <li><a [routerLink]="['/about']">About</a></li>
+            <li><a [routerLink]="['/learn']">Learn in Public</a></li>
+            <li><a [routerLink]="['/projects']">Projects</a></li>
+        </ul>
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="flex-end" fxHide.gt-xs>
+        <a class="valign-center" mat-icon-button [matMenuTriggerFor]="menu" aria-label="additional links">
+            <mat-icon>more_vert</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['/about']">About</button>
+            <button mat-menu-item [routerLink]="['/learn']">Learn in Public</button>
+            <button mat-menu-item [routerLink]="['/projects']">Projects</button>
+        </mat-menu>
+    </div>
+</mat-toolbar> -->

@@ -12,6 +12,7 @@ export class UserhomeComponent implements OnInit {
   CartService: any;
 
   usercartid: number;
+  role:string = '';
 
   constructor(
     private authentication: AuthenticationService,

@@ -1,3 +1,24 @@
+.carousel-inner img{
+  /* min-height: 30vh;
+  max-height: 70vh; */
+  background-size: cover;
+  width: 100%;
+}
+
+.carousel-item{
+  max-height: 80vh;
+}
+
+.carousel-item h2{
+  text-shadow: 2px 2px 8px black;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+/* .carousel-caption{
+  background-color: rgba(210, 180, 140, 0.256);
+} */
+
 
 .img-1{
   min-height: 500px;
