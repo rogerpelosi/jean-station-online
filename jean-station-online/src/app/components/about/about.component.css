@@ -12,6 +12,7 @@
   background-size: cover;
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .separation {
@@ -205,4 +206,8 @@ h1{
 .card:hover .card-image {
   transform: translateY(-120px);
   transition: .5s;
+}
+
+.for-footer {
+  height: 800px;
 }
