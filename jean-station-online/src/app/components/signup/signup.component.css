@@ -83,12 +83,17 @@ input:hover,
 #button:hover {
     background-color: rgb(255, 255, 255, .3);
     transition-duration: 0.3s;
+    cursor: pointer;
 
 }
 #button{
     background-color: rgb(255, 255, 255);
     color: #000;
 }
+
+/* a:hover{
+    color: rgb(184, 122, 28); 
+} */
 
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {

@@ -15,7 +15,7 @@ export class UserAccountService {
     private snackbar: MatSnackBar){}
 
   create(user: UserAccount): Observable<UserAccount> {
-    console.log(user);
+    // console.log(user);
     return this.httpClient.post<UserAccount>(`http://localhost:9000/api/v1/accounts/signup`, user).pipe(
       tap((createdUser: UserAccount) => this.snackbar.open(`User ${createdUser.username} created successflly`, 'Close', {
         duration: 2000, horizontalPosition: 'right', verticalPosition: 'top'

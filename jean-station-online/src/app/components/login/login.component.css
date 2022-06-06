@@ -4,8 +4,6 @@
     font-family: 'Times New Roman', Times, serif;
 } 
 
-
-
 .login-container {
     position: relative; 
     margin-top: 4%;
@@ -38,6 +36,13 @@ h2{
     /* text-align: center; */
 }
 
+.form-login p{
+    margin-left: 8vw;
+    margin-top: 2vw;
+    margin-bottom: 0%;
+    color: #1a1a6a;
+    font-weight: bold;
+}
 
 #username,
 #password,

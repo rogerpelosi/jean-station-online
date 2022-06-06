@@ -1,10 +1,12 @@
 <body>
     <section class="login-container">
-        <p *ngIf="error" color="accent">{{error}}</p>
+        <!-- <p *ngIf="error" color="accent">{{error}}</p> -->
 
         <form [formGroup]="loginForm" class="form-login">
 
             <h2>Login</h2>
+
+            <p *ngIf="error" color="accent">{{error}}</p>
 
             <div class="login-form">
                 <div>

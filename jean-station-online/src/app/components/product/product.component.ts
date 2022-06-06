@@ -77,15 +77,6 @@ export class ProductComponent implements OnInit {
     // this.cartService.updateCart(this.oneProduct);
   }
 
-
-
-
-
-
-
-
-
-
   openDialog(): void {
     const dialogRef = this.dialog.open( DescriptiondialogComponent, {
       width: '500px',
@@ -96,8 +87,5 @@ export class ProductComponent implements OnInit {
       console.log('The dialog was closed');
     });
   }
-
-
-
 
 }

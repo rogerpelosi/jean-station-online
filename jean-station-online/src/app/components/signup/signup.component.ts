@@ -49,7 +49,7 @@ export class SignupComponent implements OnInit {
       this.newUser.username = this.username.value
       this.newUser.password = this.password.value;
       this.newUser.role = 'user';
-      console.log(this.newUser)
+      // console.log(this.newUser)
 
       this.userAccountService.create(
         this.newUser
@@ -63,7 +63,7 @@ export class SignupComponent implements OnInit {
         tap(() => this.router.navigate(['landing', 'login']))
       ).subscribe({
         next:x=>{
-          console.log(x)
+          // console.log(x)
           
         },
         error:c=>console.log(c)
