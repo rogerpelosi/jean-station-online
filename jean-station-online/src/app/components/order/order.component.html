@@ -12,7 +12,7 @@
   
         <mat-expansion-panel-header>
           <mat-panel-title class="title">
-            Click to {{panelOpenState? 'hide' : 'see'}} order details <mat-icon>{{panelOpenState? 'chevron_right' : 'expand_more'}}</mat-icon>
+            Click to {{panelOpenState? 'hide' : 'view'}} order details <mat-icon>{{panelOpenState? 'chevron_right' : 'expand_more'}}</mat-icon>
           </mat-panel-title>
         </mat-expansion-panel-header>
 
@@ -47,7 +47,7 @@
       <mat-expansion-panel class="order-card" hideToggle (opened)="panelOpenState = true" (closed)="panelOpenState = false">
         <mat-expansion-panel-header>
           <mat-panel-title class="title">
-            Click to {{panelOpenState? 'hide' : 'see'}} order details <mat-icon>{{panelOpenState? 'chevron_right' : 'expand_more'}}</mat-icon>
+            Click to {{panelOpenState? 'hide' : 'view'}} order details <mat-icon>{{panelOpenState? 'chevron_right' : 'expand_more'}}</mat-icon>
           </mat-panel-title>
         </mat-expansion-panel-header>
 
