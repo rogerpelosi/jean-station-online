@@ -1,0 +1,16 @@
+button{
+    margin-right: 5px;
+    background-color: rgba(191, 191, 191, 0.441);
+    color: aliceblue;
+}
+
+button:hover{
+    background-color: rgb(184, 122, 28);
+    color: aliceblue;
+}
+
+img{
+    width: auto;
+    background-size: cover;
+    max-height: 60vh;
+}

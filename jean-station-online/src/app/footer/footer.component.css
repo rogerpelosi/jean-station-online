@@ -40,9 +40,12 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 
 .footer{
 	color: #1a1a6a;
-	background-color:rgba(214, 160, 78, 0.856);
+	/* background-color:rgba(214, 160, 78, 0.856); */
+	background-color: #b5b5de;
 	opacity: 0.9;
-	border-top: 8px solid rgb(190, 140, 65);
+	/* border-top: 8px solid rgb(190, 140, 65); */
+	border-top: 8px solid #9090be;
+
 }
 
 .footer h5{

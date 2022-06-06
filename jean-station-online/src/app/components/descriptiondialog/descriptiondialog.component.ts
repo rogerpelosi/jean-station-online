@@ -19,7 +19,7 @@ export class DescriptiondialogComponent implements OnInit {
   product: Product = this.data.product;
 
   ngOnInit(){
-    console.log(this.data)
+    // console.log(this.data)
   }
 
   onNoClick(): void {
@@ -27,5 +27,8 @@ export class DescriptiondialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
+  close(){
+    this.dialogRef.close();
+  }
 
 }

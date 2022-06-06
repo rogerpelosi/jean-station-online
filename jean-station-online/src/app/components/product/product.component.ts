@@ -88,8 +88,9 @@ export class ProductComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open( DescriptiondialogComponent, {
-      width: '250px',
-      data: {product: this.oneProduct.description}
+      width: '500px',
+      panelClass: 'custom-dialog',
+      data: {product: this.oneProduct}
     })
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');

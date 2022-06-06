@@ -1,3 +1,5 @@
-<p>{{product}}</p>
-
-
+<h2>{{product.title}} - ${{product.price}}</h2>
+<h3>Product No. {{product.id}}</h3>
+<img src={{product.url}} alt="">
+<p>Details: {{product.description}}</p>
+<button mat-raised-button (click)="close()">Close</button>
