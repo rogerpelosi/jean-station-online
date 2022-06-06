@@ -93,8 +93,7 @@ export class CartComponent implements OnInit {
       width: '300px',
       panelClass: 'custom-dialog',
       data: this.userCart
-    }).backdropClick().subscribe()
-    //.afterClosed().subscribe(()=>this.clearCart())
+    }).afterClosed().subscribe(()=>this.clearCart())
   }
 
   //()=>this.clearCart()

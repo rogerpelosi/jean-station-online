@@ -60,3 +60,15 @@
 .products-container{
   margin-left: 15vw;
 }
+
+#all-products{
+  margin-left: 17vw;
+  margin-top: 8vh;
+  font-weight: 500;
+  color: #1a1a6a;
+  /* background-color: rgba(233, 233, 233, 0.884); */
+  width: fit-content;
+  padding: 1%;
+  border-radius: 10px;
+  /* text-decoration: underline; */
+}

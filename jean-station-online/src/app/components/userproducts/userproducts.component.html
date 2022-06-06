@@ -66,9 +66,9 @@
   <app-product *ngFor="let oneProduct of filteredProductsArr" [oneProduct]="oneProduct" (handleAddToCart)="handleAddToCart($event)" [role]="role" ></app-product>
 </div> -->
 
-<h2>All Products</h2>
+<h2 id="all-products">All Products:</h2>
 
-<section class="products-container" style="margin-top: 3em">
+<section class="products-container" style="margin-top: 2em">
     <app-product *ngFor="let oneProduct of filteredProductsArr" [oneProduct]="oneProduct" (handleAddToCart)="handleAddToCart($event)" [role]="role" ></app-product>
 </section>
 
