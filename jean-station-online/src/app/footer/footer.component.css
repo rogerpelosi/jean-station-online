@@ -39,15 +39,23 @@ footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
 .social_footer_ul li i {  width:20px; height:20px; text-align:center;} */
 
 .footer{
-	background-color:#00FFFF;
+	color: #1a1a6a;
+	background-color:rgba(214, 160, 78, 0.856);
 	opacity: 0.9;
+	border-top: 8px solid rgb(190, 140, 65);
+}
+
+.footer h5{
+	margin-top: 1em;
+	margin-right: 1em;
+	font-weight: bolder;
 }
 
 
 img{
-	height: 80px;
-	width: 80px;
+	height: 3vw;
+	width: 3vw;
 	border-radius: 10px;
 	justify-content: space-evenly;
-	margin: auto;
+	margin: 4px;
 }
