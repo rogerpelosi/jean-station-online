@@ -3,29 +3,29 @@
         <!-- <p *ngIf="error" color="accent">{{error}}</p> -->
 
         <form [formGroup]="loginForm" class="form-login">
-
             <h2>Login</h2>
-
             <p *ngIf="error" color="accent">{{error}}</p>
-
             <div class="login-form">
-                <div>
-                    <mat-form-field appearance="outline">
-                        <input matInput class="form-control" id="username" type="username" placeholder="Enter Username"
-                            formControlName="username">
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field appearance="outline">
-                        <input matInput class="form-control" id="password" type="password" placeholder="Enter Password"
-                            formControlName="password">
-                    </mat-form-field>
-                </div>
+            
+                <mat-form-field appearance="outline">
+                    <input matInput class="form-control" id="username" type="username" placeholder="Enter Username" formControlName="username">
+                </mat-form-field>
+                
+              
+                <mat-form-field appearance="outline">
+                    <input matInput class="form-control" id="password" type="password" placeholder="Enter Password" formControlName="password">
+                </mat-form-field>
+              
                 <div class="separation"></div>
 
                 <button mat-raised-button color="accent" [disabled]="loginForm.invalid" (click)="login()"
-                    id="button">Enter</button>
-                    <button mat-button [routerLink]="['../signup']">Need an Account?</button>
+                    id="button">Enter
+                </button>
+
+                <div class="signup">
+                    <a [routerLink]="['../signup']">Need an Account?</a>
+                </div>
+
             </div>
         </form>
 

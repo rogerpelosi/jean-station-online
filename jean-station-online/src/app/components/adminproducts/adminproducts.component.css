@@ -38,7 +38,7 @@ mat-icon{
     color: #1a1a6a;
 }
 
-.newproductform button:hover{
+.newproductform button:enabled:hover{
     background-color: rgb(214, 160, 78);
     color: whitesmoke;
 }

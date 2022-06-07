@@ -1,3 +1,28 @@
+.additional-details-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#prod-no{
+    color: rgb(151, 100, 25);
+}
+
+.product-img-container{
+    max-height: 60vh;
+    overflow-y: hidden;
+    text-align: center;
+    overflow-x: hidden;
+    margin-bottom: 1em;
+}
+
+img{
+    width: auto;
+    background-size: cover;
+    max-height: 60vh;
+}
+
 button{
     margin-right: 5px;
     background-color: rgba(191, 191, 191, 0.441);
@@ -7,10 +32,4 @@ button{
 button:hover{
     background-color: rgb(184, 122, 28);
     color: aliceblue;
-}
-
-img{
-    width: auto;
-    background-size: cover;
-    max-height: 60vh;
 }

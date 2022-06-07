@@ -1,5 +1,9 @@
-<h2>{{product.title}} - ${{product.price}}</h2>
-<h3>Product No. {{product.id}}</h3>
-<img src={{product.url}} alt="">
-<p>Details: {{product.description}}</p>
-<button mat-raised-button (click)="close()">Close</button>
+<div class="additional-details-container">
+    <h2>{{product.title}} - ${{product.price}}</h2>
+    <h3 id="prod-no">Product No. {{product.id}}</h3>
+    <div class="product-img-container">
+        <img src={{product.url}} alt={{product.title}}>
+    </div>
+    <p>Details: {{product.description}}</p>
+    <button mat-raised-button (click)="close()">Close</button>
+</div>

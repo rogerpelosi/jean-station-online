@@ -19,9 +19,6 @@ body {
     align-items: center;
 }
 
-
-
-
  .cart-container {
 
     width: 70%;
@@ -42,7 +39,6 @@ body {
 
 
 }
-
 
 .cart-items{
     margin: auto;
@@ -67,7 +63,6 @@ body {
 }
 
 .button:disabled{
-
     width: 15%;
     height: 40px;
     border: none;
@@ -104,9 +99,9 @@ body {
 }
 
  .button:enabled:hover {
-    background: linear-gradient(to bottom right, #B8D7FF, #8EB7EB);
+    background: #1a1a6a;
     color: white;
-    transform: scale(1.2);
+    /* transform: scale(1.2); */
 }
 
 

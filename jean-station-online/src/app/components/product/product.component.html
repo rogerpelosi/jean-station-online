@@ -27,7 +27,7 @@
     </div>
 
     <mat-card-header style="margin-top: 10px;">
-      <mat-card-title>{{oneProduct.title}}</mat-card-title>
+      <mat-card-title (click)="openDialog()">{{oneProduct.title}}</mat-card-title>
       <mat-card-subtitle>${{oneProduct.price}}</mat-card-subtitle>
     </mat-card-header>
 
