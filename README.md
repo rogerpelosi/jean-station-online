@@ -1,3 +1,10 @@
+#Jean Station Online
+###Co-Created By:
+-Ian McConihay 
+-Reshmi Joseph 
+-Darwin Mathis
+-Roger Pelosi
+*********************************
 # MicroService Plans
 ### Microservices Identified: 
 - ProductService 
