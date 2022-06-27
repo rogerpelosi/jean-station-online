@@ -1,7 +1,7 @@
 # Jean Station Online
 ### Co-Created By:
-- Ian McConihay [Ian McConihay](https://www.linkedin.com/in/ian-mcconihay/)
-- Reshmi Joseph 
+- [Ian McConihay](https://www.linkedin.com/in/ian-mcconihay/)
+- [Reshmi Joseph](https://www.linkedin.com/in/reshmi-joseph/) - [GitHub](https://github.com/reshmijoseph)
 - Darwin Mathis
 - Roger Pelosi
 *********************************
