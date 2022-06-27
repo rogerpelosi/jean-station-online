@@ -1,5 +1,5 @@
 # Jean Station Online
-### Co-Created By:
+### Created By:
 - [Ian McConihay](https://www.linkedin.com/in/ian-mcconihay/) - [GitHub](https://github.com/Ian-McConihay)
 - [Reshmi Joseph](https://www.linkedin.com/in/reshmi-joseph/) - [GitHub](https://github.com/reshmijoseph)
 - [Darwin Mathis](https://www.linkedin.com/in/darwin-mathis-94337b1aa/) - [GitHub](https://github.com/DarwinMath4)
